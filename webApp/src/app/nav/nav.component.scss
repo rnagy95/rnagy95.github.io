@@ -1,0 +1,8 @@
+.app-nav{
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}

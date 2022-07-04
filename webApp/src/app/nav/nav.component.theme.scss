@@ -1,0 +1,45 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../utils/style/color-utils.scss" as color-utils;
+
+@mixin color($color-config) {
+  $primary-palette: map.get($color-config, 'primary');
+
+  $background-color: mat.get-color-from-palette($primary-palette, default);
+  $active-background-color: mat.get-color-from-palette($primary-palette, darker);
+  $color: color-utils.get-text-color-on-background($background-color);
+  $active-color: color-utils.get-text-color-on-background($active-background-color);
+
+  .app-nav {
+      background-color: $background-color;
+      color: $color;
+
+      a{
+        color: $color;
+      }
+
+      .active{
+        background-color: $active-background-color;
+        color: $active-color;
+      }
+  }
+
+}
+
+@mixin typography($typography-config) {
+  .app-nav {
+    font-family: mat.font-family($typography-config);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($color-config);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config != null {
+    @include typography($typography-config);
+  }
+}
