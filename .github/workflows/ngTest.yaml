@@ -1,0 +1,29 @@
+name: ng test
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+    
+    - name: Use Node.js v16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    
+    - name: Run tests
+      run: | 
+            cd src/myApp
+            npm ci
+            export DISPLAY=:99
+            chromedriver --url-base=/wd/hub &
+            sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+            npm run test --if-present
