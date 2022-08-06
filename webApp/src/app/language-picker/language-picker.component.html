@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline" style="width: 8rem;">
+    <mat-select [(value)]="localizationService.SelectedLanguage">
+        <mat-select-trigger>
+            <img style="vertical-align: middle;" src="../../assets/{{localizationService.SelectedLanguage.code}}.svg"
+                alt="ASD" width="24" height="24" />
+            {{localizationService.SelectedLanguage.name}}
+        </mat-select-trigger>
+        <mat-option *ngFor="let language of localizationService.Languages" [value]="language">
+            <img style="vertical-align: middle;" src="../../assets/{{language.code}}.svg"
+                alt="ASD" width="22" height="22" />
+            {{language.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
