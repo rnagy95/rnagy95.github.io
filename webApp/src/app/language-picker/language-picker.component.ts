@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from '../interfaces/Language';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
@@ -7,6 +8,10 @@ import { LocalizationService } from '../services/localization/localization.servi
   styleUrls: ['./language-picker.component.scss']
 })
 export class LanguagePickerComponent implements OnInit {
+
+  public onLanguageChanged(language:Language){
+    this.localizationService.SelectedLanguage = language;
+  }
 
   constructor(public localizationService:LocalizationService) { }
 
