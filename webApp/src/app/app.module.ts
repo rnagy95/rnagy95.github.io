@@ -11,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContentComponent } from './main-content/main-content.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LanguagePickerComponent } from './language-picker/language-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContentComponent,
     PrivacyPolicyComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LanguagePickerComponent
   ],
   imports: [
     BrowserModule,
