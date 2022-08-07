@@ -9,31 +9,31 @@ import * as en from '../../../assets/locale/en-US.json';
 })
 export class LocalizationService {
 
-  private languages: Language[] =  [
+  private _languages: Language[] =  [
     { code: "en-US", name: "English", localization: en },
     { code: "hu-HU", name: "Magyar", localization: hu }
   ];
 
-  public get Languages(): Language[] {
-    return this.languages;
+  public get languages(): Language[] {
+    return this._languages;
   }
 
-  private set Languages(value){
-    this.languages = value;
+  private set languages(value){
+    this._languages = value;
   }
 
-  private selectedLanguage:Language = this.Languages[0];
+  private _selectedLanguage:Language = this.languages[0];
   
-  public get SelectedLanguage():Language{
-    return this.selectedLanguage;
+  public get selectedLanguage():Language{
+    return this._selectedLanguage;
   }
 
-  public set SelectedLanguage(value:Language){
-    this.selectedLanguage = value;
+  public set selectedLanguage(value:Language){
+    this._selectedLanguage = value;
   }
 
   public localize(key:string):string{
-    return this?.SelectedLanguage?.localization[key];
+    return this?.selectedLanguage?.localization[key];
   }
 
   constructor() { }

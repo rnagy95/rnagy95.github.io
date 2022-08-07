@@ -10,7 +10,7 @@ import { LocalizationService } from '../services/localization/localization.servi
 export class LanguagePickerComponent implements OnInit {
 
   public onLanguageChanged(language:Language){
-    this.localizationService.SelectedLanguage = language;
+    this.localizationService.selectedLanguage = language;
   }
 
   constructor(public localizationService:LocalizationService) { }

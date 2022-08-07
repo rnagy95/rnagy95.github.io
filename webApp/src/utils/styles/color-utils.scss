@@ -1,0 +1,37 @@
+@use "sass:math";
+
+@function calculate-luminance($color){
+    $vR: math.div(red($color), 255);
+    $vG: math.div(green($color), 255);
+    $vB: math.div(blue($color), 255);
+
+    @if $vR <= 0.04045 {
+        $vR: math.div($vR, 12.92);
+    } @else {
+        $vR: math.pow(math.div(($vR + 0.055), 1.055), 2.4);
+    }
+
+    @if $vG <= 0.04045 {
+        $vG: math.div($vG, 12.92);
+    } @else {
+        $vG: math.pow(math.div(($vG + 0.055), 1.055), 2.4);
+    }
+
+    @if $vB <= 0.04045 {
+        $vB: math.div($vB, 12.92);
+    } @else {
+        $vB: math.pow(math.div(($vB + 0.055), 1.055), 2.4);
+    }
+
+    @return ((0.2126 * $vR) + (0.7152 * $vG) + (0.0722 * $vB));
+}
+
+//This helps to be complient with W3C rules (WCAG 2.0 > Contrast)
+@function get-text-color-on-background($background) {
+    $color: #fff;
+    @if (calculate-luminance($background) > 0.17912878) {
+        $color: #000;
+    }
+
+    @return $color
+}
