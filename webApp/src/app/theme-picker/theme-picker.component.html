@@ -1,0 +1,10 @@
+<button mat-icon-button [matMenuTriggerFor]="themePicker" aria-label="Select theme" matTooltip="Select theme">
+    <mat-icon>format_color_fill</mat-icon>
+</button>
+<mat-menu #themePicker="matMenu" xPosition="before">
+    <button mat-menu-item *ngFor="let theme of themeService.themes" (click)="onThemeSelected(theme)">
+        <mat-icon *ngIf="theme === themeService.selectedTheme">radio_button_checked</mat-icon>
+        <mat-icon *ngIf="theme !== themeService.selectedTheme">radio_button_unchecked</mat-icon>
+        {{theme.name}}
+    </button>
+</mat-menu>

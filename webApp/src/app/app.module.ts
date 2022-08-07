@@ -13,6 +13,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LanguagePickerComponent } from './language-picker/language-picker.component';
 import { NavBarComponent } from './navbar/navbar.component';
+import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavBarComponent } from './navbar/navbar.component';
     PrivacyPolicyComponent,
     PageNotFoundComponent,
     LanguagePickerComponent,
-    NavBarComponent
+    NavBarComponent,
+    ThemePickerComponent
   ],
   imports: [
     BrowserModule,
