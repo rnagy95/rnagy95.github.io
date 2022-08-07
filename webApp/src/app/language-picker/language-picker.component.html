@@ -1,0 +1,12 @@
+<button mat-button [matMenuTriggerFor]="languagePicker" aria-label="Select language"
+        matTooltip="Select language">
+        <img style="vertical-align: middle;" src="../../assets/{{localizationService.selectedLanguage.code}}.svg" width="30" height="30" />
+        {{localizationService.selectedLanguage.name}}
+  <mat-icon>arrow_drop_down</mat-icon>
+</button>
+<mat-menu #languagePicker="matMenu" xPosition="before">
+  <button mat-menu-item *ngFor="let language of localizationService.languages" (click)="onLanguageChanged(language)">
+    <img style="vertical-align: middle;" src="../../assets/{{language.code}}.svg" width="30" height="30" />
+    {{language.name}}
+  </button>
+</mat-menu>

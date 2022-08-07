@@ -1,0 +1,37 @@
+.app-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+
+    >.mat-button {
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+
+    .flex-spacer {
+        flex-grow: 1;
+    }
+
+    
+}
+
+.app-navbar.show-on-moblie {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .navbar-link.hide-on-moblie {
+        display: none;
+    }
+    
+    .app-navbar.show-on-moblie {
+        display: flex;
+
+        .navbar-link {
+            text-decoration: inherit;
+            flex: 1;
+        }
+    }
+}
