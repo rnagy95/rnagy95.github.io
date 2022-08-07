@@ -12,6 +12,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LanguagePickerComponent } from './language-picker/language-picker.component';
+import { NavBarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LanguagePickerComponent } from './language-picker/language-picker.compo
     MainContentComponent,
     PrivacyPolicyComponent,
     PageNotFoundComponent,
-    LanguagePickerComponent
+    LanguagePickerComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
