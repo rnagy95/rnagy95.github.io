@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Language } from '../interfaces/Language';
+import { CookieService } from '../services/cookie/cookie.service';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LanguagePickerComponent implements OnInit {
     this.localizationService.selectedLanguage = language;
   }
 
-  constructor(public localizationService:LocalizationService) { }
+  constructor(public localizationService:LocalizationService, private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
