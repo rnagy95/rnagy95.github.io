@@ -1,0 +1,64 @@
+.modal {
+    border-radius: 6px;
+    max-width: 40vw;
+    max-height: 80vh;
+    position: relative;
+
+    .show-on-mobile {
+        display: none;
+    }
+
+    .group-header{
+        display: flex;
+
+        .spacer{
+            flex-grow: 1;
+        }
+
+        .enabledIndicator{
+            margin-right: 15px;
+        }
+    }
+
+    .cookie{
+        display: flex;
+        flex-wrap: wrap;
+
+        .cookie-name{
+            font-size: larger;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        .cookie-description{
+            padding-left: 15px;
+            flex: 2;
+        }
+
+        .spacer{
+            flex-grow: 1;
+        }
+    }
+
+}
+
+@media (max-width: 920px) {
+    .modal {
+        max-width: 60vw;
+        .show-on-mobile {
+            display: block;
+        }
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+}
+
+
+@media (max-width: 720px) {
+
+    .modal {
+        max-width: 80vw;
+    }
+
+}

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Language } from 'src/app/interfaces/Language';
 import * as hu from '../../../assets/locale/hu-HU.json';
 import * as en from '../../../assets/locale/en-US.json';
+import { CookieService } from '../cookie/cookie.service';
 
 
 @Injectable({
@@ -9,32 +10,43 @@ import * as en from '../../../assets/locale/en-US.json';
 })
 export class LocalizationService {
 
-  private _languages: Language[] =  [
-    { code: "en-US", name: "English", localization: en },
-    { code: "hu-HU", name: "Magyar", localization: hu }
+  private _localizations = {
+    'en-US': en,
+    'hu-HU': hu
+  }
+
+  private _languages: Language[] = [
+    { code: "en-US", name: "English" },
+    { code: "hu-HU", name: "Magyar" }
   ];
 
   public get languages(): Language[] {
     return this._languages;
   }
 
-  private set languages(value){
+  private set languages(value) {
     this._languages = value;
   }
 
-  private _selectedLanguage:Language = this.languages[0];
-  
-  public get selectedLanguage():Language{
+  private _selectedLanguage: Language;
+
+  public get selectedLanguage(): Language {
     return this._selectedLanguage;
   }
 
-  public set selectedLanguage(value:Language){
+  public set selectedLanguage(value: Language) {
     this._selectedLanguage = value;
+    this.cookieService.storeValue('preferences.language', JSON.stringify(value))
   }
 
-  public localize(key:string):string{
-    return this?.selectedLanguage?.localization[key];
+  public localize(key: string): string {
+    return this._localizations[(this.selectedLanguage.code) as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)];
   }
 
-  constructor() { }
+  constructor(private cookieService: CookieService) {
+    const preferedLanguageString = cookieService.getValue('preferences.language');
+    const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;
+
+    this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages[0];
+  }
 }
