@@ -14,24 +14,24 @@
         flex-grow: 1;
     }
 
-    
-}
-
-.app-navbar.show-on-moblie {
-    display: none;
+    &.show-on-mobile{
+        display: none;
+    }
 }
 
 @media (max-width: 720px) {
-    .navbar-link.hide-on-moblie {
+    .navbar-link.hide-on-mobile {
         display: none;
     }
     
-    .app-navbar.show-on-moblie {
-        display: flex;
-
-        .navbar-link {
-            text-decoration: inherit;
-            flex: 1;
+    .app-navbar{
+        &.show-on-mobile {
+            display: flex;
+    
+            .navbar-link {
+                text-decoration: inherit;
+                flex: 1;
+            }
         }
     }
 }
