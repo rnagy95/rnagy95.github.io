@@ -11,13 +11,13 @@ import { CookieService } from '../cookie/cookie.service';
 export class LocalizationService {
 
   private _localizations = {
-    'en-US': en,
-    'hu-HU': hu
+    'en': en,
+    'hu': hu
   }
 
   private _languages: Language[] = [
-    { code: "en-US", name: "English" },
-    { code: "hu-HU", name: "Magyar" }
+    { code: "en", name: "English" },
+    { code: "hu", name: "Magyar" }
   ];
 
   public get languages(): Language[] {
@@ -36,7 +36,8 @@ export class LocalizationService {
 
   public set selectedLanguage(value: Language) {
     this._selectedLanguage = value;
-    this.cookieService.storeValue('preferences.language', JSON.stringify(value))
+    this.cookieService.storeValue('preferences.language', JSON.stringify(value));
+    document.documentElement.setAttribute("lang", value.code);
   }
 
   public localize(key: string): string {
@@ -47,8 +48,9 @@ export class LocalizationService {
     const preferedLanguageString = cookieService.getValue('preferences.language');
     const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;
 
-    const browserLanguage = navigator.language === 'hu' ? 'hu-HU' : 'en-US'; 
+    const browserLanguage = navigator.language === 'hu' ? 'hu' : 'en'; 
 
     this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages.find(x => x.code === browserLanguage) || this.languages[0];
+    document.documentElement.setAttribute("lang", this._selectedLanguage.code);
   }
 }
