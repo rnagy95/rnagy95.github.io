@@ -17,6 +17,7 @@ import { NavBarComponent } from './navbar/navbar.component';
 import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 import { CookieService } from './services/cookie/cookie.service';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CookieService } from './services/cookie/cookie.service';
     LanguagePickerComponent,
     NavBarComponent,
     ThemePickerComponent,
-    CookiePopupComponent
+    CookiePopupComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cookie } from 'src/app/interfaces/Cookie';
-import { Theme } from 'src/app/interfaces/Theme';
+import { Theme, ThemeType } from 'src/app/interfaces/Theme';
 import { CookieService } from '../cookie/cookie.service';
 
 @Injectable({
@@ -9,10 +9,12 @@ import { CookieService } from '../cookie/cookie.service';
 export class ThemeService {
 
   private _themes: Theme[] = [
-    { klass: 'dark-ide-theme', name: 'Dark IDE' },
-    { klass: 'light-ide-theme', name: 'Light IDE' },
-    { klass: 'terminal-theme', name: 'Terminal' }
+    { klass: 'dark-ide-theme', name: 'Dark IDE', type: ThemeType.dark },
+    { klass: 'light-ide-theme', name: 'Light IDE', type: ThemeType.light },
+    { klass: 'terminal-theme', name: 'Terminal', type: ThemeType.dark }
   ]
+
+  public onSelectedThemeChanged : Event = new Event('onSelectedThemeChanged');
 
   public get themes(): Theme[] {
     return this._themes;
@@ -31,6 +33,7 @@ export class ThemeService {
     this._selectedTheme = value;
     this.applyTheme(value)
     this.cookieService.storeValue('preferences.theme', JSON.stringify(value))
+    dispatchEvent(this.onSelectedThemeChanged);
   }
 
   private applyTheme(theme: Theme) {
