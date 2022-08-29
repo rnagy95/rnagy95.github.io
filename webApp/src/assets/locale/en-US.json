@@ -1,4 +1,7 @@
 {
     "name": "Richard Nagy",
-    "profession": "Full stack software engineer"
+    "profession": "Full stack software engineer",
+    "about": "About",
+    "technologies": "Technologies",
+    "experience": "Work Experiences"
 }

@@ -8,7 +8,7 @@ import { Link } from '../interfaces/Link';
 })
 export class MainContentComponent implements OnInit {
 
-  links:Link[] = [{href: '', text: 'About'}, {href: '', text: 'Technologies'}, {href: '', text: 'CV'}]
+  links:Link[] = [{href: '', text: 'about'}, {href: '', text: 'technologies'}, {href: '', text: 'experience'}]
 
   constructor() { }
 
