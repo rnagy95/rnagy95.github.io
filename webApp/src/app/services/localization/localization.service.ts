@@ -38,7 +38,7 @@ export class LocalizationService {
     this._selectedLanguage = value;
     this.cookieService.storeValue('preferences.language', JSON.stringify(value));
     document.documentElement.setAttribute("lang", value.code);
-    document.title = value.code === 'hu' ? 'Nagy Richárd' : 'Richard Nagy'
+    document.title = this.localize('name');
   }
 
   public localize(key: string): string {
@@ -53,6 +53,6 @@ export class LocalizationService {
 
     this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages.find(x => x.code === browserLanguage) || this.languages[0];
     document.documentElement.setAttribute("lang", this._selectedLanguage.code);
-    document.title = this._selectedLanguage.code === 'hu' ? 'Nagy Richárd' : 'Richard Nagy'
+    document.title = this.localize('name');
   }
 }
