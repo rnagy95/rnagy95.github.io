@@ -9,11 +9,11 @@ import { environment } from 'src/environments/environment';
 export class CookieService {
 
   private _cookies: Cookie[] = [
-    { id: 'consent.isAgreed', name: 'Consent', description: 'Stores that you already interacted with the cookie consent banner.', type: CookieType.LocalStorage, category: CookieCategory.Necessary, isEnabled: true },
-    { id: 'consent.cookieConfig', name: 'Cookie Configuration', description: 'Stores your cookie preferences.', type: CookieType.LocalStorage, category: CookieCategory.Necessary, isEnabled: true },
-    { id: 'preferences.language', name: 'Selected language', description: 'Stores your prefered language.', type: CookieType.LocalStorage, category: CookieCategory.Preferences, isEnabled: false },
-    { id: 'preferences.theme', name: 'Selected theme', description: 'Stores your prefered theme.', type: CookieType.LocalStorage, category: CookieCategory.Preferences, isEnabled: false },
-    { id: 'analytics.google', name: 'Google Analytics', description: 'Collects analytical data.', type: CookieType.GoogleAnalytics, category: CookieCategory.Analytics, isEnabled: false }
+    { id: 'consent.isAgreed', name: 'Consent', description: 'consent.description', type: CookieType.LocalStorage, category: CookieCategory.Necessary, isEnabled: true },
+    { id: 'consent.cookieConfig', name: 'Cookie Configuration', description: 'cookieConfig.description', type: CookieType.LocalStorage, category: CookieCategory.Necessary, isEnabled: true },
+    { id: 'preferences.language', name: 'Selected language', description: 'selectedLanguage.description', type: CookieType.LocalStorage, category: CookieCategory.Preferences, isEnabled: false },
+    { id: 'preferences.theme', name: 'Selected theme', description: 'selectedTheme.description', type: CookieType.LocalStorage, category: CookieCategory.Preferences, isEnabled: false },
+    { id: 'analytics.google', name: 'Google Analytics', description: 'googleAnalytics.description', type: CookieType.GoogleAnalytics, category: CookieCategory.Analytics, isEnabled: false }
   ];
 
   public get cookies(): Cookie[] {
@@ -42,7 +42,7 @@ export class CookieService {
   }
 
   private toggleGoogleAnalytics(): void {
-    const isEnabled = environment.production ? this.cookies.find(x=>x.id === "analytics.google")?.isEnabled : false;
+    const isEnabled = environment.production && this.cookies.find(x=>x.id === "analytics.google")?.isEnabled;
     (window as any)["ga-disable-G-K0LL388L6C"] = !isEnabled;
   }
 

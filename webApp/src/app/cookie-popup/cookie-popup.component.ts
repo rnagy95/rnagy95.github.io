@@ -2,6 +2,7 @@ import { ApplicationRef, ChangeDetectorRef, Component, OnInit } from '@angular/c
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Cookie, CookieCategory } from '../interfaces/Cookie';
 import { CookieService } from '../services/cookie/cookie.service';
+import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
   selector: 'app-cookie-popup',
@@ -64,7 +65,7 @@ export class CookiePopupComponent implements OnInit {
     return CookieCategory[i as CookieCategory];
   }
 
-  constructor(public cookieService: CookieService, private changeDetectorRef: ChangeDetectorRef, private appRef: ApplicationRef) { }
+  constructor(public cookieService: CookieService, public localizationService : LocalizationService) { }
 
   ngOnInit(): void {
     this._initModel()

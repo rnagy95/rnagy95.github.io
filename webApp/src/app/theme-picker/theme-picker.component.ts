@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Theme } from '../interfaces/Theme';
+import { LocalizationService } from '../services/localization/localization.service';
 import { ThemeService } from '../services/theme/theme.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ThemePickerComponent implements OnInit {
     this.themeService.selectedTheme = theme;
   }
 
-  constructor(public themeService: ThemeService) { }
+  constructor(public themeService: ThemeService, public localizationService: LocalizationService) { }
 
   ngOnInit(): void {
   }
