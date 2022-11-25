@@ -1,0 +1,18 @@
+<footer class="app-footer">
+  <section class="ft-main">
+    <div class="ft-main-item ft-contact" *ngFor="let contact of contacts">
+      <a [href]="contact.url" target="_blank" rel="noopener noreferrer">
+        <img [src]="contact.logo" style="width: 32px; height:auto;" [alt]="contact.altText" />
+      </a>
+    </div>
+  </section>
+  <section class="ft-legal">
+    <ul class="ft-legal-list">
+      <li><a mat-button (click)="openCookiePopup()">{{localizationService.localize('changeCookieSettings')}}</a></li>
+      <li><a mat-button routerLink="/privacy-policy">{{localizationService.localize('privacyPolicy')}}</a></li>
+      <li><a mat-button routerLink="/terms-and-conditions">{{localizationService.localize('termAndConditions')}}</a></li>
+      <li>Copyright &copy; {{year}} {{localizationService.localize('name')}}.
+        {{localizationService.localize('allRightsReserved')}}.</li>
+    </ul>
+  </section>
+</footer>
