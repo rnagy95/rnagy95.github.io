@@ -42,7 +42,7 @@ export class LocalizationService {
   }
 
   public localize(key: string): string {
-    return this._localizations[(this.selectedLanguage.code) as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)];
+    return this._localizations[this.selectedLanguage.code as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)] || key;
   }
 
   constructor(private cookieService: CookieService) {

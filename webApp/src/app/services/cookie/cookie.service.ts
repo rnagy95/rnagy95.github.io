@@ -1,6 +1,5 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Cookie, CookieCategory, CookieType } from 'src/app/interfaces/Cookie';
-import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -23,7 +22,13 @@ export class CookieService {
   public set cookies(value: Cookie[]) {
     this._cookies = value;
     this.toggleGoogleAnalytics();
-    localStorage.setItem('consent.cookieConfig', JSON.stringify(value))
+    localStorage.setItem('consent.cookieConfig', JSON.stringify(value));
+
+    this._cookies.forEach((item) => {
+      if (item.isEnabled === false) {
+        this.removeCookieFromLocalStorage(item.id);
+      }
+    });
   }
 
   private readCookieConfigFromLocalStorage(): void {
@@ -42,8 +47,16 @@ export class CookieService {
   }
 
   private toggleGoogleAnalytics(): void {
-    const isEnabled = environment.production && this.cookies.find(x=>x.id === "analytics.google")?.isEnabled;
+    const isEnabled = environment.production && this.cookies.find(x => x.id === "analytics.google")?.isEnabled;
     (window as any)["ga-disable-G-K0LL388L6C"] = !isEnabled;
+  }
+
+  private removeCookieFromLocalStorage(id: string): void {
+    const cookie = this.cookies.find(x => x.id === id);
+
+    if (cookie?.type === CookieType.LocalStorage) {
+      localStorage.removeItem(id);
+    }
   }
 
   public getValue(id: string): string | null {
