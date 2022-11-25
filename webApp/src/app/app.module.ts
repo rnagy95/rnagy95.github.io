@@ -18,6 +18,8 @@ import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 import { CookieService } from './services/cookie/cookie.service';
 import { BannerComponent } from './banner/banner.component';
+import { FooterComponent } from './footer/footer.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { BannerComponent } from './banner/banner.component';
     NavBarComponent,
     ThemePickerComponent,
     CookiePopupComponent,
-    BannerComponent
+    BannerComponent,
+    FooterComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,

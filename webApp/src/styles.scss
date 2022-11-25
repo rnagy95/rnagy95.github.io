@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @use './app/navbar/navbar.component.theme.scss' as navbar;
 @use './app/banner/banner.component.theme.scss' as banner;
+@use './app/footer/footer.component.theme.scss' as footer;
 
 @include mat.core();
 
@@ -43,18 +44,21 @@ $terminal-theme: mat.define-dark-theme((
 .dark-ide-theme{
   @include mat.all-component-themes($dark-ide-theme);
   @include navbar.theme($dark-ide-theme);
+  @include footer.theme($dark-ide-theme);
   @include banner.theme($dark-ide-theme, $isDarkTheme: true);
 }
 
 .light-ide-theme{
   @include mat.all-component-themes($light-ide-theme);
   @include navbar.theme($light-ide-theme);
+  @include footer.theme($light-ide-theme);
   @include banner.theme($light-ide-theme, $isDarkTheme: false);
 }
 
 .terminal-theme{
   @include mat.all-component-themes($terminal-theme);
   @include navbar.theme($terminal-theme);
+  @include footer.theme($terminal-theme);
   @include banner.theme($terminal-theme, $isDarkTheme: true);
 }
 
