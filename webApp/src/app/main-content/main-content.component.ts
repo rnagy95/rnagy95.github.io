@@ -9,7 +9,7 @@ import { ContactLink } from '../interfaces/ContactLink';
 })
 export class MainContentComponent implements OnInit {
 
-  links:Link[] = [{href: '', text: 'about'}, {href: '', text: 'technologies'}, {href: '', text: 'experience'}]
+  links:Link[] = [{href: '#about', text: 'about'}, {href: '', text: 'technologies'}, {href: '', text: 'experience'}]
   contacts: ContactLink[] = [{altText: 'E-Mail', logo:'../../assets/email.png', url: "mailto:95.richard.nagy@gmail.com"}, {altText: 'GitHub', logo:'../../assets/GitHub-Mark-Light-64px.png', url: "https://github.com/rnagy95"}, {altText: 'LinkedIn', logo:'../../assets/LI-In-Bug.png', url: "https://www.linkedin.com/in/richard-nagy-636310135/"}]
 
   constructor() { }

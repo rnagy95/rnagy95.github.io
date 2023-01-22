@@ -1,11 +1,11 @@
 .app-navbar {
     position: sticky;
-    top:0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 16px;
     z-index: 999;
+    top:0px;
 
     >.mat-button {
         &:hover{
