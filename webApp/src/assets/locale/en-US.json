@@ -3,7 +3,7 @@
     "profession": "Full stack software engineer",
     "about": "About",
     "technologies": "Technologies",
-    "experience": "Work Experiences",
+    "experience": "Experience",
     "cookieBanner.title": "This website uses cookies",
     "cookieBanner.subTitle": "I use cookies (and similar technoligies) to enhance your browsing experience, serve personalized content, and analyze my traffic. By clicking \"Accept All\", you consent to my use of cookies.",
     "cookieBanner.readMore": "Read More",
@@ -32,5 +32,7 @@
     "allRightsReserved": "All rights reserved",
     "changeCookieSettings": "Change cookie settings",
     "privacyPolicy": "Privacy policy",
-    "termAndConditions": "Terms & Conditions"
+    "termAndConditions": "Terms & Conditions",
+    "functionList": "Software Engineer, Technology Enthusiast, Hobby Economist",
+    "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
 }

@@ -3,7 +3,7 @@
     "profession": "Szoftverfejlesztő mérnök",
     "about": "Rólam",
     "technologies": "Technológiák",
-    "experience": "Munkatapasztalat",
+    "experience": "Tapasztalat",
     "cookieBanner.title": "Ez az oldal sütiket használ",
     "cookieBanner.subTitle": "Sütiket (és hansonló technológiákat) használok a böngészési élmény fokozása, testreszabott tartalom szolgáltatása és a hálózati forgalom elemzése érdekében. A \"Mindet Engedélyezem\" gombra kattintva Ön beleegyezik a sütik használatába.",
     "cookieBanner.readMore": "Tudjon meg többet",
@@ -32,5 +32,7 @@
     "allRightsReserved": "Minden jog fenntartva",
     "changeCookieSettings": "Sütibeállítások módosítása",
     "privacyPolicy": "Adatkezelési tájékoztató",
-    "termAndConditions": "Használati feltételek"
+    "termAndConditions": "Használati feltételek",
+    "functionList": "Mérnök Informatikus, Technológia Rajongó, Hobbi Közgazdász",
+    "quote": "Bármely idióta képes a számítógép által értelmezhető kódot írni. A jó programozó olyan kódot ír, amit az emberek is megértenek."
 }
