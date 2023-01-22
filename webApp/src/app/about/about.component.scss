@@ -1,0 +1,208 @@
+.outer-container {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    .inner-container {
+        margin: auto;
+        width: 85%;
+        height: 85%;
+        border-radius: 15px;
+
+        .left-panel {
+            display: inline-block;
+            vertical-align: middle;
+            width: 33%;
+            height: 100%;
+
+            .bullet-point {
+                margin-top: 15px;
+                margin-left: 30px;
+                display: flex;
+                align-items: center;
+
+                &:last-child {
+                    margin-bottom: 15px;
+                }
+
+                .bullet-point-icon {
+                    font-size: 36px;
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .bullet-point-text {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .right-panel {
+            display: inline-block;
+            vertical-align: middle;
+            width: 66%;
+
+            &>* {
+                margin-left: 30px;
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 2;
+            }
+
+            .functions {
+                font-style: italic;
+                font-size: 18px;
+                line-height: 1.2;
+            }
+
+            .quote-block {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 5px;
+                width: fit-content;
+                border-top: solid 1px black;
+                border-bottom: solid 1px black;
+                position: relative;
+
+                .quote {
+                    font-style: italic;
+                    padding-left: 70px;
+
+                    &::before {
+                        content: "\201C";
+                        font-size: 128px;
+                        position: absolute;
+                        top: 38px;
+                        left: 0px;
+                        font-family: 'Times New Roman', Times, serif;
+                        font-weight: bold;
+                        opacity: 25%;
+                    }
+                }
+
+                .quotee{
+                    text-align: right;
+                    font-weight: bold;
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .outer-container {
+        .inner-container {
+            .left-panel {
+                width: 49%;
+            }
+
+            .right-panel {
+                width: 49%;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .outer-container {
+        .inner-container {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            .left-panel,
+            .right-panel {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+// .outer-container {
+//     width: 100%;
+//     padding: 25px 0px 25px 0px;
+
+//     .inner-container {
+//         width: 85%;
+//         height: 85%;
+//         margin: auto;
+//         border-radius: 15px;
+
+//         .left-panel {
+//             display: inline-block;
+//             vertical-align: middle;
+//             width: 33%;
+
+//             .bullet-point {
+//                 margin-top: 15px;
+//                 margin-left: 30px;
+//                 display: flex;
+//                 align-items: center;
+
+//                 &:last-child {
+//                     margin-bottom: 15px;
+//                 }
+
+//                 .bullet-point-icon {
+//                     font-size: 36px;
+//                     width: 36px;
+//                     height: 36px;
+//                 }
+
+//                 .bullet-point-text {
+//                     font-size: 24px;
+//                     font-weight: bold;
+//                     margin-left: 5px;
+//                 }
+//             }
+//         }
+
+//         .right-panel {
+//             display: inline-block;
+//             vertical-align: middle;
+//             width: 66%;
+//         }
+//     }
+// }
+
+// @media (max-width: 720px) {
+//     .outer-container {
+//         .inner-container {
+
+//             .left-panel,
+//             .right-panel {
+//                 display: block;
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }
+
+// @media (min-width:720px) and (max-width:950px) {
+//     .outer-container {
+//         .inner-container {
+
+//             .left-panel,
+//             .right-panel {
+//                 .bullet-point {
+//                     .bullet-point-icon {
+//                         font-size: 24px;
+//                         width: 24px;
+//                         height: 24px;
+//                     }
+
+//                     .bullet-point-text {
+//                         font-size: 16px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
