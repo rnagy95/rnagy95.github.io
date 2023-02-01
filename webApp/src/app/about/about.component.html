@@ -1,17 +1,17 @@
 <div class="outer-container">
     <div class="inner-container">
         <div class="left-panel">
-            <div class="bullet-point" matTooltip="Address">
+            <div class="bullet-point" matTooltip="{{localizationService.localize('address')}}">
                 <mat-icon fontIcon="place" class="bullet-point-icon"></mat-icon>
-                <span class="bullet-point-text">Budapest, Hungary</span>
+                <span class="bullet-point-text">{{localizationService.localize('myAddress')}}</span>
             </div>
-            <div class="bullet-point" matTooltip="Year of Birth">
+            <div class="bullet-point" matTooltip="{{localizationService.localize('DOB')}}">
                 <mat-icon fontIcon="cake" class="bullet-point-icon"></mat-icon>
-                <span class="bullet-point-text">1995</span>
+                <span class="bullet-point-text">{{localizationService.localize('dateOfBirth')}}</span>
             </div>
-            <div class="bullet-point" matTooltip="Work experience">
+            <div class="bullet-point" matTooltip="{{localizationService.localize('workExperience')}}">
                 <mat-icon fontIcon="work_history" class="bullet-point-icon"></mat-icon>
-                <span class="bullet-point-text">{{getExperienceInYears()}} years</span>
+                <span class="bullet-point-text">{{getExperienceInYears()}} {{localizationService.localize('years')}}</span>
             </div>
         </div>
         <div class="right-panel">
@@ -25,18 +25,20 @@
                     - Martin Fowler
                 </div>
             </div>
-            <ul>
-                <li>Lorem</li>
-                <li>Ipsum</li>
-                <li>Dolor</li>
-                <li>Sit</li>
-                <li>Amet</li>
-                <li>Lorem</li>
-                <li>Ipsum</li>
-                <li>Dolor</li>
-                <li>Sit</li>
-                <li>Amet</li>
-            </ul>
+            <div class="introduction">
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p1')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p2')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p3')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p4')}}
+                </div>
+            </div>
         </div>
     </div>
 </div>

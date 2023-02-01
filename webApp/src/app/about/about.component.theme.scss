@@ -7,14 +7,8 @@
 
   $outer-background-color: mat.get-color-from-palette($primary-palette, 900);
   $inner-background-color: mat.get-color-from-palette($primary-palette, 100);
-  $title-color: color-utils.get-text-color-on-background($outer-background-color);
   $color: color-utils.get-text-color-on-background($inner-background-color);
 
-  .title-label{
-    background-color: $outer-background-color;
-    color: $title-color;
-  }
-  
   .outer-container {
     background-color: $outer-background-color;
 
@@ -40,10 +34,10 @@
         }
       }
 
-      .right-panel{
-        .quote-block{
-          .quote{
-            &::before{
+      .right-panel {
+        .quote-block {
+          .quote {
+            &::before {
               color: $outer-background-color;
             }
           }

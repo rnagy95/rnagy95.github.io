@@ -33,6 +33,16 @@
     "changeCookieSettings": "Sütibeállítások módosítása",
     "privacyPolicy": "Adatkezelési tájékoztató",
     "termAndConditions": "Használati feltételek",
-    "functionList": "Mérnök Informatikus, Technológia Rajongó, Hobbi Közgazdász",
-    "quote": "Bármely idióta képes a számítógép által értelmezhető kódot írni. A jó programozó olyan kódot ír, amit az emberek is megértenek."
+    "functionList": "Mérnök informatikus, technológia rajongó, hobbi közgazdász",
+    "quote": "Bármely féleszű képes a számítógép által értelmezhető kódot írni. A jó programozó olyan kódot ír, amit az emberek is megértenek.",
+    "myAddress": "Budapest",
+    "dateOfBirth": "1995 június 22",
+    "years": "év",
+    "address": "Lakóhely",
+    "DOB": "Születési idő",
+    "workExperience": "Munkatapasztalat",
+    "intro.p1": "Tapasztalt mérnök informatikus vagyok, jelenleg full-stack webalkalmazás-fejlesztőként dolgozom. Küldetésem, hogy segítsek a vállalatoknak kiaknázni a technológiában rejlő lehetőségeket.",
+    "intro.p2": "Az Óbudai Egyetem hallgatójaként kezdtem programozni. A harmadik félévben szereztem az első gyakornoki pozíciómat, ahol elkezdtem webalkalmazás-fejlesztést tanulni. A szakdolgozatomat cross-platform mobilalkalmazás-fejlesztésről írtam, majd 2018-ban diplomáztam. Azóta teljes munkaidőben szoftverfejlesztő mérnökként dolgozom különböző beosztásokban.",
+    "intro.p3": "Pályafutásom során különféle projekteken dolgoztam, például e-kereskedelmi platformon és projektmenedzsment eszközökön, elsősorban Microsoft® technológiák használatával. Tapasztalatot szereztem továbbá az agilis módszerek és a tesztvezérelt fejlesztés (TDD) területén is.",
+    "intro.p4": "Szabadidőmben szívesen foglalkozom közgazdaságtannal, fotózok és számítógépes játékokkal játszom."
 }

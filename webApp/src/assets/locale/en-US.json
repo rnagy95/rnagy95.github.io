@@ -33,6 +33,16 @@
     "changeCookieSettings": "Change cookie settings",
     "privacyPolicy": "Privacy policy",
     "termAndConditions": "Terms & Conditions",
-    "functionList": "Software Engineer, Technology Enthusiast, Hobby Economist",
-    "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+    "functionList": "Software engineer, technology enthusiast, hobby economist",
+    "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "myAddress": "Budapest, Hungary",
+    "dateOfBirth": "June 22, 1995",
+    "years": "years",
+    "address": "Address",
+    "DOB": "Date of Birth",
+    "workExperience": "Work experience",
+    "intro.p1": "I'm a profitient software engineer, working as a full-stack web application developer. My mission is to help companies uncage the potential of technology.",
+    "intro.p2": "I started professional programming as a student at Obuda University. In the third semester I got my first internship position where I started learning web application development. I wrote my thesis on cross-platform mobile application development, then graduated in 2018. Since then I work full time as a software engineer in different roles.",
+    "intro.p3": "During my career I worked on various projects like e-commerce platform and project management tools mainly using Microsoft® technologies. I gathered experience in agile methodologies and Test Driven Development as well.",
+    "intro.p4": "At my leisure I'm happy to learn about the economics, take photos and play video games."
 }
