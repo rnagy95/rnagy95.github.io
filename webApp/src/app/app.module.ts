@@ -20,6 +20,7 @@ import { CookieService } from './services/cookie/cookie.service';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     CookiePopupComponent,
     BannerComponent,
     FooterComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

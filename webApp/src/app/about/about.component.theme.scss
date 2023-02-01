@@ -1,0 +1,68 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../utils/styles/color-utils.scss" as color-utils;
+
+@mixin color($color-config) {
+  $primary-palette: map.get($color-config, 'primary');
+
+  $outer-background-color: mat.get-color-from-palette($primary-palette, 900);
+  $inner-background-color: mat.get-color-from-palette($primary-palette, 100);
+  $color: color-utils.get-text-color-on-background($inner-background-color);
+
+  .outer-container {
+    background-color: $outer-background-color;
+
+    .inner-container {
+      background-color: $inner-background-color;
+      color: $color;
+
+      .left-panel {
+        @media (max-width: 720px) {
+          border-bottom: 3px solid $outer-background-color;
+        }
+
+        @media (min-width: 720px) {
+          border-right: 3px solid $outer-background-color;
+        }
+
+        .bullet-point {
+
+          .bullet-point-icon,
+          .bullet-point-text {
+            color: $outer-background-color;
+          }
+        }
+      }
+
+      .right-panel {
+        .quote-block {
+          .quote {
+            &::before {
+              color: $outer-background-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin typography($typography-config) {
+  .app-navbar {
+    font-family: mat.font-family($typography-config);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+
+  @if $color-config  !=null {
+    @include color($color-config);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+
+  @if $typography-config  !=null {
+    @include typography($typography-config);
+  }
+}
