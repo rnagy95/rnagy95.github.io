@@ -1,0 +1,76 @@
+.parallax-container {
+  background-image: url('../../assets/workspace.jpg');
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 48px;
+  row-gap: 48px;
+  justify-content: center;
+  padding: 48px;
+
+  .card {
+    max-width: 350px;
+    min-width: 350px;
+    flex: 1;
+    opacity: 0;
+    
+
+    //Animate
+    &.show {
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}){
+          animation: float-in #{($i * 0.2) + 0.3}s linear 0.15s forwards;
+        }
+      }
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 48px;
+    }
+
+    .stack-item {
+      padding-left: 48px;
+      padding-left: 48px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .stack-item-logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 25%;
+        min-height: 48px;
+
+        img {
+          width: 48px;
+          pointer-events: none;
+        }
+      }
+
+      .stack-item-title {
+        display: inline-block;
+        vertical-align: middle;
+        width: 75%;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@keyframes float-in {
+  from {
+    transform: translate(0, 25vh);
+    opacity: 0%;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+
+}
