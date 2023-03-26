@@ -9,10 +9,10 @@
   $inner-background-color: mat.get-color-from-palette($primary-palette, 100);
   $color: color-utils.get-text-color-on-background($inner-background-color);
 
-  .outer-container {
+  .about-outer-container {
     background-color: $outer-background-color;
 
-    .inner-container {
+    .about-inner-container {
       background-color: $inner-background-color;
       color: $color;
 
@@ -48,7 +48,7 @@
 }
 
 @mixin typography($typography-config) {
-  .app-navbar {
+  .about-outer-container {
     font-family: mat.font-family($typography-config);
   }
 }

@@ -21,7 +21,7 @@
 }
 
 @mixin typography($typography-config) {
-    .conatiner {
+    .banner-container {
         font-family: mat.font-family($typography-config);
     }
 }

@@ -1,4 +1,4 @@
-.parallax-container {
+.tech-stack-parallax-container {
   background-image: url('../../assets/workspace.jpg');
   height: 100%;
   background-attachment: fixed;
@@ -18,8 +18,6 @@
     flex: 1;
     opacity: 0;
     
-
-    //Animate
     &.show {
       @for $i from 1 through 4 {
         &:nth-child(#{$i}){
