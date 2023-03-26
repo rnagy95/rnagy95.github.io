@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Language } from 'src/app/interfaces/Language';
-import * as hu from '../../../assets/locale/hu-HU.json';
-import * as en from '../../../assets/locale/en-US.json';
+import hu from '../../../assets/locale/hu-HU.json';
+import en from '../../../assets/locale/en-US.json';
 import { CookieService } from '../cookie/cookie.service';
 
 
