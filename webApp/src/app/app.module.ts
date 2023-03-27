@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { AboutComponent } from './about/about.component';
 import { TechStackComponent } from './tech-stack/tech-stack.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TechStackComponent } from './tech-stack/tech-stack.component';
     FooterComponent,
     TermsAndConditionsComponent,
     AboutComponent,
-    TechStackComponent
+    TechStackComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
