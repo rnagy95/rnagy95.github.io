@@ -1,4 +1,4 @@
-<div #parallaxContainer class="parallax-container">
+<section #parallaxContainer class="tech-stack-parallax-container">
     <mat-card class="card" [class.show]="areCardsVisible" *ngFor="let card of techStack | keyvalue">
         <mat-card-header>
             <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
@@ -10,4 +10,4 @@
             </div>
           </mat-card-content>
     </mat-card>
-</div>
+</section>

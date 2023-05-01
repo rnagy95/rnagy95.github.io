@@ -45,6 +45,19 @@ export class LocalizationService {
     return this._localizations[this.selectedLanguage.code as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)] || key;
   }
 
+  public get dateFormat() : string {
+    let dateFormat: string;
+    
+    if (this.selectedLanguage.code === "hu"){
+      dateFormat = "YYYY MMMM d";
+    }
+    else{
+      dateFormat = "MMM d, YYYY"
+    }
+
+    return dateFormat
+  }
+
   constructor(private cookieService: CookieService) {
     const preferedLanguageString = cookieService.getValue('preferences.language');
     const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;

@@ -1,6 +1,6 @@
-<div class="outer-container">
-    <div class="inner-container">
-        <div class="left-panel">
+<section class="about-outer-container">
+    <div class="about-inner-container">
+        <section class="left-panel">
             <div class="bullet-point" matTooltip="{{localizationService.localize('address')}}">
                 <mat-icon fontIcon="place" class="bullet-point-icon"></mat-icon>
                 <span class="bullet-point-text">{{localizationService.localize('myAddress')}}</span>
@@ -13,8 +13,8 @@
                 <mat-icon fontIcon="work_history" class="bullet-point-icon"></mat-icon>
                 <span class="bullet-point-text">{{getExperienceInYears()}} {{localizationService.localize('years')}}</span>
             </div>
-        </div>
-        <div class="right-panel">
+        </section>
+        <section class="right-panel">
             <div class="name">{{localizationService.localize('name')}}</div>
             <div class="functions">{{localizationService.localize('functionList')}}</div>
             <div class="quote-block">
@@ -39,6 +39,6 @@
                     {{localizationService.localize('intro.p4')}}
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-</div>
+</section>

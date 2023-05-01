@@ -1,0 +1,18 @@
+[
+    {
+        "school": "oe",
+        "schoolLogo": "oe.jpg",
+        "degreeType": 3,
+        "fieldOfStudy": "oe.fieldOfStudy",
+        "startDateString": "2014-09-01",
+        "endDateString": "2018-06-25"
+    },
+    {
+        "school": "dobo",
+        "schoolLogo": "dobo.jpg",
+        "degreeType": 1,
+        "fieldOfStudy": "dobo.fieldOfStudy",
+        "startDateString": "2009-09-01",
+        "endDateString": "2014-06-18"
+    }
+]

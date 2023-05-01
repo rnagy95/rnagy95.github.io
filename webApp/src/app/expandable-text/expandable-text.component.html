@@ -1,0 +1,5 @@
+<div *ngIf="!!text">
+    <span *ngIf="!expanded && text.length <= 123">{{text}}</span>
+    <span *ngIf="!expanded && text.length > 123">{{text | slice:0:120}}... <a (click)="toggleExpandedState()">[{{localizationService.localize('seeMore')}}]</a></span>
+    <span *ngIf="expanded && text.length > 123">{{text}} <a (click)="toggleExpandedState()">[{{localizationService.localize('seeLess')}}]</a></span>
+</div>
