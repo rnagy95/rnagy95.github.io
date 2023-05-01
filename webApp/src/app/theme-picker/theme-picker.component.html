@@ -2,7 +2,7 @@
     <mat-icon>format_color_fill</mat-icon>
 </button>
 <mat-menu #themePicker="matMenu" xPosition="before">
-    <button mat-menu-item *ngFor="let theme of themeService.themes" (click)="onThemeSelected(theme)">
+    <button mat-menu-item *ngFor="let theme of themeService.themes | filterPrivateThemes" (click)="onThemeSelected(theme)">
         <mat-icon color="accent" *ngIf="theme === themeService.selectedTheme">radio_button_checked</mat-icon>
         <mat-icon *ngIf="theme !== themeService.selectedTheme">radio_button_unchecked</mat-icon>
         {{localizationService.localize(theme.name)}}

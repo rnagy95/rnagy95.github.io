@@ -14,15 +14,26 @@
 
     .about-inner-container {
       background-color: $inner-background-color;
+
+      @media print {
+        background-color: #f0f0f0;
+      }
+
       color: $color;
 
       .left-panel {
-        @media (max-width: 720px) {
+        @media screen and (max-width: 720px) {
           border-bottom: 3px solid $outer-background-color;
         }
 
-        @media (min-width: 720px) {
+        @media print,
+        (min-width: 720px) {
           border-right: 3px solid $outer-background-color;
+
+          @media print {
+            $color: mat.get-color-from-palette($primary-palette, darker);
+            border-right: 3px solid $color;
+          }
         }
 
         .bullet-point {
@@ -30,6 +41,10 @@
           .bullet-point-icon,
           .bullet-point-text {
             color: $outer-background-color;
+
+            @media print {
+              color: mat.get-color-from-palette($primary-palette, darker);
+            }
           }
         }
       }
@@ -39,6 +54,10 @@
           .quote {
             &::before {
               color: $outer-background-color;
+
+              @media print {
+                color: mat.get-color-from-palette($primary-palette, darker);
+              }
             }
           }
         }
@@ -56,13 +75,13 @@
 @mixin theme($theme) {
   $color-config: mat.get-color-config($theme);
 
-  @if $color-config  !=null {
+  @if $color-config !=null {
     @include color($color-config);
   }
 
   $typography-config: mat.get-typography-config($theme);
 
-  @if $typography-config  !=null {
+  @if $typography-config !=null {
     @include typography($typography-config);
   }
 }

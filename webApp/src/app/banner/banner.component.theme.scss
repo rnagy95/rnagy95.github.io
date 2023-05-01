@@ -18,6 +18,12 @@
             color: $color;
         }
     }
+
+    @media print {
+        .text-container {
+            color: mat.get-color-from-palette($primary-palette, darker);
+        }
+    }
 }
 
 @mixin typography($typography-config) {

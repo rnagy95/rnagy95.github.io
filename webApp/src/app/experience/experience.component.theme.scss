@@ -12,26 +12,64 @@
     $light-nested-background: #e8e8e8;
 
     .experience-container {
-        @if $isDarkTheme{
+        @if $isDarkTheme {
             $background-color: mat.get-color-from-palette($primary-palette, 200);
             background-color: $background-color;
             color: $dark-background
         }
-        @else{
+
+        @else {
             $background-color: mat.get-color-from-palette($primary-palette, 400);
             background-color: $background-color;
             color: $light-background;
         }
 
-        .job-history, .education-history {
+        @media print {
+            background-color: white;
+            $color: mat.get-color-from-palette($primary-palette, darker);
+            color: $color;
+
+            .section-title {
+                span {
+                    border-bottom: solid 2px $color;
+                }
+            }
+        }
+
+        .job-history,
+        .education-history {
             .card {
-                @if $isDarkTheme{
+                @if $isDarkTheme {
                     background-color: $dark-background;
                     color: white;
                 }
-                @else{
+
+                @else {
                     background-color: $light-background;
                     color: black;
+                }
+
+                .card-content {
+                    .card-content-description {
+                        .position-card {
+                            &::before {
+                                @if($isDarkTheme){
+                                    background-color: #888;
+                                }
+                                @else{
+                                    background-color: #aaa;
+                                }
+                            }
+                            &::after {
+                                @if($isDarkTheme){
+                                    background-color: #666;
+                                }
+                                @else{
+                                    background-color: #ccc;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

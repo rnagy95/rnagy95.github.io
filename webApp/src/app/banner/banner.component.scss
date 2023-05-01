@@ -6,8 +6,10 @@
     -ms-transform: scale(1);
     transform: scale(1);
     opacity: 1;
-    -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
-    transition: opacity .8s ease, transform 1.4s ease
+    -webkit-transition: opacity .8s ease,
+    -webkit-transform 1.4s ease;
+    transition: opacity .8s ease,
+    transform 1.4s ease
 }
 
 #particles-js {
@@ -16,11 +18,19 @@
     position: fixed;
     z-index: -10;
     top: 0;
-    left: 0
+    left: 0;
+    @media print {
+        display: none;
+    }
 }
 
 .banner-container {
     height: 100vh;
+
+    @media print {
+        height: 20vh;
+    }
+
     width: 100%;
     display: flex;
     position: relative;
@@ -41,6 +51,12 @@
         .image-container {
             width: 65%;
             padding-bottom: 65%;
+
+            @media print {
+                width: 50%;
+                padding-bottom: 50%;
+            }
+
             position: relative;
             overflow: hidden;
             margin: auto;
@@ -49,6 +65,9 @@
             border-radius: 50%;
 
             &:before {
+                @media print {
+                    display: none;
+                }
                 content: "";
                 z-index: 1;
                 width: 95%;
@@ -91,6 +110,11 @@
 
         .text-container {
             --f-size: 12;
+
+            @media print {
+                --f-size: 8;
+            }
+
             --f-unit: 1vmin;
             --f: calc(var(--f-size) * var(--f-unit));
             font-family: "VT323";
@@ -325,15 +349,15 @@
         transform: translate(-50%, -50%) rotate(0deg);
     }
 
-    25%{
+    25% {
         transform: translate(-50%, -50%) rotate(-90deg);
     }
 
-    50%{
+    50% {
         transform: translate(-50%, -50%) rotate(-180deg);
     }
 
-    75%{
+    75% {
         transform: translate(-50%, -50%) rotate(-270deg);
     }
 

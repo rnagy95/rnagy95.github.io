@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Theme } from '../interfaces/Theme';
 import { LocalizationService } from '../services/localization/localization.service';
 import { ThemeService } from '../services/theme/theme.service';
@@ -19,4 +19,13 @@ export class ThemePickerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+}
+
+@Pipe({
+  name: 'filterPrivateThemes'
+})
+export class FilterPrivateThemesPipe implements PipeTransform{
+  public transform(values:any[], ...args: unknown[]): any[]{
+    return (values.filter(v => v.name[0] !== '.'));
+  }
 }
