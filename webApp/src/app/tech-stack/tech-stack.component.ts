@@ -27,7 +27,7 @@ export class TechStackComponent implements OnInit {
   public onScroll(): void {
     if (!!this.parallaxContainer && !this.areCardsVisible) {
       const rect = this.parallaxContainer.nativeElement.getBoundingClientRect()
-      this.areCardsVisible = ((rect.top >= 0) && (rect.top < window.innerHeight)) || ((rect.bottom >= 0) && (rect.bottom <= window.innerHeight));
+      this.areCardsVisible = ((rect.top >= 0) && (rect.top < window.innerHeight)) || ((rect.bottom >= 0) && (rect.bottom <= window.innerHeight)) || ((rect.top <= 0) && (rect.bottom >= window.innerHeight));
     }
   }
 }
