@@ -6,14 +6,34 @@
 
     $primary-palette: map.get($color-config, 'primary');
     $accent-palette: map.get($color-config, 'accent');
+    $dark-background: #333333;
+    $dark-nested-background: #494949;
+    $light-background: #ffffff;
+    $light-nested-background: #e8e8e8;
 
     .experience-container {
-        $background-color: mat.get-color-from-palette($accent-palette, 100);
-        background-color: $background-color;
-        color: color-utils.get-text-color-on-background($background-color);
+        @if $isDarkTheme{
+            $background-color: mat.get-color-from-palette($primary-palette, 200);
+            background-color: $background-color;
+            color: $dark-background
+        }
+        @else{
+            $background-color: mat.get-color-from-palette($primary-palette, 400);
+            background-color: $background-color;
+            color: $light-background;
+        }
 
-        .job-history::after{
-            background-color: mat.get-color-from-palette($accent-palette, darker);;
+        .job-history, .education-history {
+            .card {
+                @if $isDarkTheme{
+                    background-color: $dark-background;
+                    color: white;
+                }
+                @else{
+                    background-color: $light-background;
+                    color: black;
+                }
+            }
         }
     }
 
@@ -25,11 +45,11 @@
     }
 }
 
-@mixin theme($theme) {
+@mixin theme($theme, $isDarkTheme: false) {
     $color-config: mat.get-color-config($theme);
 
     @if $color-config !=null {
-        @include color($color-config);
+        @include color($color-config, $isDarkTheme);
     }
 
     $typography-config: mat.get-typography-config($theme);

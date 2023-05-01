@@ -107,8 +107,8 @@
 }
 
 @media (min-width: 720px) and (max-width: 1024px) {
-    .outer-container {
-        .inner-container {
+    .about-outer-container {
+        .about-inner-container {
             .left-panel {
                 width: 49%;
             }
@@ -121,8 +121,8 @@
 }
 
 @media (max-width: 720px) {
-    .outer-container {
-        .inner-container {
+    .about-outer-container {
+        .about-inner-container {
             padding-top: 15px;
             padding-bottom: 15px;
 

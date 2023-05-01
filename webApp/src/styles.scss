@@ -36,7 +36,7 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
   @include navbar.theme($dark-ide-theme);
   @include footer.theme($dark-ide-theme);
   @include about.theme($dark-ide-theme);
-  @include experience.theme($dark-ide-theme);
+  @include experience.theme($dark-ide-theme, $isDarkTheme: true);
   @include banner.theme($dark-ide-theme, $isDarkTheme: true);
 }
 
@@ -45,7 +45,7 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
   @include navbar.theme($light-ide-theme);
   @include footer.theme($light-ide-theme);
   @include about.theme($light-ide-theme);
-  @include experience.theme($light-ide-theme);
+  @include experience.theme($light-ide-theme, $isDarkTheme: false);
   @include banner.theme($light-ide-theme, $isDarkTheme: false);
 }
 
@@ -54,7 +54,7 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
   @include navbar.theme($terminal-theme);
   @include footer.theme($terminal-theme);
   @include about.theme($terminal-theme);
-  @include experience.theme($terminal-theme);
+  @include experience.theme($terminal-theme, $isDarkTheme: true);
   @include banner.theme($terminal-theme, $isDarkTheme: true);
 }
 
