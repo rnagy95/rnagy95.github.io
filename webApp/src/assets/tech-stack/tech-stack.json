@@ -8,7 +8,7 @@
         "Python": "python.svg"
     },
     "database":{
-        "Microsoft SQL Server & Transact-SQL": "ms_sql_server.svg",
+        "Microsoft SQL Server & Transact‑SQL": "ms_sql_server.svg",
         "MySQL": "mysql.svg",
         "MongoDB": "mongodb.svg",
         "q/KDB+": "kdb.svg"

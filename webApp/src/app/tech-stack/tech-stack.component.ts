@@ -21,6 +21,16 @@ export class TechStackComponent implements OnInit {
 
   ngOnInit(): void {
      this.onScroll()
+     addEventListener('onPrintStarted', this.showCardWhenPrintStarted);
+     addEventListener('onPrintFinished', this.hideCardsWhenPrintFinished);
+  }
+
+  private showCardWhenPrintStarted(){
+    this.areCardsVisible = true;
+  }
+
+  private hideCardsWhenPrintFinished(){
+    this.onScroll();
   }
 
   @HostListener('window:scroll', ['$event'])

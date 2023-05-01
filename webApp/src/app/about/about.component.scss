@@ -2,12 +2,23 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+    page-break-inside: avoid;
+
+    @media print {
+        background-color: inherit;
+        padding: 0;
+    }
 
     .about-inner-container {
         margin: auto;
         width: 85%;
         height: 85%;
         border-radius: 15px;
+
+        @media print {
+            width: 95%;
+            height: 100%;
+        }
 
         .left-panel {
             display: inline-block;
@@ -25,16 +36,35 @@
                     margin-bottom: 30px;
                 }
 
+                @media print {
+                    margin-top: 10px;
+
+                    &:last-child {
+                        margin-bottom: 10px;
+                    }
+                }
+
                 .bullet-point-icon {
                     font-size: 36px;
                     width: 36px;
                     height: 36px;
+
+                    @media print {
+                        font-size: 22px;
+                        width: 22px;
+                        height: 22px;
+                    }
                 }
 
                 .bullet-point-text {
                     font-size: 24px;
                     font-weight: bold;
                     margin-left: 5px;
+
+                    @media print {
+                        font-size: 16px;
+                        line-height: 1.2;
+                    }
                 }
             }
         }
@@ -55,12 +85,22 @@
                 font-weight: bold;
                 font-size: 24px;
                 line-height: 1.5;
+
+                @media print {
+                    font-size: 16px;
+                    line-height: 1.2;
+                }
             }
 
             .functions {
                 font-style: italic;
                 font-size: 16px;
                 line-height: 1.2;
+
+                @media print {
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
             }
 
             .quote-block {
@@ -72,9 +112,18 @@
                 border-bottom: solid 1px black;
                 position: relative;
 
+                @media print {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
                 .quote {
                     font-style: italic;
                     padding-left: 70px;
+
+                    @media print {
+                        font-size: 10px;
+                    }
 
                     &::before {
                         content: "\201C";
@@ -91,6 +140,9 @@
                 .quotee {
                     text-align: right;
                     font-weight: bold;
+                    @media print {
+                        font-size: 10px;
+                    }
                 }
             }
 
@@ -100,13 +152,18 @@
                     margin-bottom: 8px;
                     text-align: justify;
                     text-justify: inter-word;
+
+                    @media print {
+                        font-size: 12px;
+                        line-height: 1.2;
+                    }
                 }
             }
         }
     }
 }
 
-@media (min-width: 720px) and (max-width: 1024px) {
+@media screen and (min-width: 720px) and (max-width: 1024px) {
     .about-outer-container {
         .about-inner-container {
             .left-panel {
@@ -120,7 +177,7 @@
     }
 }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
     .about-outer-container {
         .about-inner-container {
             padding-top: 15px;

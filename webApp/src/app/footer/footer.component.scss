@@ -1,4 +1,8 @@
 .app-footer {
+    @media print {
+        display: none;
+    }
+
     line-height: 1.5;
 
     a {

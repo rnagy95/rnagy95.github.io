@@ -16,7 +16,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LanguagePickerComponent } from './language-picker/language-picker.component';
 import { NavBarComponent } from './navbar/navbar.component';
-import { ThemePickerComponent } from './theme-picker/theme-picker.component';
+import { FilterPrivateThemesPipe, ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 import { CookieService } from './services/cookie/cookie.service';
 import { BannerComponent } from './banner/banner.component';
@@ -26,6 +26,7 @@ import { AboutComponent } from './about/about.component';
 import { TechStackComponent } from './tech-stack/tech-stack.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ExpandableTextComponent } from './expandable-text/expandable-text.component';
+import { PrintContactsComponent } from './print-contacts/print-contacts.component';
 
 registerLocaleData(localeHu);
 
@@ -45,7 +46,9 @@ registerLocaleData(localeHu);
     AboutComponent,
     TechStackComponent,
     ExperienceComponent,
-    ExpandableTextComponent
+    ExpandableTextComponent,
+    PrintContactsComponent,
+    FilterPrivateThemesPipe
   ],
   imports: [
     BrowserModule,

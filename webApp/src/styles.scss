@@ -4,6 +4,8 @@
 @use './app/footer/footer.component.theme.scss' as footer;
 @use './app/about/about.component.theme.scss' as about;
 @use './app/experience/experience.component.theme.scss' as experience;
+@use './app/tech-stack/tech-stack.component.theme.scss' as tech-stack;
+@use './app/print-contacts/print-contacts.component.theme.scss' as print-contacts;
 
 @include mat.core();
 
@@ -19,6 +21,10 @@ $terminal-primary: mat.define-palette(mat.$green-palette, 800, 600, 900);
 $terminal-accent: mat.define-palette(mat.$teal-palette, 'A400', 'A200', 'A700');
 $terminal-warn: mat.define-palette(mat.$red-palette);
 
+$print-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
+$print-accent: mat.define-palette(mat.$light-blue-palette, 'A400', 100, 'A700');
+$print-warn: mat.define-palette(mat.$red-palette);
+
 $dark-ide-theme: mat.define-dark-theme((color: (primary: $dark-ide-primary,
         accent: $dark-ide-accent,
         warn: $dark-ide-warn )));
@@ -31,11 +37,17 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
         accent: $terminal-accent,
         warn: $terminal-warn )));
 
+$print-theme: mat.define-light-theme((color: (primary: $print-primary,
+        accent: $print-accent,
+        warn: $print-warn )));
+
 .dark-ide-theme {
   @include mat.all-component-themes($dark-ide-theme);
   @include navbar.theme($dark-ide-theme);
   @include footer.theme($dark-ide-theme);
   @include about.theme($dark-ide-theme);
+  @include print-contacts.theme($dark-ide-theme);
+  @include tech-stack.theme($dark-ide-theme);
   @include experience.theme($dark-ide-theme, $isDarkTheme: true);
   @include banner.theme($dark-ide-theme, $isDarkTheme: true);
 }
@@ -45,6 +57,8 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
   @include navbar.theme($light-ide-theme);
   @include footer.theme($light-ide-theme);
   @include about.theme($light-ide-theme);
+  @include print-contacts.theme($light-ide-theme);
+  @include tech-stack.theme($light-ide-theme);
   @include experience.theme($light-ide-theme, $isDarkTheme: false);
   @include banner.theme($light-ide-theme, $isDarkTheme: false);
 }
@@ -54,8 +68,21 @@ $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
   @include navbar.theme($terminal-theme);
   @include footer.theme($terminal-theme);
   @include about.theme($terminal-theme);
+  @include print-contacts.theme($terminal-theme);
+  @include tech-stack.theme($terminal-theme);
   @include experience.theme($terminal-theme, $isDarkTheme: true);
   @include banner.theme($terminal-theme, $isDarkTheme: true);
+}
+
+.print-theme {
+  @include mat.all-component-themes($print-theme);
+  @include navbar.theme($print-theme);
+  @include footer.theme($print-theme);
+  @include about.theme($print-theme);
+  @include print-contacts.theme($print-theme);
+  @include tech-stack.theme($print-theme);
+  @include experience.theme($print-theme, $isDarkTheme: false);
+  @include banner.theme($print-theme, $isDarkTheme: false);
 }
 
 html {
@@ -65,4 +92,13 @@ html {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  @media print {
+    background-color: white !important;
+  }
+}
+
+@page {
+  size: A4;
+  margin: .5cm;
 }

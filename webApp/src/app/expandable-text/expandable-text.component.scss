@@ -1,3 +1,15 @@
+.in-print{
+    @media screen {
+        display: none;
+    }
+}
+
+.on-screen{
+    @media print {
+        display: none;
+    }
+}
+
 a{
     cursor: pointer;
     font-style: italic;
