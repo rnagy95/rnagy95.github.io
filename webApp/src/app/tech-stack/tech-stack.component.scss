@@ -15,6 +15,7 @@
     @media screen {
       display: none;
     }
+
     padding-left: 20px;
     padding-top: 25px;
     display: flex;
@@ -22,27 +23,27 @@
     page-break-after: avoid;
 
     .icon {
-        font-size: 36px;
-        width: 36px;
-        height: 36px;
+      font-size: 36px;
+      width: 36px;
+      height: 36px;
 
-        @media print {
-            font-size: 22px;
-            width: 22px;
-            height: 22px;
-        }
+      @media print {
+        font-size: 22px;
+        width: 22px;
+        height: 22px;
+      }
     }
 
     span {
-        font-size: 24px;
-        font-weight: bold;
-        margin-left: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 5px;
 
-        @media print {
-            font-size: 16px;
-        }
+      @media print {
+        font-size: 16px;
+      }
     }
-}
+  }
 
   .flex-container {
     display: flex;
@@ -64,6 +65,10 @@
       flex: 1;
       opacity: 0;
 
+      @media print {
+        opacity: 1;
+      }
+
       page-break-inside: avoid;
 
       @media print {
@@ -72,9 +77,11 @@
       }
 
       &.show {
-        @for $i from 1 through 4 {
-          &:nth-child(#{$i}) {
-            animation: float-in #{($i * 0.2) + 0.3}s linear 0.15s forwards;
+        @media screen {
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              animation: float-in #{($i * 0.2) + 0.3}s linear 0.15s forwards;
+            }
           }
         }
       }

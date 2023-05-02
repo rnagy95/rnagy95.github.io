@@ -20,23 +20,13 @@ export class TechStackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.onScroll()
-     addEventListener('onPrintStarted', this.showCardWhenPrintStarted);
-     addEventListener('onPrintFinished', this.hideCardsWhenPrintFinished);
-  }
-
-  private showCardWhenPrintStarted(){
-    this.areCardsVisible = true;
-  }
-
-  private hideCardsWhenPrintFinished(){
-    this.onScroll();
+     this.onScroll();
   }
 
   @HostListener('window:scroll', ['$event'])
   public onScroll(): void {
     if (!!this.parallaxContainer && !this.areCardsVisible) {
-      const rect = this.parallaxContainer.nativeElement.getBoundingClientRect()
+      const rect = this.parallaxContainer.nativeElement.getBoundingClientRect();
       this.areCardsVisible = ((rect.top >= 0) && (rect.top < window.innerHeight)) || ((rect.bottom >= 0) && (rect.bottom <= window.innerHeight)) || ((rect.top <= 0) && (rect.bottom >= window.innerHeight));
     }
   }
