@@ -72,13 +72,13 @@
                     width: 75px;
 
                     @media print {
-                        width: 37px;
+                        width: 48px;
                     }
 
                     img {
                         width: 64px;
                         @media print {
-                            width: 32px;
+                            width: 42px;
                         }
                         pointer-events: none;
                     }
@@ -95,7 +95,7 @@
                         font-weight: bold;
 
                         @media print {
-                            font-size: 12px;
+                            font-size: 14px;
                             line-height: 1.2;
                         }
                     }
@@ -103,7 +103,7 @@
                     .card-content-company {
                         font-size: 16px;
                         @media print {
-                            font-size: 10px;
+                            font-size: 12px;
                             line-height: 1.1;
                         }
                     }
@@ -111,15 +111,17 @@
                     .card-content-period {
                         font-style: italic;
                         @media print {
-                            font-size: 8px;
+                            font-size: 10px;
                             line-height: 1.1;
                         }
                     }
                 }
 
                 .card-content-description {
+                    text-align: justify;
+
                     @media print {
-                        font-size: 10px;
+                        font-size: 12px;
                         line-height: 1.1;
                     }
                     .position-card {
@@ -145,6 +147,11 @@
                             left: 4px;
                             top: 24px;
                             border-radius: 25%;
+                        }
+
+                        .position-card-content-description{
+                            padding: 5px 0px;
+                            text-align: justify;
                         }
 
                         &:last-of-type{
