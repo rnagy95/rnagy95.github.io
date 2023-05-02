@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Cookie } from 'src/app/interfaces/Cookie';
 import { Theme, ThemeType } from 'src/app/interfaces/Theme';
 import { CookieService } from '../cookie/cookie.service';
 
@@ -66,7 +65,7 @@ export class ThemeService {
     this._selectedTheme = this.themes.find(x => x.name === preferdTheme?.name) || this.themes[0];
     this.applyTheme(this._selectedTheme);
 
-    addEventListener('onPrintStarted', () => this.setPrintTheme())
-    addEventListener('onPrintFinished', () => this.resetThemeAfterPrint())
+    addEventListener('onPrintStarted', this.setPrintTheme.bind(this))
+    addEventListener('onPrintFinished', this.resetThemeAfterPrint.bind(this))
   }
 }
