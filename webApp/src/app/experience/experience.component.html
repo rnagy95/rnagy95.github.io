@@ -37,7 +37,7 @@
                                     <div class="card-content-position">{{localizationService.localize(pos.title)}}</div>
                                     <div class="card-content-company">{{localizationService.localize(getStringRepresentationOfEmploymentTypeEnumValue(pos.employmentType))}}</div>
                                     <div class="card-content-period">{{pos.startDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} - {{pos.endDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}}
-                                        <span *ngIf="!company.positions[0].endDate">({{localizationService.localize('present')}})</span> &bull;
+                                        <span *ngIf="!pos.endDate">({{localizationService.localize('present')}})</span> &bull;
                                         <span *ngIf="calcYearsFloor(pos.startDate, pos.endDate) > 0">{{calcYearsFloor(pos.startDate, pos.endDate)}} {{calcYearsFloor(pos.startDate, pos.endDate) > 1 ? localizationService.localize('yrs') : localizationService.localize('yr')}}&nbsp;</span>
                                         <span *ngIf="calcMonthsRound(pos.startDate, pos.endDate) > 0">{{calcMonthsRound(pos.startDate, pos.endDate)}} {{calcMonthsRound(pos.startDate, pos.endDate) > 1 ? localizationService.localize('mos') : localizationService.localize('mo')}}</span>
                                     </div>
