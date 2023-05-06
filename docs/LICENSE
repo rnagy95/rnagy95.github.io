@@ -1,0 +1,57 @@
+# License
+
+### Terminology
+* ***Software***: The source code, binaries and associated documentation of THIS software porject.
+* ***Author, I, My, Me***: Richard Nagy (95.richard.nagy@gmail.com)
+* ***Program Code***: All the source code, configuration and descriptor files that are necessary to build, deploy and run the *Software*, or are responsible for the behavior, layout and style of the *Software*, excluding any textual, graphic and audio information that is presented by the *Software*. *Program Code* is located mostly but not exclusively at */webApp/src/app/*.
+* ***Content***: All textual, graphic and audio information that is presented by the *Software*. *Content* is located mostly but not exclusively at */webApp/src/assets*.
+
+**The *Software* is provided under multiple licenses.**
+
+### The *Program Code*
+The *Program Code* is provided under the *MIT License*:
+
+> MIT License
+> 
+> Copyright (c) 2023 Richard Nagy (95.richard.nagy@gmail.com)
+> 
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+> 
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+> 
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+
+### The *Content*
+The *Content* is provided under the following terms:
+
+> Third party logos (located at */webApp/src/assets/experience/logos/* and
+> */webApp/src/assets/tech-stack/logos/*), names and trademarks are properties
+> of their respective owners. All company, product and service names used in
+> the *Software* are for identification purposes only. Use of these names,
+> trademarks and logos does not imply endorsment.
+>
+> The *Content* of the *Software* (except the upper mentioned "Third party logos,
+> names and trademarks") are properties of the *Author* and protected by copyright.
+> You may obtain a single copy of the *Content* by cloning the repository
+> (*https://www.github.com/rnagy95/rnagy95.github.io/*) and use it as an initial
+> content for experimenting and development purposes only in an isolated development
+> environment. Any other usage of the *Content* - especially but not limited to the 
+> personal information of the *Author* - are strictly prohibited including without
+> limitation the modification, distribution, transmission, reporduction, publication,
+> licensing, creating derivative works from, transfer or selling.
+
+### Third party licenses
+* npm packages: Please see /docs/npm-licenses.txt
+* particles.js: Please see /docs/partickles-js-license.txt
