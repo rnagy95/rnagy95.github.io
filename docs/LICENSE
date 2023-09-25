@@ -40,17 +40,18 @@ The *Content* is provided under the following terms:
 > */webApp/src/assets/tech-stack/logos/*), names and trademarks are properties
 > of their respective owners. All company, product and service names used in
 > the *Software* are for identification purposes only. Use of these names,
-> trademarks and logos does not imply endorsment.
+> trademarks and logos does not imply endorsement.
 >
 > The *Content* of the *Software* (except the upper mentioned "Third party logos,
 > names and trademarks") are properties of the *Author* and protected by copyright.
 > You may obtain a single copy of the *Content* by cloning the repository
 > (*https://www.github.com/rnagy95/rnagy95.github.io/*) and use it as an initial
 > content for experimenting and development purposes only in an isolated development
-> environment. Any other usage of the *Content* - especially but not limited to the 
-> personal information of the *Author* - are strictly prohibited including without
-> limitation the modification, distribution, transmission, reporduction, publication,
-> licensing, creating derivative works from, transfer or selling.
+> environment. Any other use of the *Content* beyond the intended use of the
+> website - especially but not limited to the personal information of the 
+> *Author* - are strictly prohibited including without limitation the distribution,
+> transmission, reproduction, publication, licensing, creating derivative works from,
+> transfer or selling.
 
 ### Third party licenses
 * npm packages: Please see /docs/npm-licenses.txt
