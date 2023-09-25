@@ -12,7 +12,6 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainContentComponent } from './main-content/main-content.component';
-import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LanguagePickerComponent } from './language-picker/language-picker.component';
 import { NavBarComponent } from './navbar/navbar.component';
@@ -21,7 +20,6 @@ import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
 import { CookieService } from './services/cookie/cookie.service';
 import { BannerComponent } from './banner/banner.component';
 import { FooterComponent } from './footer/footer.component';
-import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { AboutComponent } from './about/about.component';
 import { TechStackComponent } from './tech-stack/tech-stack.component';
 import { ExperienceComponent } from './experience/experience.component';
@@ -34,7 +32,6 @@ registerLocaleData(localeHu);
   declarations: [
     AppComponent,
     MainContentComponent,
-    PrivacyPolicyComponent,
     PageNotFoundComponent,
     LanguagePickerComponent,
     NavBarComponent,
@@ -42,7 +39,6 @@ registerLocaleData(localeHu);
     CookiePopupComponent,
     BannerComponent,
     FooterComponent,
-    TermsAndConditionsComponent,
     AboutComponent,
     TechStackComponent,
     ExperienceComponent,

@@ -9,8 +9,8 @@
   <section class="ft-legal">
     <ul class="ft-legal-list">
       <li><a mat-button (click)="openCookiePopup()">{{localizationService.localize('changeCookieSettings')}}</a></li>
-      <li><a mat-button routerLink="/privacy-policy">{{localizationService.localize('privacyPolicy')}}</a></li>
-      <li><a mat-button routerLink="/terms-and-conditions">{{localizationService.localize('termAndConditions')}}</a></li>
+      <li><a mat-button [href]="privacyPolicyUrl" target="_blank"> {{localizationService.localize('privacyPolicy')}}</a></li>
+      <li><a mat-button [href]="termsAndContitionsUrl" target="_blank">{{localizationService.localize('termAndConditions')}}</a></li>
       <li><a mat-button (click)="printService.print()">{{localizationService.localize('printCV')}}</a></li>
       <li>Copyright &copy; {{year}} {{localizationService.localize('name')}}.
         {{localizationService.localize('allRightsReserved')}}.</li>
