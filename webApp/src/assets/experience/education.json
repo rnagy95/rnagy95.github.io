@@ -1,5 +1,13 @@
 [
     {
+        "school": "elte",
+        "schoolLogo": "elte.jpg",
+        "degreeType": 6,
+        "fieldOfStudy": "elte.fieldOfStudy",
+        "startDateString": "2023-09-01",
+        "endDateString": ""
+    },
+    {
         "school": "oe",
         "schoolLogo": "oe.jpg",
         "degreeType": 3,
