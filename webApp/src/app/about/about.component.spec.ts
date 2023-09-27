@@ -20,4 +20,8 @@ describe('AboutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be able to calculate work experience years', () => {
+    expect(component.getExperienceInYears()).toBeGreaterThan(0)
+  })
 });

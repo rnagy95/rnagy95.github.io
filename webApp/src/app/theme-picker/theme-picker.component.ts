@@ -1,4 +1,4 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform, NgModule } from '@angular/core';
 import { Theme } from '../interfaces/Theme';
 import { LocalizationService } from '../services/localization/localization.service';
 import { ThemeService } from '../services/theme/theme.service';
