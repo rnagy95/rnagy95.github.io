@@ -1,0 +1,167 @@
+.experience-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+
+    .section-title {
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        page-break-after: avoid;
+
+        .icon {
+            font-size: 36px;
+            width: 36px;
+            height: 36px;
+
+            @media print {
+                font-size: 22px;
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        span {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 5px;
+
+            @media print {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .job-history,
+    .education-history {
+        min-width: 360px;
+        max-width: 750px;
+        flex-basis: auto;
+        flex-grow: 1;
+        padding: 40px 15px;
+        
+
+        @media print {
+            width: 100% !important;
+            padding: 5px 5px;
+            margin: 10px 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .card {
+            padding: 10px 30px;
+            margin: 10px 5px;
+            border-radius: 7px;
+            page-break-inside: avoid;
+
+            @media print {
+                padding: 5px;
+                margin: 2px 10px;
+            }
+
+            .card-content {
+
+                .card-content-logo {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 75px;
+
+                    @media print {
+                        width: 48px;
+                    }
+
+                    img {
+                        width: 64px;
+                        @media print {
+                            width: 42px;
+                        }
+                        pointer-events: none;
+                    }
+                }
+
+                .card-content-header,
+                .position-card-content-header {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: auto;
+
+                    .card-content-position {
+                        font-size: 20px;
+                        font-weight: bold;
+
+                        @media print {
+                            font-size: 14px;
+                            line-height: 1.2;
+                        }
+                    }
+
+                    .card-content-company {
+                        font-size: 16px;
+                        @media print {
+                            font-size: 12px;
+                            line-height: 1.1;
+                        }
+                    }
+
+                    .card-content-period {
+                        font-style: italic;
+                        @media print {
+                            font-size: 10px;
+                            line-height: 1.1;
+                        }
+                    }
+                }
+
+                .card-content-description {
+                    text-align: justify;
+
+                    @media print {
+                        font-size: 12px;
+                        line-height: 1.1;
+                    }
+                    .position-card {
+                        padding: 5px 20px;
+                        margin: 5px 10px;
+                        position: relative;
+
+                        &::before {
+                            content: ' ';
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            left: 0px;
+                            top: 10px;
+                        }
+
+                        &::after {
+                            content: ' ';
+                            position: absolute;
+                            width: 2px;
+                            height: calc(100% - 14px);
+                            left: 4px;
+                            top: 24px;
+                            border-radius: 25%;
+                        }
+
+                        .position-card-content-description{
+                            padding: 5px 0px;
+                            text-align: justify;
+                        }
+
+                        &:last-of-type{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

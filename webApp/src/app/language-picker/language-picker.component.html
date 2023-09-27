@@ -1,5 +1,5 @@
 <button mat-button [matMenuTriggerFor]="languagePicker" aria-label="Select language"
-        matTooltip="Select language">
+        [matTooltip]="localizationService.localize('selectLanguage')">
         <img style="vertical-align: middle;" src="../../assets/{{localizationService.selectedLanguage.code}}.svg" width="30" height="30" />
         {{localizationService.selectedLanguage.name}}
   <mat-icon>arrow_drop_down</mat-icon>

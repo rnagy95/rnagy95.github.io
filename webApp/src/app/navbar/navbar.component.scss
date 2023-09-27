@@ -1,10 +1,23 @@
 .app-navbar {
+    @media print {
+        display: none;
+    }
+
+    position: sticky;
+    top: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 16px;
+    z-index: 999;
 
     >.mat-button {
+        &:hover {
+            text-decoration: underline;
+        }
+
+        ;
+
         &:last-child {
             margin-left: auto;
         }
@@ -14,20 +27,22 @@
         flex-grow: 1;
     }
 
-    &.show-on-mobile{
+    &.show-on-mobile {
         display: none;
+        position: sticky;
+        top: 56px;
     }
 }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
     .navbar-link.hide-on-mobile {
         display: none;
     }
-    
-    .app-navbar{
+
+    .app-navbar {
         &.show-on-mobile {
             display: flex;
-    
+
             .navbar-link {
                 text-decoration: inherit;
                 flex: 1;

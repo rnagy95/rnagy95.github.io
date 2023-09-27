@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Language } from 'src/app/interfaces/Language';
-import * as hu from '../../../assets/locale/hu-HU.json';
-import * as en from '../../../assets/locale/en-US.json';
+import hu from '../../../assets/locale/hu-HU.json';
+import en from '../../../assets/locale/en-US.json';
 import { CookieService } from '../cookie/cookie.service';
 
 
@@ -11,13 +11,13 @@ import { CookieService } from '../cookie/cookie.service';
 export class LocalizationService {
 
   private _localizations = {
-    'en-US': en,
-    'hu-HU': hu
+    'en': en,
+    'hu': hu
   }
 
   private _languages: Language[] = [
-    { code: "en-US", name: "English" },
-    { code: "hu-HU", name: "Magyar" }
+    { code: "en", name: "English" },
+    { code: "hu", name: "Magyar" }
   ];
 
   public get languages(): Language[] {
@@ -36,17 +36,36 @@ export class LocalizationService {
 
   public set selectedLanguage(value: Language) {
     this._selectedLanguage = value;
-    this.cookieService.storeValue('preferences.language', JSON.stringify(value))
+    this.cookieService.storeValue('preferences.language', JSON.stringify(value));
+    document.documentElement.setAttribute("lang", value.code);
+    document.title = this.localize('name');
   }
 
   public localize(key: string): string {
-    return this._localizations[(this.selectedLanguage.code) as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)];
+    return this._localizations[this.selectedLanguage.code as keyof typeof this._localizations][key as keyof (typeof en | typeof hu)] || key;
+  }
+
+  public get dateFormat() : string {
+    let dateFormat: string;
+    
+    if (this.selectedLanguage.code === "hu"){
+      dateFormat = "YYYY MMMM d";
+    }
+    else{
+      dateFormat = "MMM d, YYYY"
+    }
+
+    return dateFormat
   }
 
   constructor(private cookieService: CookieService) {
     const preferedLanguageString = cookieService.getValue('preferences.language');
     const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;
 
-    this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages[0];
+    const browserLanguage = navigator.language === 'hu' ? 'hu' : 'en'; 
+
+    this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages.find(x => x.code === browserLanguage) || this.languages[0];
+    document.documentElement.setAttribute("lang", this._selectedLanguage.code);
+    document.title = this.localize('name');
   }
 }

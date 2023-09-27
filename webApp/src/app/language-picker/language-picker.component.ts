@@ -14,7 +14,7 @@ export class LanguagePickerComponent implements OnInit {
     this.localizationService.selectedLanguage = language;
   }
 
-  constructor(public localizationService:LocalizationService, private cookieService: CookieService) { }
+  constructor(public localizationService:LocalizationService) { }
 
   ngOnInit(): void {
   }

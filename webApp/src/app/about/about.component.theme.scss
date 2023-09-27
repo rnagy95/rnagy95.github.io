@@ -1,0 +1,87 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../utils/styles/color-utils.scss" as color-utils;
+
+@mixin color($color-config) {
+  $primary-palette: map.get($color-config, 'primary');
+
+  $outer-background-color: mat.get-color-from-palette($primary-palette, 900);
+  $inner-background-color: mat.get-color-from-palette($primary-palette, 100);
+  $color: color-utils.get-text-color-on-background($inner-background-color);
+
+  .about-outer-container {
+    background-color: $outer-background-color;
+
+    .about-inner-container {
+      background-color: $inner-background-color;
+
+      @media print {
+        background-color: #f0f0f0;
+      }
+
+      color: $color;
+
+      .left-panel {
+        @media screen and (max-width: 720px) {
+          border-bottom: 3px solid $outer-background-color;
+        }
+
+        @media print,
+        (min-width: 720px) {
+          border-right: 3px solid $outer-background-color;
+
+          @media print {
+            $color: mat.get-color-from-palette($primary-palette, darker);
+            border-right: 3px solid $color;
+          }
+        }
+
+        .bullet-point {
+
+          .bullet-point-icon,
+          .bullet-point-text {
+            color: $outer-background-color;
+
+            @media print {
+              color: mat.get-color-from-palette($primary-palette, darker);
+            }
+          }
+        }
+      }
+
+      .right-panel {
+        .quote-block {
+          .quote {
+            &::before {
+              color: $outer-background-color;
+
+              @media print {
+                color: mat.get-color-from-palette($primary-palette, darker);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin typography($typography-config) {
+  .about-outer-container {
+    font-family: mat.font-family($typography-config);
+  }
+}
+
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+
+  @if $color-config !=null {
+    @include color($color-config);
+  }
+
+  $typography-config: mat.get-typography-config($theme);
+
+  @if $typography-config !=null {
+    @include typography($typography-config);
+  }
+}

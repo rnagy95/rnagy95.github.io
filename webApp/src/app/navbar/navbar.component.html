@@ -1,10 +1,10 @@
 <nav class="app-navbar">
-    <a mat-button class="home-link" href="/">HOME</a>
-    <a mat-button class="navbar-link hide-on-mobile" *ngFor="let link of links" [href]="link.href">{{link.text}}</a>
+    <a mat-button class="home-link" href="#home">{{localizationService.localize('name')}}</a>
+    <a mat-button class="navbar-link hide-on-mobile" *ngFor="let link of links" [href]="link.href">{{localizationService.localize(link.text)}}</a>
     <div class="flex-spacer"></div>
     <app-language-picker></app-language-picker>
     <app-theme-picker></app-theme-picker>
 </nav>
 <nav class="app-navbar show-on-mobile">
-    <a mat-button class="navbar-link" *ngFor="let link of links" [href]="link.href">{{link.text}}</a>
+    <a mat-button class="navbar-link" *ngFor="let link of links" [href]="link.href">{{localizationService.localize(link.text)}}</a>
 </nav>

@@ -1,5 +1,11 @@
 @use '@angular/material' as mat;
 @use './app/navbar/navbar.component.theme.scss' as navbar;
+@use './app/banner/banner.component.theme.scss' as banner;
+@use './app/footer/footer.component.theme.scss' as footer;
+@use './app/about/about.component.theme.scss' as about;
+@use './app/experience/experience.component.theme.scss' as experience;
+@use './app/tech-stack/tech-stack.component.theme.scss' as tech-stack;
+@use './app/print-contacts/print-contacts.component.theme.scss' as print-contacts;
 
 @include mat.core();
 
@@ -12,47 +18,87 @@ $light-ide-accent: mat.define-palette(mat.$pink-palette, 600, 400, 800);
 $light-ide-warn: mat.define-palette(mat.$red-palette);
 
 $terminal-primary: mat.define-palette(mat.$green-palette, 800, 600, 900);
-$terminal-accent: mat.define-palette(mat.$teal-palette, 'A400', 'A200', 'A700' );
+$terminal-accent: mat.define-palette(mat.$teal-palette, 'A400', 'A200', 'A700');
 $terminal-warn: mat.define-palette(mat.$red-palette);
 
-$dark-ide-theme: mat.define-dark-theme((
-  color: (
-    primary: $dark-ide-primary,
-    accent: $dark-ide-accent,
-    warn: $dark-ide-warn
-  )
-));
+$print-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
+$print-accent: mat.define-palette(mat.$light-blue-palette, 'A400', 100, 'A700');
+$print-warn: mat.define-palette(mat.$red-palette);
 
-$light-ide-theme: mat.define-light-theme((
-  color: (
-    primary: $light-ide-primary,
-    accent: $light-ide-accent,
-    warn: $light-ide-warn
-  )
-));
+$dark-ide-theme: mat.define-dark-theme((color: (primary: $dark-ide-primary,
+        accent: $dark-ide-accent,
+        warn: $dark-ide-warn )));
 
-$terminal-theme: mat.define-dark-theme((
-  color: (
-    primary: $terminal-primary,
-    accent: $terminal-accent,
-    warn: $terminal-warn
-  )
-));
+$light-ide-theme: mat.define-light-theme((color: (primary: $light-ide-primary,
+        accent: $light-ide-accent,
+        warn: $light-ide-warn )));
 
-.dark-ide-theme{
+$terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
+        accent: $terminal-accent,
+        warn: $terminal-warn )));
+
+$print-theme: mat.define-light-theme((color: (primary: $print-primary,
+        accent: $print-accent,
+        warn: $print-warn )));
+
+.dark-ide-theme {
   @include mat.all-component-themes($dark-ide-theme);
   @include navbar.theme($dark-ide-theme);
+  @include footer.theme($dark-ide-theme);
+  @include about.theme($dark-ide-theme);
+  @include print-contacts.theme($dark-ide-theme);
+  @include tech-stack.theme($dark-ide-theme);
+  @include experience.theme($dark-ide-theme, $isDarkTheme: true);
+  @include banner.theme($dark-ide-theme, $isDarkTheme: true);
 }
 
-.light-ide-theme{
+.light-ide-theme {
   @include mat.all-component-themes($light-ide-theme);
   @include navbar.theme($light-ide-theme);
+  @include footer.theme($light-ide-theme);
+  @include about.theme($light-ide-theme);
+  @include print-contacts.theme($light-ide-theme);
+  @include tech-stack.theme($light-ide-theme);
+  @include experience.theme($light-ide-theme, $isDarkTheme: false);
+  @include banner.theme($light-ide-theme, $isDarkTheme: false);
 }
 
-.terminal-theme{
+.terminal-theme {
   @include mat.all-component-themes($terminal-theme);
   @include navbar.theme($terminal-theme);
+  @include footer.theme($terminal-theme);
+  @include about.theme($terminal-theme);
+  @include print-contacts.theme($terminal-theme);
+  @include tech-stack.theme($terminal-theme);
+  @include experience.theme($terminal-theme, $isDarkTheme: true);
+  @include banner.theme($terminal-theme, $isDarkTheme: true);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.print-theme {
+  @include mat.all-component-themes($print-theme);
+  @include navbar.theme($print-theme);
+  @include footer.theme($print-theme);
+  @include about.theme($print-theme);
+  @include print-contacts.theme($print-theme);
+  @include tech-stack.theme($print-theme);
+  @include experience.theme($print-theme, $isDarkTheme: false);
+  @include banner.theme($print-theme, $isDarkTheme: false);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  @media print {
+    background-color: white !important;
+  }
+}
+
+@page {
+  size: A4;
+  margin: .5cm;
+}

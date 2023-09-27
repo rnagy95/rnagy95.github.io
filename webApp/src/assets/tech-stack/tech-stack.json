@@ -1,0 +1,29 @@
+{
+    "backend":{
+        ".NET / C#": "csharp.svg",
+        "ASP.NET": "aspdotnet.png",
+        "ADO.NET & Entity Framework": "ef.png",
+        "Language-Integrated Query (LINQ)": "linq.png",
+        "Node.js": "nodejs.svg",
+        "Python": "python.svg"
+    },
+    "database":{
+        "Microsoft SQL Server & Transact‑SQL": "ms_sql_server.svg",
+        "MySQL": "mysql.svg",
+        "MongoDB": "mongodb.svg",
+        "q/KDB+": "kdb.svg"
+    },
+    "frontend":{
+        "Angular": "angular.svg",
+        "JavaScript / TypeScript": "javascript.svg",
+        "CSS / Sass": "sass.svg",
+        "HTML": "html.svg"
+    },
+    "misc":{
+        "Microsoft Office": "office.svg",
+        "Microsoft Sharepoint": "sharepoint.svg",
+        "Microsoft Azure DevOps": "azure_devops.svg",
+        "Atlassian Jira": "jira.svg",
+        "Git": "git.svg"
+    }
+}

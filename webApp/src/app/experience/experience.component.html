@@ -1,0 +1,74 @@
+<section class="experience-container">
+    <section class="job-history">
+        <div class="section-title">
+            <mat-icon fontIcon="work_history" class="icon"></mat-icon>
+            <span>{{localizationService.localize('experience')}}</span>
+        </div>
+        <div class="card" *ngFor="let company of workHistory">
+            <div class="card-content">
+                <div class="card-content-logo">
+                    <img src="../../assets/experience/logos/{{company.companyLogo}}" />
+                </div>
+                <div class="card-content-header" *ngIf="company.positions.length === 1">
+                    <div class="card-content-position">{{localizationService.localize(company.positions[0].title)}}</div>
+                    <div class="card-content-company">{{company.company}} &bull; {{localizationService.localize(getStringRepresentationOfEmploymentTypeEnumValue(company.positions[0].employmentType))}}</div>
+                    <div class="card-content-period">{{company.positions[0].startDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} - {{company.positions[0].endDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} 
+                        <span *ngIf="!company.positions[0].endDate">({{localizationService.localize('present')}})</span> &bull; 
+                        <span *ngIf="calcYearsFloor(company.positions[0].startDate, company.positions[0].endDate) > 0">{{calcYearsFloor(company.positions[0].startDate, company.positions[0].endDate)}} {{calcYearsFloor(company.positions[0].startDate, company.positions[0].endDate) > 1 ? localizationService.localize('yrs') : localizationService.localize('yr')}}&nbsp;</span>
+                        <span *ngIf="calcMonthsRound(company.positions[0].startDate, company.positions[0].endDate) > 0">{{calcMonthsRound(company.positions[0].startDate, company.positions[0].endDate)}} {{calcMonthsRound(company.positions[0].startDate, company.positions[0].endDate) > 1 ? localizationService.localize('mos') : localizationService.localize('mo')}}</span>
+                    </div>
+                </div>
+                <div class="card-content-header" *ngIf="company.positions.length > 1">
+                    <div class="card-content-position">{{company.company}}</div>
+                    <div class="card-content-period">{{company.positions[company.positions.length - 1].startDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} - {{company.positions[0].endDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} 
+                        <span *ngIf="!company.positions[0].endDate">({{localizationService.localize('present')}})</span> &bull; 
+                        <span *ngIf="calcYearsFloor(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate) > 0">{{calcYearsFloor(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate)}} {{calcYearsFloor(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate) > 1 ? localizationService.localize('yrs') : localizationService.localize('yr')}}&nbsp;</span>
+                        <span *ngIf="calcMonthsRound(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate) > 0">{{calcMonthsRound(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate)}} {{calcMonthsRound(company.positions[company.positions.length - 1].startDate, company.positions[0].endDate) > 1 ? localizationService.localize('mos') : localizationService.localize('mo')}}</span>
+                    </div>
+                </div>
+                <div class="card-content-description" *ngIf="company.positions.length === 1">
+                    <app-expandable-text [text]="localizationService.localize(company.positions[0].description || '')"> </app-expandable-text>
+                </div>
+                <div class="card-content-description" *ngIf="company.positions.length > 1">
+                    <div class="position-history">
+                        <div class="position-card" *ngFor="let pos of company.positions">
+                            <div class="position-card-content">
+                                <div class="position-card-content-header">
+                                    <div class="card-content-position">{{localizationService.localize(pos.title)}}</div>
+                                    <div class="card-content-company">{{localizationService.localize(getStringRepresentationOfEmploymentTypeEnumValue(pos.employmentType))}}</div>
+                                    <div class="card-content-period">{{pos.startDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} - {{pos.endDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}}
+                                        <span *ngIf="!pos.endDate">({{localizationService.localize('present')}})</span> &bull;
+                                        <span *ngIf="calcYearsFloor(pos.startDate, pos.endDate) > 0">{{calcYearsFloor(pos.startDate, pos.endDate)}} {{calcYearsFloor(pos.startDate, pos.endDate) > 1 ? localizationService.localize('yrs') : localizationService.localize('yr')}}&nbsp;</span>
+                                        <span *ngIf="calcMonthsRound(pos.startDate, pos.endDate) > 0">{{calcMonthsRound(pos.startDate, pos.endDate)}} {{calcMonthsRound(pos.startDate, pos.endDate) > 1 ? localizationService.localize('mos') : localizationService.localize('mo')}}</span>
+                                    </div>
+                                </div>
+                                <div class="position-card-content-description">
+                                    <app-expandable-text [text]="localizationService.localize(pos.description || '')"> </app-expandable-text>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-history">
+        <div class="section-title">
+            <mat-icon fontIcon="school" class="icon"></mat-icon>
+            <span>{{localizationService.localize('education')}}</span>
+        </div>
+        <div class="card" *ngFor="let edu of educationHistory">
+            <div class="card-content">
+                <div class="card-content-logo">
+                    <img src="../../assets/experience/logos/{{edu.schoolLogo}}" />
+                </div>
+                <div class="card-content-header">
+                    <div class="card-content-position">{{localizationService.localize(edu.school)}}</div>
+                    <div class="card-content-company">{{localizationService.localize(getStringRepresentationOfDegreeTypeEnumValue(edu.degreeType))}} &bull; {{localizationService.localize(edu.fieldOfStudy)}}</div>
+                    <div class="card-content-period">{{edu.startDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}} - {{edu.endDate | date:localizationService.dateFormat:'':localizationService.selectedLanguage.code}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,44 @@
+<section class="about-outer-container">
+    <div class="about-inner-container">
+        <section class="left-panel">
+            <div class="bullet-point" matTooltip="{{localizationService.localize('address')}}">
+                <mat-icon fontIcon="place" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{localizationService.localize('myAddress')}}</span>
+            </div>
+            <div class="bullet-point" matTooltip="{{localizationService.localize('DOB')}}">
+                <mat-icon fontIcon="cake" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{localizationService.localize('dateOfBirth')}}</span>
+            </div>
+            <div class="bullet-point" matTooltip="{{localizationService.localize('workExperience')}}">
+                <mat-icon fontIcon="work_history" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{getExperienceInYears()}} {{localizationService.localize('years')}}</span>
+            </div>
+        </section>
+        <section class="right-panel">
+            <div class="name">{{localizationService.localize('name')}}</div>
+            <div class="functions">{{localizationService.localize('functionList')}}</div>
+            <div class="quote-block">
+                <div class="quote">
+                    {{localizationService.localize('quote')}}
+                </div>
+                <div class="quotee">
+                    - Martin Fowler
+                </div>
+            </div>
+            <div class="introduction">
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p1')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p2')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p3')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p4')}}
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+[
+    {
+        "company": "Morgan Stanley",
+        "companyLogo": "morgan_stanley.jpg",
+        "positions": [
+            {
+                "title": "quantitativeModelDeveloper",
+                "employmentType": 1,
+                "startDateString":"2022-06-07"
+            },
+            {
+                "title": "quantitativeModelDeveloper",
+                "employmentType": 3,
+                "startDateString":"2020-06-15",
+                "endDateString": "2022-06-06",
+                "description": "ms.quantDev.desc"
+            }
+        ]
+    },
+    {
+        "company": "Avon",
+        "companyLogo": "avon.jpg",
+        "positions": [
+            {
+                "title": "devOpsEngineer",
+                "employmentType": 3,
+                "startDateString":"2020-03-23",
+                "endDateString": "2020-06-12",
+                "description": "avon.devOps.desc"
+            },
+            {
+                "title": "fullStackDev",
+                "employmentType": 3,
+                "startDateString":"2019-09-16",
+                "endDateString": "2020-03-20",
+                "description": "avon.fullStack.desc"
+            }
+        ]
+    },
+    {
+        "company": "Abesse",
+        "companyLogo": "abesse.png",
+        "positions": [
+            {
+                "title": "fullStackDev",
+                "employmentType": 5,
+                "startDateString":"2018-10-24",
+                "endDateString": "2019-09-12",
+                "description": "abesse.fullStack.desc"
+            }
+        ]
+    },
+    {
+        "company": "HyperTeam",
+        "companyLogo": "hyperteam.jpg",
+        "positions": [
+            {
+                "title": "fullStackDev",
+                "employmentType": 5,
+                "startDateString":"2016-02-15",
+                "endDateString": "2018-10-19",
+                "description": "ht.fullStack.desc"
+            }
+        ]
+    }
+]

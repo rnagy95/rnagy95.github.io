@@ -1,27 +1,25 @@
-<div class="modal">
+<div class="cookie-modal">
     <h1 mat-dialog-title style="text-align: center;">
-        This website uses cookies <mat-icon>cookie</mat-icon>
+        {{localizationService.localize('cookieBanner.title')}} <mat-icon>cookie</mat-icon>
     </h1>
     <mat-dialog-content>
         <mat-card>
             <mat-card-content>
                 <h3>
-                    I use cookies (and similar technoligies) to enhance your browsing experience,
-                    serve personalized content, and analyze my traffic.
-                    By clicking "Accept All", you consent to my use of cookies.
+                    {{localizationService.localize('cookieBanner.subTitle')}}
                 </h3>
             </mat-card-content>
             <mat-card-actions>
-                <a mat-button routerLink="privacy-policy" mat-dialog-close>Read More</a>
+                <a mat-button routerLink="privacy-policy" mat-dialog-close>{{localizationService.localize('cookieBanner.readMore')}}</a>
             </mat-card-actions>
         </mat-card>
         <mat-tab-group>
-            <mat-tab label="Customize" color="primary">
+            <mat-tab [label]="localizationService.localize('cookieBanner.customize')" color="primary">
                 <mat-accordion class="example-headers-align" multi>
                     <mat-expansion-panel *ngFor="let group of model | keyvalue">
                         <mat-expansion-panel-header class="group-header">
                             <mat-panel-title>
-                                {{getStringRepresentationOfCookieCategoryEnumValue(group.key)}}
+                                {{localizationService.localize(getStringRepresentationOfCookieCategoryEnumValue(group.key))}}
                             </mat-panel-title>
                             <mat-panel-description>
                                 <span class="spacer"></span>
@@ -32,10 +30,10 @@
 
                         <div class="cookie" *ngFor="let cookie of $any(group).value">
                             <div class="cookie-name">
-                                {{cookie.name}}
+                                {{localizationService.localize(cookie.name)}}
                             </div>
                             <div class="coockie-description">
-                                {{cookie.description}}
+                                {{localizationService.localize(cookie.description)}}
                             </div>
                             <span class="spacer"></span>
                             <mat-slide-toggle [disabled]="getStringRepresentationOfCookieCategoryEnumValue(group.key) === 'Necessary'" [(ngModel)]="cookie.isEnabled">
@@ -47,13 +45,12 @@
         </mat-tab-group>
     </mat-dialog-content>
     <mat-dialog-actions align="end" class="show-on-mobile">
-        <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close>Save your
-            preferences</button>
+        <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close>{{localizationService.localize('cookieBanner.savePreferences')}}</button>
     </mat-dialog-actions>
     <mat-dialog-actions align="end">
-        <button mat-raised-button color="warn" (click)="rejectAll()" mat-dialog-close>Reject All</button>
+        <button mat-raised-button color="warn" (click)="rejectAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.rejectAll')}}</button>
         <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close
-            class="hide-on-mobile">Save my preferences</button>
-        <button mat-raised-button color="primary" (click)="acceptAll()" mat-dialog-close>Accept All</button>
+            class="hide-on-mobile">{{localizationService.localize('cookieBanner.savePreferences')}}</button>
+        <button mat-raised-button color="primary" (click)="acceptAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.acceptAll')}}</button>
     </mat-dialog-actions>
 </div>
