@@ -34,6 +34,7 @@ jobs:
         run: | 
             cd webApp
             npm ci
+            npm run test --if-present
             npm run build --if-present
 
       - name: Upload artifact
