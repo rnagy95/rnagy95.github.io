@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import localeHu from '@angular/common/locales/hu';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -47,6 +47,7 @@ registerLocaleData(localeHu);
     FilterPrivateThemesPipe
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

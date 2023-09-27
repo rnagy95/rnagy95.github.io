@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatMenuModule } from '@angular/material/menu';
 
-import { ThemePickerComponent } from './theme-picker.component';
+import { FilterPrivateThemesPipe, ThemePickerComponent } from './theme-picker.component';
 
 describe('ThemePickerComponent', () => {
   let component: ThemePickerComponent;
@@ -8,9 +9,10 @@ describe('ThemePickerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ThemePickerComponent ]
+      declarations: [ThemePickerComponent, FilterPrivateThemesPipe],
+      imports: [MatMenuModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ThemePickerComponent);
     component = fixture.componentInstance;

@@ -18,7 +18,7 @@ export class BannerComponent implements OnInit {
   constructor(public localizationService: LocalizationService, private themeService: ThemeService) { }
 
   private setTheme() {
-    if (!!pJSDom && !!pJSDom[0]){
+    if (!!pJSDom && !!pJSDom[0]) {
       pJSDom[0].pJS.particles = (this.themeService.selectedTheme.type === ThemeType.dark ? lightParticles.particles : darkParticles.particles);
       pJSDom[0].pJS.fn.particlesRefresh();
     }

@@ -20,4 +20,10 @@ describe('ExpandableTextComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle expanded state', () =>{
+    const expanded = component.expanded;
+    component.toggleExpandedState();
+    expect(component.expanded).toBe(!expanded);
+  })
 });
