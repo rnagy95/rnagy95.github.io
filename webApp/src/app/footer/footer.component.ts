@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/dialog';
+import { MatDialog as MatDialog } from '@angular/material/dialog';
 import { LocalizationService } from '../services/localization/localization.service';
 import { CookiePopupComponent } from '../cookie-popup/cookie-popup.component';
 import { ContactLink } from '../interfaces/ContactLink';
