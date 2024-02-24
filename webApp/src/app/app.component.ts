@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CookiePopupComponent } from './cookie-popup/cookie-popup.component';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/dialog';
 import { CookieService } from './services/cookie/cookie.service';
 
 @Component({

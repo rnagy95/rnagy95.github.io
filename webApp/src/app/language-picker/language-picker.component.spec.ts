@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/legacy-menu';
+import { MatLegacyMenuModule as MatMenuModule } from '@angular/material/menu';
 
 import { LanguagePickerComponent } from './language-picker.component';
 
