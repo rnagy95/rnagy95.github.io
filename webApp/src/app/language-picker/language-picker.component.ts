@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Language } from '../interfaces/Language';
-import { CookieService } from '../services/cookie/cookie.service';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
