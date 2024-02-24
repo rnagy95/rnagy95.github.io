@@ -25,21 +25,29 @@ $print-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
 $print-accent: mat.define-palette(mat.$light-blue-palette, 'A400', 100, 'A700');
 $print-warn: mat.define-palette(mat.$red-palette);
 
+$typography: mat.define-typography-config(
+    $font-family: 'Roboto',
+  );
+
 $dark-ide-theme: mat.define-dark-theme((color: (primary: $dark-ide-primary,
         accent: $dark-ide-accent,
-        warn: $dark-ide-warn )));
+        warn: $dark-ide-warn),
+      typography: $typography));
 
 $light-ide-theme: mat.define-light-theme((color: (primary: $light-ide-primary,
         accent: $light-ide-accent,
-        warn: $light-ide-warn )));
+        warn: $light-ide-warn),
+      typography: $typography));
 
 $terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
         accent: $terminal-accent,
-        warn: $terminal-warn )));
+        warn: $terminal-warn),
+      typography: $typography));
 
 $print-theme: mat.define-light-theme((color: (primary: $print-primary,
         accent: $print-accent,
-        warn: $print-warn )));
+        warn: $print-warn),
+      typography: $typography));
 
 .dark-ide-theme {
   @include mat.all-component-themes($dark-ide-theme);

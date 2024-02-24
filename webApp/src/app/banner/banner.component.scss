@@ -132,7 +132,8 @@
                 font-size: var(--f);
                 line-height: .75;
                 text-align: center;
-                vertical-align: middle;
+                vertical-align: bottom;
+                margin: 0px 0px 0px 6px;
                 transform: scaleX(var(--scale, 1));
                 @media screen {
                     animation: glitch-main 4s 1 alternate-reverse forwards;
@@ -176,6 +177,7 @@
                 font-size: calc(var(--f) *0.667);
                 text-align: center;
                 transform: scaleX(var(--scale, 1));
+                margin: 0px 6px 0px 0px;
                 @media screen {
                     animation: glitch-main 4s 1 0.75s alternate forwards;
                 }
