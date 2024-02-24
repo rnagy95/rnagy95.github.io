@@ -7,7 +7,16 @@
 @use './app/tech-stack/tech-stack.component.theme.scss' as tech-stack;
 @use './app/print-contacts/print-contacts.component.theme.scss' as print-contacts;
 
-@include mat.core();
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
 
 $dark-ide-primary: mat.define-palette(mat.$blue-palette, 700, 500, 900);
 $dark-ide-accent: mat.define-palette(mat.$purple-palette);
@@ -42,7 +51,7 @@ $print-theme: mat.define-light-theme((color: (primary: $print-primary,
         warn: $print-warn )));
 
 .dark-ide-theme {
-  @include mat.all-component-themes($dark-ide-theme);
+  @include mat.all-legacy-component-themes($dark-ide-theme);
   @include navbar.theme($dark-ide-theme);
   @include footer.theme($dark-ide-theme);
   @include about.theme($dark-ide-theme);
@@ -53,7 +62,7 @@ $print-theme: mat.define-light-theme((color: (primary: $print-primary,
 }
 
 .light-ide-theme {
-  @include mat.all-component-themes($light-ide-theme);
+  @include mat.all-legacy-component-themes($light-ide-theme);
   @include navbar.theme($light-ide-theme);
   @include footer.theme($light-ide-theme);
   @include about.theme($light-ide-theme);
@@ -64,7 +73,7 @@ $print-theme: mat.define-light-theme((color: (primary: $print-primary,
 }
 
 .terminal-theme {
-  @include mat.all-component-themes($terminal-theme);
+  @include mat.all-legacy-component-themes($terminal-theme);
   @include navbar.theme($terminal-theme);
   @include footer.theme($terminal-theme);
   @include about.theme($terminal-theme);
@@ -75,7 +84,7 @@ $print-theme: mat.define-light-theme((color: (primary: $print-primary,
 }
 
 .print-theme {
-  @include mat.all-component-themes($print-theme);
+  @include mat.all-legacy-component-themes($print-theme);
   @include navbar.theme($print-theme);
   @include footer.theme($print-theme);
   @include about.theme($print-theme);
