@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Cookie, CookieCategory } from '../interfaces/Cookie';
 import { CookieService } from '../services/cookie/cookie.service';
 import { LocalizationService } from '../services/localization/localization.service';
@@ -64,7 +65,11 @@ export class CookiePopupComponent implements OnInit {
     return CookieCategory[i as CookieCategory];
   }
 
-  constructor(public cookieService: CookieService, public localizationService : LocalizationService) { }
+  public get privacyPolicyUrl(): SafeResourceUrl{
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(`../../assets/legal/privacy_policy_${this.localizationService.selectedLanguage.code}.pdf`);
+  }
+
+  constructor(public cookieService: CookieService, public localizationService : LocalizationService, private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this._initModel()
