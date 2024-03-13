@@ -10,7 +10,7 @@
                 </h3>
             </mat-card-content>
             <mat-card-actions>
-                <a mat-button routerLink="privacy-policy" mat-dialog-close>{{localizationService.localize('cookieBanner.readMore')}}</a>
+                <a mat-button [href]="privacyPolicyUrl" target="_blank">{{localizationService.localize('cookieBanner.readMore')}}</a>
             </mat-card-actions>
         </mat-card>
         <mat-tab-group>
