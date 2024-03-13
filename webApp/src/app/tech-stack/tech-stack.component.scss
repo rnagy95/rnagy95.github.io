@@ -144,16 +144,3 @@
     }
   }
 }
-
-@keyframes float-in {
-  from {
-    transform: translate(0, 25vh);
-    opacity: 0%;
-  }
-
-  to {
-    transform: translate(0, 0);
-    opacity: 100%;
-  }
-
-}
