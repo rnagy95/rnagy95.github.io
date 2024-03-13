@@ -110,3 +110,179 @@ body {
   size: A4;
   margin: .5cm;
 }
+
+@keyframes glitch-main {
+  17% {
+      --scale: .87;
+  }
+
+  31% {
+      --scale: 1.1;
+  }
+
+  37% {
+      --scale: 1.3;
+  }
+
+  47% {
+      --scale: .91;
+  }
+
+  87% {
+      --scale: 1;
+  }
+}
+
+@keyframes glitch-after {
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+      --top: 0;
+      --left: 0;
+      opacity: 0;
+  }
+
+  0% {
+      opacity: 0;
+  }
+
+  1% {
+      --v-height: 15%;
+      opacity: 1;
+  }
+
+  20% {
+      --left: .005;
+      opacity: 1;
+  }
+
+  40% {
+      --left: .01;
+      --v-height: 20%;
+      --top: 3;
+      opacity: 1;
+  }
+
+  60% {
+      --left: .03;
+      --v-height: 25%;
+      --top: 6;
+      opacity: 1;
+  }
+
+  80% {
+      --left: .07;
+      --v-height: 5%;
+      --top: 8;
+      opacity: 1;
+  }
+
+  99% {
+      --left: .083;
+      --v-height: 30%;
+      --top: 1;
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes glitch-before {
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+      --top: 0;
+      --left: 0;
+      opacity: 0;
+  }
+
+  0% {
+      opacity: 0;
+  }
+
+  1% {
+      --v-height: 15%;
+      --top: 10;
+      opacity: 1;
+  }
+
+  20% {
+      --left: -.005;
+      opacity: 1;
+  }
+
+  40% {
+      --left: -.01;
+      --v-height: 17%;
+      --top: 3;
+      opacity: 1;
+  }
+
+  60% {
+      --left: -.03;
+      --v-height: 35%;
+      --top: 6;
+      opacity: 1;
+  }
+
+  80% {
+      --left: -.07;
+      --v-height: 5%;
+      --top: 8;
+      opacity: 1;
+  }
+
+  99% {
+      --left: -.083;
+      --v-height: 30%;
+      --top: 1;
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+      transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  50% {
+      transform: translate(-50%, -50%) rotate(-180deg);
+  }
+
+  75% {
+      transform: translate(-50%, -50%) rotate(-270deg);
+  }
+
+  100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes float-in {
+  from {
+    transform: translate(0, 25vh);
+    opacity: 0%;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+
+}
