@@ -1,12 +1,24 @@
 [
     {
+        "company": "Aegon Global Business Solutions Center",
+        "companyLogo": "aegon.png",
+        "positions": [
+            {
+                "title": "firstLineModelValidator",
+                "employmentType": 1,
+                "startDateString":"2024-08-21"
+            }
+        ]
+    },
+    {
         "company": "Morgan Stanley",
         "companyLogo": "morgan_stanley.jpg",
         "positions": [
             {
                 "title": "quantitativeModelDeveloper",
                 "employmentType": 1,
-                "startDateString":"2022-06-07"
+                "startDateString":"2022-06-07",
+                "endDateString": "2024-08-12"
             },
             {
                 "title": "quantitativeModelDeveloper",
