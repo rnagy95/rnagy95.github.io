@@ -15,6 +15,6 @@ export class PrintService {
     dispatchEvent(this.onPrintFinished);
   }
 
-  constructor(private themeService: ThemeService) { }
+  constructor() { }
 
 }
