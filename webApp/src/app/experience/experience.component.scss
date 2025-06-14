@@ -41,6 +41,7 @@
         flex-basis: auto;
         flex-grow: 1;
         padding: 40px 15px;
+        page-break-inside: avoid;
         
 
         @media print {
