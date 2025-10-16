@@ -1,6 +1,6 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
+name: Task / Research
+about: Track non-coding tasks such as research, setup, or general to-dos
 title: "[TASK]"
 labels: Task / Research
 assignees: rnagy95
