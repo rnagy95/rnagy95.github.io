@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PrintContact } from '../interfaces/PrintContact';
 
 @Component({
-  selector: 'app-print-contacts',
-  templateUrl: './print-contacts.component.html',
-  styleUrls: ['./print-contacts.component.scss']
+    selector: 'app-print-contacts',
+    templateUrl: './print-contacts.component.html',
+    styleUrls: ['./print-contacts.component.scss'],
+    standalone: false
 })
 export class PrintContactsComponent implements OnInit {
 

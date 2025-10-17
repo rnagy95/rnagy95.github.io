@@ -6,9 +6,10 @@ import _workHistory from '../../assets/experience/work-history.json';
 import _education from '../../assets/experience/education.json';
 
 @Component({
-  selector: 'app-experience',
-  templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.scss']
+    selector: 'app-experience',
+    templateUrl: './experience.component.html',
+    styleUrls: ['./experience.component.scss'],
+    standalone: false
 })
 export class ExperienceComponent implements OnInit {
 

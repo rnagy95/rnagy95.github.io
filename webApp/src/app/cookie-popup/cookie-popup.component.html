@@ -1,56 +1,59 @@
 <div class="cookie-modal">
-    <h1 mat-dialog-title style="text-align: center;">
-        {{localizationService.localize('cookieBanner.title')}} <mat-icon>cookie</mat-icon>
-    </h1>
-    <mat-dialog-content>
-        <mat-card>
-            <mat-card-content>
-                <h3>
-                    {{localizationService.localize('cookieBanner.subTitle')}}
-                </h3>
-            </mat-card-content>
-            <mat-card-actions>
-                <a mat-button [href]="privacyPolicyUrl" target="_blank">{{localizationService.localize('cookieBanner.readMore')}}</a>
-            </mat-card-actions>
-        </mat-card>
-        <mat-tab-group>
-            <mat-tab [label]="localizationService.localize('cookieBanner.customize')" color="primary">
-                <mat-accordion class="example-headers-align" multi>
-                    <mat-expansion-panel *ngFor="let group of model | keyvalue">
-                        <mat-expansion-panel-header class="group-header">
-                            <mat-panel-title>
-                                {{localizationService.localize(getStringRepresentationOfCookieCategoryEnumValue(group.key))}}
-                            </mat-panel-title>
-                            <mat-panel-description>
-                                <span class="spacer"></span>
-                                <span class="enabledIndicator">{{getEnabledCookiesIndicatorString(group.key)}}</span>
-                                <mat-slide-toggle [disabled]="getStringRepresentationOfCookieCategoryEnumValue(group.key) === 'Necessary'" [ngModel]="isAllEnabledInGroup(group.key)" (change)="toggleGroup(group.key)" (click)="$event.stopPropagation()"></mat-slide-toggle>
-                            </mat-panel-description>
-                        </mat-expansion-panel-header>
-
-                        <div class="cookie" *ngFor="let cookie of $any(group).value">
-                            <div class="cookie-name">
-                                {{localizationService.localize(cookie.name)}}
-                            </div>
-                            <div class="coockie-description">
-                                {{localizationService.localize(cookie.description)}}
-                            </div>
-                            <span class="spacer"></span>
-                            <mat-slide-toggle [disabled]="getStringRepresentationOfCookieCategoryEnumValue(group.key) === 'Necessary'" [(ngModel)]="cookie.isEnabled">
-                            </mat-slide-toggle>
-                        </div>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </mat-tab>
-        </mat-tab-group>
-    </mat-dialog-content>
-    <mat-dialog-actions align="end" class="show-on-mobile">
-        <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close>{{localizationService.localize('cookieBanner.savePreferences')}}</button>
-    </mat-dialog-actions>
-    <mat-dialog-actions align="end">
-        <button mat-raised-button color="warn" (click)="rejectAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.rejectAll')}}</button>
-        <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close
-            class="hide-on-mobile">{{localizationService.localize('cookieBanner.savePreferences')}}</button>
-        <button mat-raised-button color="primary" (click)="acceptAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.acceptAll')}}</button>
-    </mat-dialog-actions>
+  <h1 mat-dialog-title style="text-align: center;">
+    {{localizationService.localize('cookieBanner.title')}} <mat-icon>cookie</mat-icon>
+  </h1>
+  <mat-dialog-content>
+    <mat-card>
+      <mat-card-content>
+        <h3>
+          {{localizationService.localize('cookieBanner.subTitle')}}
+        </h3>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [href]="privacyPolicyUrl" target="_blank">{{localizationService.localize('cookieBanner.readMore')}}</a>
+      </mat-card-actions>
+    </mat-card>
+    <mat-tab-group>
+      <mat-tab [label]="localizationService.localize('cookieBanner.customize')" color="primary">
+        <mat-accordion class="example-headers-align" multi>
+          @for (group of model | keyvalue; track group) {
+            <mat-expansion-panel>
+              <mat-expansion-panel-header class="group-header">
+                <mat-panel-title>
+                  {{localizationService.localize(getStringRepresentationOfCookieCategoryEnumValue(group.key))}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  <span class="spacer"></span>
+                  <span class="enabledIndicator">{{getEnabledCookiesIndicatorString(group.key)}}</span>
+                  <mat-slide-toggle [disabled]="getStringRepresentationOfCookieCategoryEnumValue(group.key) === 'Necessary'" [ngModel]="isAllEnabledInGroup(group.key)" (change)="toggleGroup(group.key)" (click)="$event.stopPropagation()"></mat-slide-toggle>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              @for (cookie of $any(group).value; track cookie) {
+                <div class="cookie">
+                  <div class="cookie-name">
+                    {{localizationService.localize(cookie.name)}}
+                  </div>
+                  <div class="coockie-description">
+                    {{localizationService.localize(cookie.description)}}
+                  </div>
+                  <span class="spacer"></span>
+                  <mat-slide-toggle [disabled]="getStringRepresentationOfCookieCategoryEnumValue(group.key) === 'Necessary'" [(ngModel)]="cookie.isEnabled">
+                  </mat-slide-toggle>
+                </div>
+              }
+            </mat-expansion-panel>
+          }
+        </mat-accordion>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" class="show-on-mobile">
+    <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close>{{localizationService.localize('cookieBanner.savePreferences')}}</button>
+  </mat-dialog-actions>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" (click)="rejectAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.rejectAll')}}</button>
+    <button mat-stroked-button color="primary" (click)="savePreferences()" mat-dialog-close
+    class="hide-on-mobile">{{localizationService.localize('cookieBanner.savePreferences')}}</button>
+    <button mat-raised-button color="primary" (click)="acceptAll()" mat-dialog-close>{{localizationService.localize('cookieBanner.acceptAll')}}</button>
+  </mat-dialog-actions>
 </div>

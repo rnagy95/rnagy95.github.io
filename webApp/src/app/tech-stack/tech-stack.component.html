@@ -4,16 +4,22 @@
     <span>{{localizationService.localize('technologies')}}</span>
   </div>
   <div class="flex-container">
-    <mat-card class="card" [class.show]="areCardsVisible" *ngFor="let card of techStack | keyvalue">
-      <mat-card-header>
-        <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="stack-item" *ngFor="let item of card.value | keyvalue">
-          <div class="stack-item-logo"><img src="../../assets/tech-stack/logos/{{item.value}}" *ngIf="item.value" /></div>
-          <div class="stack-item-title">{{item.key}}</div>
-        </div>
-      </mat-card-content>
-    </mat-card>
+    @for (card of techStack | keyvalue; track card) {
+      <mat-card class="card" [class.show]="areCardsVisible">
+        <mat-card-header>
+          <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          @for (item of card.value | keyvalue; track item) {
+            <div class="stack-item">
+              <div class="stack-item-logo">@if (item.value) {
+                <img src="../../assets/tech-stack/logos/{{item.value}}" />
+              }</div>
+              <div class="stack-item-title">{{item.key}}</div>
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
+    }
   </div>
 </section>

@@ -1,10 +1,12 @@
 <footer class="app-footer">
   <section class="ft-main">
-    <div class="ft-main-item ft-contact" *ngFor="let contact of contacts">
-      <a [href]="contact.url" target="_blank" rel="noopener noreferrer">
-        <img [src]="contact.logo" style="width: 36px; height:auto;" [alt]="contact.altText" />
-      </a>
-    </div>
+    @for (contact of contacts; track contact) {
+      <div class="ft-main-item ft-contact">
+        <a [href]="contact.url" target="_blank" rel="noopener noreferrer">
+          <img [src]="contact.logo" style="width: 36px; height:auto;" [alt]="contact.altText" />
+        </a>
+      </div>
+    }
   </section>
   <section class="ft-legal">
     <ul class="ft-legal-list">
@@ -13,7 +15,7 @@
       <li><a mat-button [href]="termsAndContitionsUrl" target="_blank">{{localizationService.localize('termAndConditions')}}</a></li>
       <li><a mat-button (click)="printService.print()">{{localizationService.localize('printCV')}}</a></li>
       <li>Copyright &copy; {{year}} {{localizationService.localize('name')}}.
-        {{localizationService.localize('allRightsReserved')}}.</li>
+      {{localizationService.localize('allRightsReserved')}}.</li>
     </ul>
   </section>
 </footer>

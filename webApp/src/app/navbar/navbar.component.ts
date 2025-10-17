@@ -3,9 +3,10 @@ import { Link } from '../interfaces/Link';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
 export class NavBarComponent implements OnInit {
 
