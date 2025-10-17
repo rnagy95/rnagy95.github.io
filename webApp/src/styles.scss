@@ -9,42 +9,42 @@
 
 @include mat.core();
 
-$dark-ide-primary: mat.define-palette(mat.$blue-palette, 700, 500, 900);
-$dark-ide-accent: mat.define-palette(mat.$purple-palette);
-$dark-ide-warn: mat.define-palette(mat.$red-palette);
+$dark-ide-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 900);
+$dark-ide-accent: mat.m2-define-palette(mat.$m2-purple-palette);
+$dark-ide-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$light-ide-primary: mat.define-palette(mat.$indigo-palette, 700, 500, 900);
-$light-ide-accent: mat.define-palette(mat.$pink-palette, 600, 400, 800);
-$light-ide-warn: mat.define-palette(mat.$red-palette);
+$light-ide-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
+$light-ide-accent: mat.m2-define-palette(mat.$m2-pink-palette, 600, 400, 800);
+$light-ide-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$terminal-primary: mat.define-palette(mat.$green-palette, 800, 600, 900);
-$terminal-accent: mat.define-palette(mat.$teal-palette, 'A400', 'A200', 'A700');
-$terminal-warn: mat.define-palette(mat.$red-palette);
+$terminal-primary: mat.m2-define-palette(mat.$m2-green-palette, 800, 600, 900);
+$terminal-accent: mat.m2-define-palette(mat.$m2-teal-palette, 'A400', 'A200', 'A700');
+$terminal-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$print-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
-$print-accent: mat.define-palette(mat.$light-blue-palette, 'A400', 100, 'A700');
-$print-warn: mat.define-palette(mat.$red-palette);
+$print-primary: mat.m2-define-palette(mat.$m2-blue-palette, 600, 400, 800);
+$print-accent: mat.m2-define-palette(mat.$m2-light-blue-palette, 'A400', 100, 'A700');
+$print-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$typography: mat.define-typography-config(
+$typography: mat.m2-define-typography-config(
     $font-family: 'Roboto',
   );
 
-$dark-ide-theme: mat.define-dark-theme((color: (primary: $dark-ide-primary,
+$dark-ide-theme: mat.m2-define-dark-theme((color: (primary: $dark-ide-primary,
         accent: $dark-ide-accent,
         warn: $dark-ide-warn),
       typography: $typography));
 
-$light-ide-theme: mat.define-light-theme((color: (primary: $light-ide-primary,
+$light-ide-theme: mat.m2-define-light-theme((color: (primary: $light-ide-primary,
         accent: $light-ide-accent,
         warn: $light-ide-warn),
       typography: $typography));
 
-$terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
+$terminal-theme: mat.m2-define-dark-theme((color: (primary: $terminal-primary,
         accent: $terminal-accent,
         warn: $terminal-warn),
       typography: $typography));
 
-$print-theme: mat.define-light-theme((color: (primary: $print-primary,
+$print-theme: mat.m2-define-light-theme((color: (primary: $print-primary,
         accent: $print-accent,
         warn: $print-warn),
       typography: $typography));

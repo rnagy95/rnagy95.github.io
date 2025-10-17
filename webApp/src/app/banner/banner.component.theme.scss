@@ -5,14 +5,14 @@
    
     $primary-palette: map.get($color-config, 'primary');
     @if $isDarkTheme {
-        $color: mat.get-color-from-palette($primary-palette, 100); 
+        $color: mat.m2-get-color-from-palette($primary-palette, 100); 
         
         .text-container {
             color: $color;
         }
     }
     @else {
-        $color: mat.get-color-from-palette($primary-palette, 900);
+        $color: mat.m2-get-color-from-palette($primary-palette, 900);
 
         .text-container {
             color: $color;
@@ -21,25 +21,25 @@
 
     @media print {
         .text-container {
-            color: mat.get-color-from-palette($primary-palette, darker);
+            color: mat.m2-get-color-from-palette($primary-palette, darker);
         }
     }
 }
 
 @mixin typography($typography-config) {
     .banner-container {
-        font-family: mat.font-family($typography-config);
+        font-family: mat.m2-font-family($typography-config);
     }
 }
 
 @mixin theme($theme, $isDarkTheme: false) {
-    $color-config: mat.get-color-config($theme);
+    $color-config: mat.m2-get-color-config($theme);
 
     @if $color-config  !=null {
         @include color($color-config, $isDarkTheme);
     }
 
-    $typography-config: mat.get-typography-config($theme);
+    $typography-config: mat.m2-get-typography-config($theme);
 
     @if $typography-config  !=null {
         @include typography($typography-config);

@@ -5,7 +5,7 @@
 @mixin color($color-config) {
   $primary-palette: map.get($color-config, 'primary');
 
-  $background-color: mat.get-color-from-palette($primary-palette, default);
+  $background-color: mat.m2-get-color-from-palette($primary-palette, default);
   $color: color-utils.get-text-color-on-background($background-color);
 
   .app-navbar {
@@ -20,17 +20,17 @@
 
 @mixin typography($typography-config) {
   .app-navbar {
-    font-family: mat.font-family($typography-config);
+    font-family: mat.m2-font-family($typography-config);
   }
 }
 
 @mixin theme($theme) {
-  $color-config: mat.get-color-config($theme);
+  $color-config: mat.m2-get-color-config($theme);
   @if $color-config != null {
     @include color($color-config);
   }
 
-  $typography-config: mat.get-typography-config($theme);
+  $typography-config: mat.m2-get-typography-config($theme);
   @if $typography-config != null {
     @include typography($typography-config);
   }
