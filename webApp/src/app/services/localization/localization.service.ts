@@ -49,10 +49,10 @@ export class LocalizationService {
     let dateFormat: string;
     
     if (this.selectedLanguage.code === "hu"){
-      dateFormat = "YYYY MMMM d";
+      dateFormat = "yyyy MMMM d";
     }
     else{
-      dateFormat = "MMM d, YYYY"
+      dateFormat = "MMM d, yyyy"
     }
 
     return dateFormat
