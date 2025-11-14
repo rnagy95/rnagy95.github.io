@@ -3,13 +3,18 @@
         display: none;
     }
 
-    position: sticky;
+    position: fixed;
+    width: 99%;
     top: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 16px;
     z-index: 999;
+
+    &.on-top{
+        animation: fade-in-background 0.3s linear 0.2s forwards;;
+    }
 
     >.mat-button {
         &:hover {
@@ -24,29 +29,41 @@
     }
 
     .flex-spacer {
-        flex-grow: 1;
+        flex: 1 1 auto;
     }
 
-    &.show-on-mobile {
+    >.show-on-mobile {
         display: none;
-        position: sticky;
-        top: 56px;
     }
 }
 
+.app-sidebar{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    height: 95%;
+
+    @media print {
+        display: none;
+    }
+
+    >.flex-spacer {
+        flex: 1 1 auto;
+    }
+
+
+}
+
 @media screen and (max-width: 720px) {
-    .navbar-link.hide-on-mobile {
+    .hide-on-mobile {
         display: none;
     }
 
     .app-navbar {
-        &.show-on-mobile {
-            display: flex;
-
-            .navbar-link {
-                text-decoration: inherit;
-                flex: 1;
-            }
+        >.show-on-mobile {
+            display: inherit;
         }
     }
 }
