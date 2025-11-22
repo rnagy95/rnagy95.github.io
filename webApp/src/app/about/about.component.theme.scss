@@ -10,7 +10,7 @@
   $color: color-utils.get-text-color-on-background($inner-background-color);
 
   .about-outer-container {
-    background-color: $outer-background-color;
+    //background-color: $outer-background-color;
 
     .about-inner-container {
       background-color: $inner-background-color;

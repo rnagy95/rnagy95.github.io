@@ -1,26 +1,22 @@
 .bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(circle at center, #030a06 0%, #030603 80%);
-      overflow: hidden;
-      opacity: 0.6;
-    
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at center, #030a06 0%, #030603 80%);
+    overflow: hidden;
+    opacity: 0.6;
+
 
     .bg-lines {
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        to right,
-        rgba(0, 255, 220, 0.03) 0 0.1vh,
-        transparent 0.1vh 4vh
-      ),
-      repeating-linear-gradient(
-        to bottom,
-        rgba(0, 255, 220, 0.03) 0 0.1vh,
-        transparent 0.1vh 4vh
-      );
-      animation: scrollGrid 20s linear infinite;
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(to right,
+                rgba(0, 255, 220, 0.03) 0 0.1vh,
+                transparent 0.1vh 4vh),
+            repeating-linear-gradient(to bottom,
+                rgba(0, 255, 220, 0.03) 0 0.1vh,
+                transparent 0.1vh 4vh);
+        animation: scrollGrid 20s linear infinite;
     }
 }
 
@@ -32,8 +28,9 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    
-    .left-col, .right-col {
+
+    .left-col,
+    .right-col {
         flex: 1 1 auto;
         width: 100%;
         height: 100%;
@@ -42,62 +39,65 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .left-col {
         padding-left: 50px;
+
         .text-container {
             display: flex;
             flex-direction: column;
             font-family: 'Roboto Mono', monospace;
-            
-            .name{
+
+            .name {
                 font-size: 6vmin;
                 font-weight: bold;
             }
-            
+
             .title {
                 font-size: 2vmin;
                 font-weight: bold;
             }
-            
+
             .slogen {
                 font-size: 2vmin;
                 font-weight: normal;
                 margin-top: 10%;
-                
-                &:after{
+
+                &:after {
                     content: "█";
                     animation: blink 1s step-start 0s infinite;
                 }
             }
-            
+
             .learn-more-button {
-                margin-top:10%;
+                margin-top: 10%;
                 width: 50%;
             }
         }
     }
-    
+
     .right-col {
         padding-right: 50px;
+
         .profile-picture {
             width: 60%;
             border-radius: 5%;
-            --s: 5vw; /* the size on the corner */
-            border: 0.4vw solid #BBDEFB; /* the thickness and color */
+            --s: 5vw;
+            /* the size on the corner */
+            border: 0.4vw solid #BBDEFB;
+            /* the thickness and color */
             -webkit-mask:
-                conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
-                0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+                conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)),
                 linear-gradient(#000 0 0) content-box;
         }
     }
-    
+
     .scroll-icon-container {
         display: flex;
         flex-direction: column;
         position: absolute;
-        bottom:50px;
-        left:50%;
+        bottom: 50px;
+        left: 50%;
         transform: translateX(-50%);
         align-items: center;
         gap: 10px;
@@ -121,6 +121,10 @@
         }
 
         .right-col {
+
+            align-items: end;
+            justify-content: end;
+
             .profile-picture {
                 width: 45%;
             }
@@ -147,7 +151,7 @@
             }
         }
 
-        .right-col{
+        .right-col {
             padding-right: 0px;
 
             .profile-picture {
@@ -160,11 +164,24 @@
 }
 
 @keyframes scrollGrid {
-    from { background-position: 0 0; }
-    to { background-position: 200px 200px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 200px 200px;
+    }
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
