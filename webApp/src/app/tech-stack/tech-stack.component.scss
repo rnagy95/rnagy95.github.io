@@ -1,146 +1,267 @@
-.tech-stack-parallax-container {
-  background-image: url('../../assets/workspace.jpg');
+.tech-stack-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  page-break-inside: avoid;
+  padding: 24px 0px;
 
   @media print {
-    background: none;
+    min-height: 0;
   }
 
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .section-title {
-    @media screen {
-      display: none;
-    }
-
-    padding-left: 20px;
-    padding-top: 25px;
+  .card-container {
+    width: 80%;
     display: flex;
-    align-items: center;
-    page-break-after: avoid;
+    flex-direction: column;
 
-    .icon {
-      font-size: 36px;
-      width: 36px;
-      height: 36px;
+    .title-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4vmin;
 
-      @media print {
-        font-size: 22px;
-        width: 22px;
-        height: 22px;
-      }
-    }
-
-    span {
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 5px;
-
-      @media print {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 48px;
-    row-gap: 48px;
-    justify-content: center;
-    padding: 48px;
-
-    @media print {
-      column-gap: 12px;
-      row-gap: 12px;
-      padding: 12px;
-    }
-
-    .card {
-      max-width: 350px;
-      min-width: 350px;
-      flex: 1;
-      opacity: 0;
-
-      @media print {
-        opacity: 1;
-      }
-
-      page-break-inside: avoid;
-
-      @media print {
-        max-width: 140px;
-        min-width: 140px;
-      }
-
-      &.show {
-        @media screen {
-          @for $i from 1 through 4 {
-            &:nth-child(#{$i}) {
-              animation: float-in #{($i * 0.2) + 0.3}s linear 0.15s forwards;
-            }
-          }
-        }
-      }
-
-      .card-title {
-        font-size: 24px;
+      .title {
+        display: flex;
+        align-items: baseline;
+        font-size: 3vmin;
         font-weight: bold;
-        margin-bottom: 48px;
+        page-break-after: avoid;
 
-        @media print {
-          font-size: 14px;
-          margin-bottom: 7px;
+        .icon {
+          font-size: 4vmin;
+          width: 4vmin;
+          height: 4vmin;
+
+          margin-right: 1vmin;
+
+          @media print {
+            font-size: 22px;
+            width: 22px;
+            height: 22px;
+          }
         }
       }
 
-      .stack-item {
-        padding-left: 48px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+      .search{
+        display: flex;
+        gap: 2vmin;
+        align-items: baseline;
+        flex-wrap: nowrap;
 
-        @media print {
-          padding-left: 10px;
-          margin-top: 3px;
-          margin-bottom: 3px;
+        .group-checkbox{
+          flex: 0 0 auto;
         }
 
-        .stack-item-logo {
-          display: inline-block;
-          vertical-align: middle;
-          width: 25%;
-          min-height: 48px;
-
-          @media print {
-            min-height: 20px;
-          }
-
-          img {
-            width: 48px;
-
-            @media print {
-              width: 20px;
-            }
-
-            pointer-events: none;
-          }
-        }
-
-        .stack-item-title {
-          display: inline-block;
-          vertical-align: middle;
-          width: 75%;
-          font-size: 18px;
-
-          @media print {
-            font-size: 12px;
-            line-height: 1.1;
-          }
+        .searchbar{
+          flex: 0 0 auto;
+          width: 36vmin;
         }
       }
     }
+
+    .group-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: hidden;
+      flex-wrap: wrap;
+
+      .group {
+        flex: 1 1 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2vmin;
+        margin: 2vmin 0;
+
+        .group-title {
+          flex: 0 0 100%;
+          font-size: 3vmin;
+          font-weight: bold;
+        }
+
+        .card {
+          flex: 0 0 18%;
+          min-width: 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: stretch;
+          gap: 1vmin;
+          border-radius: 10px;
+          border: solid 1px #A3A3A3;
+
+          .card-title {
+            flex: 0 0 30%;
+            font-size: 1.8vmin;
+          }
+
+          .card-logo {
+            flex: 0 0 70%;
+
+            img {
+              width: 8vmin;
+              aspect-ratio: 1 / 1;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+
+    }
+
   }
 }
+
+// .tech-stack-parallax-container {
+//   background-image: url('../../assets/workspace.jpg');
+
+//   @media print {
+//     background: none;
+//   }
+
+//   height: 100%;
+//   background-attachment: fixed;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+
+//   .section-title {
+//     @media screen {
+//       display: none;
+//     }
+
+//     padding-left: 20px;
+//     padding-top: 25px;
+//     display: flex;
+//     align-items: center;
+//     page-break-after: avoid;
+
+//     .icon {
+//       font-size: 36px;
+//       width: 36px;
+//       height: 36px;
+
+//       @media print {
+//         font-size: 22px;
+//         width: 22px;
+//         height: 22px;
+//       }
+//     }
+
+//     span {
+//       font-size: 24px;
+//       font-weight: bold;
+//       margin-left: 5px;
+
+//       @media print {
+//         font-size: 16px;
+//       }
+//     }
+//   }
+
+//   .flex-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     column-gap: 48px;
+//     row-gap: 48px;
+//     justify-content: center;
+//     padding: 48px;
+
+//     @media print {
+//       column-gap: 12px;
+//       row-gap: 12px;
+//       padding: 12px;
+//     }
+
+//     .card {
+//       max-width: 350px;
+//       min-width: 350px;
+//       flex: 1;
+//       opacity: 0;
+
+//       @media print {
+//         opacity: 1;
+//       }
+
+//       page-break-inside: avoid;
+
+//       @media print {
+//         max-width: 140px;
+//         min-width: 140px;
+//       }
+
+//       &.show {
+//         @media screen {
+//           @for $i from 1 through 4 {
+//             &:nth-child(#{$i}) {
+//               animation: float-in #{($i * 0.2) + 0.3}s linear 0.15s forwards;
+//             }
+//           }
+//         }
+//       }
+
+//       .card-title {
+//         font-size: 24px;
+//         font-weight: bold;
+//         margin-bottom: 48px;
+
+//         @media print {
+//           font-size: 14px;
+//           margin-bottom: 7px;
+//         }
+//       }
+
+//       .stack-item {
+//         padding-left: 48px;
+//         margin-top: 10px;
+//         margin-bottom: 10px;
+
+//         @media print {
+//           padding-left: 10px;
+//           margin-top: 3px;
+//           margin-bottom: 3px;
+//         }
+
+//         .stack-item-logo {
+//           display: inline-block;
+//           vertical-align: middle;
+//           width: 25%;
+//           min-height: 48px;
+
+//           @media print {
+//             min-height: 20px;
+//           }
+
+//           img {
+//             width: 48px;
+
+//             @media print {
+//               width: 20px;
+//             }
+
+//             pointer-events: none;
+//           }
+//         }
+
+//         .stack-item-title {
+//           display: inline-block;
+//           vertical-align: middle;
+//           width: 75%;
+//           font-size: 18px;
+
+//           @media print {
+//             font-size: 12px;
+//             line-height: 1.1;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
