@@ -11,6 +11,8 @@ export class PageNotFoundComponent implements OnInit {
 
   constructor(public localizationService:LocalizationService) { }
 
+  command: string = window.location.pathname.substring(1);
+
   ngOnInit(): void {
 
   }

@@ -1,27 +1,162 @@
 .page-not-found-container {
     height: 100vh;
     width: 100vw;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 
-    &::before{
-        content: '404';
-        font-size: 50vmin;
-        opacity: .1;
-        font-style: italic;
-        font-weight: bold;
-    }
-
-    .text {
-        font-weight: bold;
-    }
-
-    .customization-section{
-        position: absolute;
+    .customization-section {
+        position: sticky;
         top: 0px;
-        right: 20px;
+        left: 20px;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .notification {
+        flex: 1 1 auto;
+        margin: 20px;
+
+        .error-badge {
+            background-color: #aa3333;
+            width: fit-content;
+            padding: 15px;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .title {
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .body{
+            p{
+                margin-top:3px;
+                margin-bottom: 3px;
+            }
+            margin-bottom: 30px;
+        }
+    }
+
+    .terminal {
+        flex: 1 1 auto;
+        margin: 20px;
+        min-width: 35vw;
+        min-height: 25vh;
+        background: linear-gradient(180deg, rgba(17, 24, 33, 0.95), rgba(12, 17, 23, 0.98));
+        border-radius: 10px;
+        border: 1px solid #1e2a36;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55),
+            inset 0 0 0 1px rgba(200, 255, 220, 0.05);
+        overflow: hidden;
+
+        @media print {
+            border: none;
+            box-shadow: none;
+            background: none;
+            min-height: 0px;
+            width: 100%;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 1vimn;
+            padding: 10px 14px;
+            background: linear-gradient(180deg, rgba(24, 32, 43, 0.9), rgba(18, 26, 36, 0.9));
+            border-bottom: 1px solid #1a2633;
+            color: var(--muted);
+            font-size: 2vmin;
+
+            @media print {
+                display: none;
+            }
+
+            .traffic {
+                flex: 1 1 auto;
+                display: flex;
+                gap: 8px;
+
+                .dot {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+                    &.red {
+                        background: #ff5f56;
+                    }
+
+                    &.yellow {
+                        background: #ffbd2e;
+                    }
+
+                    &.green {
+                        background: #27c93f;
+                    }
+                }
+
+
+            }
+
+            .title {
+                flex: 1 1 auto;
+            }
+        }
+
+        .terminal-body {
+            padding: 10px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 2vmin;
+            display: flex;
+            flex-direction: column;
+            height: 90%;
+
+            .command-line {
+                margin-top: 15px;
+                pointer-events: none;
+
+                .prompt-end {
+                    color: #00ffa3;
+                    margin-left: 5px;
+                }
+
+                &:last-child::after {
+                    content: "█";
+                    margin-left: 10px;
+                    animation: blink 1s step-start 0s infinite;
+                }
+
+                @media print {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
     }
 }
