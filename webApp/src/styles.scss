@@ -10,17 +10,13 @@
 @include mat.elevation-classes();
 @include mat.app-background();
 
-$dark-ide-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 900);
-$dark-ide-accent: mat.m2-define-palette(mat.$m2-purple-palette);
-$dark-ide-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$dark-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 900);
+$dark-accent: mat.m2-define-palette(mat.$m2-purple-palette);
+$dark-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$light-ide-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
-$light-ide-accent: mat.m2-define-palette(mat.$m2-pink-palette, 600, 400, 800);
-$light-ide-warn: mat.m2-define-palette(mat.$m2-red-palette);
-
-$terminal-primary: mat.m2-define-palette(mat.$m2-green-palette, 800, 600, 900);
-$terminal-accent: mat.m2-define-palette(mat.$m2-teal-palette, 'A400', 'A200', 'A700');
-$terminal-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$light-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
+$light-accent: mat.m2-define-palette(mat.$m2-pink-palette, 600, 400, 800);
+$light-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 $print-primary: mat.m2-define-palette(mat.$m2-blue-palette, 600, 400, 800);
 $print-accent: mat.m2-define-palette(mat.$m2-light-blue-palette, 'A400', 100, 'A700');
@@ -30,19 +26,14 @@ $typography: mat.m2-define-typography-config(
     $font-family: 'Inter, sans-serif',
   );
 
-$dark-ide-theme: mat.m2-define-dark-theme((color: (primary: $dark-ide-primary,
-        accent: $dark-ide-accent,
-        warn: $dark-ide-warn),
+$dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+        warn: $dark-warn),
       typography: $typography));
 
-$light-ide-theme: mat.m2-define-light-theme((color: (primary: $light-ide-primary,
-        accent: $light-ide-accent,
-        warn: $light-ide-warn),
-      typography: $typography));
-
-$terminal-theme: mat.m2-define-dark-theme((color: (primary: $terminal-primary,
-        accent: $terminal-accent,
-        warn: $terminal-warn),
+$light-theme: mat.m2-define-light-theme((color: (primary: $light-primary,
+        accent: $light-accent,
+        warn: $light-warn),
       typography: $typography));
 
 $print-theme: mat.m2-define-light-theme((color: (primary: $print-primary,
@@ -50,37 +41,26 @@ $print-theme: mat.m2-define-light-theme((color: (primary: $print-primary,
         warn: $print-warn),
       typography: $typography));
 
-.dark-ide-theme {
-  @include mat.all-component-themes($dark-ide-theme);
-  @include navbar.theme($dark-ide-theme);
-  @include footer.theme($dark-ide-theme);
-  @include about.theme($dark-ide-theme);
-  @include print-contacts.theme($dark-ide-theme);
-  @include tech-stack.theme($dark-ide-theme);
-  @include experience.theme($dark-ide-theme, $isDarkTheme: true);
-  @include banner.theme($dark-ide-theme, $isDarkTheme: true);
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  @include navbar.theme($dark-theme);
+  @include footer.theme($dark-theme);
+  @include about.theme($dark-theme);
+  @include print-contacts.theme($dark-theme);
+  @include tech-stack.theme($dark-theme);
+  @include experience.theme($dark-theme, $isDarkTheme: true);
+  @include banner.theme($dark-theme, $isDarkTheme: true);
 }
 
-.light-ide-theme {
-  @include mat.all-component-themes($light-ide-theme);
-  @include navbar.theme($light-ide-theme);
-  @include footer.theme($light-ide-theme);
-  @include about.theme($light-ide-theme);
-  @include print-contacts.theme($light-ide-theme);
-  @include tech-stack.theme($light-ide-theme);
-  @include experience.theme($light-ide-theme, $isDarkTheme: false);
-  @include banner.theme($light-ide-theme, $isDarkTheme: false);
-}
-
-.terminal-theme {
-  @include mat.all-component-themes($terminal-theme);
-  @include navbar.theme($terminal-theme);
-  @include footer.theme($terminal-theme);
-  @include about.theme($terminal-theme);
-  @include print-contacts.theme($terminal-theme);
-  @include tech-stack.theme($terminal-theme);
-  @include experience.theme($terminal-theme, $isDarkTheme: true);
-  @include banner.theme($terminal-theme, $isDarkTheme: true);
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+  @include navbar.theme($light-theme);
+  @include footer.theme($light-theme);
+  @include about.theme($light-theme);
+  @include print-contacts.theme($light-theme);
+  @include tech-stack.theme($light-theme);
+  @include experience.theme($light-theme, $isDarkTheme: false);
+  @include banner.theme($light-theme, $isDarkTheme: false);
 }
 
 .print-theme {
@@ -110,27 +90,4 @@ body {
 @page {
   size: A4;
   margin: .5cm;
-}
-
-@keyframes float-in {
-  from {
-    transform: translate(0, 25vh);
-    opacity: 0%;
-  }
-
-  to {
-    transform: translate(0, 0);
-    opacity: 100%;
-  }
-
-}
-
-@keyframes fade-in-background {
-  from {
-  }
-
-  to {
-    background: inherit;
-  }
-
 }

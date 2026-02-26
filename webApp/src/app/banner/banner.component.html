@@ -12,10 +12,10 @@
                 {{localizationService.localize('profession')}}
             </div>
             <div class="slogen">
-                Some fancy slogen goes here...
+                {{localizationService.localize('slogen')}}
             </div>
             <button matButton="filled" class="learn-more-button" (click)="scrollDown()">
-                Learn More
+                {{localizationService.localize('learnMore')}}
             </button>
         </div>
     </section>
@@ -24,7 +24,7 @@
     </section>
     <div class="scroll-icon-container" (click)="scrollDown()">
         <div class="scroll-text">
-            Scroll down
+            {{localizationService.localize('scrollDown')}}
         </div>
         <div class="scroll-icon">
             <mat-icon>keyboard_arrow_down</mat-icon>

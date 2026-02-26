@@ -1,17 +1,17 @@
 .about-container {
     display: grid;
     place-items: center;
-    min-height: 100vh;
-    padding: 24px 0;
+    min-height: 75vh;
+    padding: 1.5em 0;
     page-break-inside: avoid;
-    @media print{
+
+    @media print {
         padding: 0px;
         min-height: 0px;
     }
 
     .terminal {
         width: 80vw;
-        min-height: 75vh;
         background: linear-gradient(180deg, rgba(17, 24, 33, 0.95), rgba(12, 17, 23, 0.98));
         border-radius: 10px;
         border: 1px solid #1e2a36;
@@ -31,9 +31,9 @@
             display: flex;
             align-items: center;
             gap: 1vimn;
-            padding: 10px 14px;
+            padding: .6em .8em;
             background: linear-gradient(180deg, rgba(24, 32, 43, 0.9), rgba(18, 26, 36, 0.9));
-            border-bottom: 1px solid #1a2633;
+            border-bottom: .06em solid #1a2633;
             color: var(--muted);
             font-size: 2vmin;
 
@@ -44,13 +44,13 @@
             .traffic {
                 flex: 1 1 auto;
                 display: flex;
-                gap: 8px;
+                gap: .5em;
 
                 .dot {
-                    width: 12px;
-                    height: 12px;
+                    width: .75em;
+                    height: .75em;
                     border-radius: 50%;
-                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+                    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.25);
 
                     &.red {
                         background: #ff5f56;
@@ -74,8 +74,12 @@
         }
 
         .terminal-body {
-            padding: 10px;
-            font-family: 'Roboto Mono', monospace;
+            padding: .6em;
+
+            @media only screen {
+                font-family: 'Roboto Mono', monospace;
+            }
+
             font-size: 2vmin;
             display: flex;
             flex-direction: column;
@@ -90,13 +94,15 @@
 
                 .panel {
                     margin: 0.5vmin;
-                    border: 1px solid #C3C3C3;
-                    border-radius: 5px;
-                    padding: 10px;
+                    border: 0.06em solid #C3C3C3;
+                    border-radius: .4em;
+                    padding: .8em;
                     display: flex;
                     flex-direction: column;
 
                     @media print {
+                        margin: .5em;
+                        padding:.5em;
                         border: none;
                     }
 
@@ -104,43 +110,43 @@
                         flex: 1 1 30%;
 
                         .bullet-point {
-                            margin-top: 15px;
-                            margin-left: 15px;
+                            margin-top: .95em;
+                            margin-left: .95em;
                             display: flex;
                             align-items: center;
                             font-family: monospace;
 
                             &:last-child {
-                                margin-bottom: 15px;
+                                margin-bottom: .95em;
                             }
 
                             @media print {
-                                margin-top: 10px;
+                                margin-top: .6em;
 
                                 &:last-child {
-                                    margin-bottom: 10px;
+                                    margin-bottom: .6em;
                                 }
                             }
 
                             .bullet-point-icon {
-                                font-size: 4vmin;
-                                width: 4vmin;
-                                height: 4vmin;
+                                font-size: 3vmin;
+                                width: 3vmin;
+                                height: 3vmin;
 
                                 @media print {
-                                    font-size: 22px;
-                                    width: 22px;
-                                    height: 22px;
+                                    font-size: 20px;
+                                    width: 20px;
+                                    height: 20px;
                                 }
                             }
 
                             .bullet-point-text {
-                                font-size: 3vmin;
+                                font-size: 2.5vmin;
                                 font-weight: bold;
-                                margin-left: 3vmin;
+                                margin-left: 2.5vmin;
 
                                 @media print {
-                                    font-size: 16px;
+                                    font-size: 14px;
                                     line-height: 1.2;
                                 }
                             }
@@ -152,7 +158,7 @@
 
                         .name {
                             font-weight: bold;
-                            font-size: 4vmin;
+                            font-size: 6vmin;
                             line-height: 1.5;
 
                             @media print {
@@ -166,24 +172,23 @@
                             line-height: 1.2;
 
                             @media print {
-                                font-size: 14px;
-                                line-height: 1.2;
+                                display: none;
                             }
                         }
 
                         .quote-block {
-                            margin-top: 25px;
-                            margin-bottom: 25px;
-                            padding: 5px;
+                            margin-top: 1.5em;
+                            margin-bottom: 1.5em;
+                            padding: .4em;
                             width: fit-content;
-                            border-top: solid 1px #959595;
-                            border-bottom: solid 1px #959595;
+                            border-top: solid .06em #959595;
+                            border-bottom: solid .06em #959595;
                             position: relative;
-                            font-size: 1.7vmin;
+                            font-size: 2vmin;
 
                             @media print {
-                                margin-top: 10px;
-                                margin-bottom: 10px;
+                                margin-top: .6em;
+                                margin-bottom: .6em;
                             }
 
                             .quote {
@@ -222,10 +227,18 @@
 
                         .introduction {
                             .paragraph {
-                                margin-top: 1.5vmin;
-                                margin-bottom: 1.5vmin;
+                                margin-top: 1em;
+                                margin-bottom: 1em;
                                 text-align: justify;
                                 text-justify: inter-word;
+
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
 
                                 @media print {
                                     font-size: 12px;
@@ -243,12 +256,12 @@
 
                 .prompt-end {
                     color: #00ffa3;
-                    margin-left: 5px;
+                    margin-left: .4em;
                 }
 
                 &:after {
                     content: "█";
-                    margin-left: 10px;
+                    margin-left: .6em;
                     animation: blink 1s step-start 0s infinite;
                 }
 

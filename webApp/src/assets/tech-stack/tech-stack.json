@@ -1,32 +1,25 @@
 {
     "categories": {
         "backend": {
-            "name": "Backend",
-            "icon": "terminal"
+            "name": "backend"
         },
         "frontend": {
-            "name": "Frontend",
-            "icon": "dashboard"
+            "name": "frontend"
         },
         "database": {
-            "name": "Database",
-            "icon": "database"
+            "name": "database"
         },
         "source_control": {
-            "name": "Source Control",
-            "icon": "graph_8"
+            "name": "sourceControl"
         },
         "automation": {
-            "name": "Automation",
-            "icon": "automation"
+            "name": "automation"
         },
         "ai": {
-            "name": "AI Tools",
-            "icon": "robot_2"
+            "name": "aiTools"
         },
         "other": {
-            "name": "Other Tools",
-            "icon": "apps"
+            "name": "otherTools"
         }
     },
     "tools": [

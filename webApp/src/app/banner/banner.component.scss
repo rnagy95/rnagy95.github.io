@@ -41,7 +41,7 @@
     }
 
     .left-col {
-        padding-left: 50px;
+        padding-left: 3em;
 
         .text-container {
             display: flex;
@@ -54,7 +54,7 @@
             }
 
             .title {
-                font-size: 2vmin;
+                font-size: 2.5vmin;
                 font-weight: bold;
             }
 
@@ -77,7 +77,7 @@
     }
 
     .right-col {
-        padding-right: 50px;
+        padding-right: 3em;
 
         .profile-picture {
             width: 60%;
@@ -106,12 +106,24 @@
     }
 
     @media print {
-        height: 20vh;
+        height: 15vh;
 
         .left-col {
             .text-container {
-                .slogen::after {
-                    display: none;
+                .name {
+                    font-size: 24px;
+                }
+
+                .title {
+                    font-size: 18px;
+                }
+
+                .slogen {
+                    font-size: 14px;
+
+                    &:after {
+                        display: none;
+                    }
                 }
 
                 .learn-more-button {
@@ -126,7 +138,8 @@
             justify-content: end;
 
             .profile-picture {
-                width: 45%;
+                height: 95%;
+                width: auto;
             }
         }
 
@@ -139,11 +152,23 @@
         flex-direction: column;
 
         .left-col {
-            padding-left: 0px;
+            padding-left: 0;
 
             .text-container {
                 align-items: center;
                 text-align: center;
+
+                .name {
+                    font-size: 4vmax;
+                }
+
+                .title {
+                    font-size: 1.5vmax;
+                }
+
+                .slogen {
+                    font-size: 1.2vmax;
+                }
 
                 .learn-more-button {
                     width: 100%;
@@ -152,7 +177,7 @@
         }
 
         .right-col {
-            padding-right: 0px;
+            padding-right: 0;
 
             .profile-picture {
                 width: 50%;
