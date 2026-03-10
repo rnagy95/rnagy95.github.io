@@ -1,8 +1,15 @@
-<app-navbar [links]="links"></app-navbar>
-<app-banner id="home"></app-banner>
-<app-print-contacts [contacts]="printContacts"></app-print-contacts>
-<app-about id="about"></app-about>
-<app-tech-stack id="technologies"></app-tech-stack>
-<app-experience id="experience"></app-experience>
-<app-footer [contacts]="contacts"></app-footer>
+<mat-sidenav-container class="main-conetnt-container">
+    <mat-sidenav-content>
+        <app-navbar [links]="links" [sidenav]="false"></app-navbar>
+        <app-banner id="home"></app-banner>
+        <app-print-contacts [contacts]="printContacts"></app-print-contacts>
+        <app-about id="about"></app-about>
+        <app-tech-stack id="technologies"></app-tech-stack>
+        <app-experience id="experience"></app-experience>
+        <app-footer [contacts]="contacts"></app-footer>
+    </mat-sidenav-content>
+    <mat-sidenav class="sidenav" mode="push" position="end" [(opened)]="navmenuService.isOpen">
+      <app-navbar [links]="links" [sidenav]="true"></app-navbar>
+    </mat-sidenav>
+</mat-sidenav-container>
 

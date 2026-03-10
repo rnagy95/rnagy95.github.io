@@ -6,24 +6,25 @@
 
     $primary-palette: map.get($color-config, 'primary');
     $accent-palette: map.get($color-config, 'accent');
-    $dark-background: #333333;
-    $dark-nested-background: #494949;
-    $light-background: #ffffff;
-    $light-nested-background: #e8e8e8;
+
+    $job-card-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 17%);
+    $job-card-border-color: mat.m2-get-color-from-palette($primary-palette, 100);
+    $education-card-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
+    $education-card-border-color: mat.m2-get-color-from-palette($accent-palette, 400);
+    $job-text-color: color-utils.get-text-color-on-background($job-card-color);
+    $education-text-color: color-utils.get-text-color-on-background($education-card-color);
+
+    @if $isDarkTheme {
+        $job-card-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 26%);
+        $job-card-border-color: lighten(mat.m2-get-color-from-palette($primary-palette, 100), 5%);
+        $education-card-color: darken(mat.m2-get-color-from-palette($accent-palette, 800), 7%);
+        $education-card-border-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
+        $job-text-color: color-utils.get-text-color-on-background($job-card-color);
+        $education-text-color: color-utils.get-text-color-on-background($education-card-color);
+    }
+
 
     .experience-container {
-        @if $isDarkTheme {
-            $background-color: mat.m2-get-color-from-palette($primary-palette, 200);
-            background-color: $background-color;
-            color: $dark-background
-        }
-
-        @else {
-            $background-color: mat.m2-get-color-from-palette($primary-palette, 400);
-            background-color: $background-color;
-            color: $light-background;
-        }
-
         @media print {
             background-color: white;
             $color: mat.m2-get-color-from-palette($primary-palette, darker);
@@ -36,37 +37,61 @@
             }
         }
 
-        .job-history,
-        .education-history {
+        .job-history {
             .card {
-                @if $isDarkTheme {
-                    background-color: $dark-background;
-                    color: white;
-                }
-
-                @else {
-                    background-color: $light-background;
-                    color: black;
-                }
+                background: linear-gradient(180deg,
+                        rgba(red($job-card-color),
+                            green($job-card-color),
+                            blue($job-card-color),
+                            0.9),
+                        rgba(red($job-card-color),
+                            green($job-card-color),
+                            blue($job-card-color),
+                            0.85));
+                border: 1px solid $job-card-border-color;
+                color: $job-text-color;
 
                 .card-content {
                     .card-content-description {
                         .position-card {
                             &::before {
-                                @if($isDarkTheme){
-                                    background-color: #888;
-                                }
-                                @else{
-                                    background-color: #aaa;
-                                }
+                                background-color: $job-card-border-color;
                             }
+
                             &::after {
-                                @if($isDarkTheme){
-                                    background-color: #666;
-                                }
-                                @else{
-                                    background-color: #ccc;
-                                }
+                                background-color: $job-card-border-color;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .education-history {
+            .card {
+                background: linear-gradient(180deg,
+                        rgba(red($education-card-color),
+                            green($education-card-color),
+                            blue($education-card-color),
+                            0.85),
+                        rgba(red($education-card-color),
+                            green($education-card-color),
+                            blue($education-card-color),
+                            0.7));
+                border: 1px solid $education-card-border-color;
+                color: $education-text-color;
+
+                .card-content {
+                    .card-content-description {
+                        .position-card {
+                            &::before {
+                                background-color: $education-card-border-color;
+                            }
+
+                            &::after {
+                                background-color: $education-card-border-color;
+
                             }
                         }
                     }
