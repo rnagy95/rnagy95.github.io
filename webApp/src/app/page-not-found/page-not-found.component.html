@@ -1,3 +1,7 @@
+<div class="bg-not-found">
+  <div class="bg-lines-not-found"></div>
+</div>
+
 <section class="page-not-found-container">
     <section class="customization-section">
         <app-language-picker></app-language-picker>
@@ -7,17 +11,17 @@
 
         <div class="notification">
             <div class="error-badge">
-                <mat-icon>warning</mat-icon><span>ERROR: 404</span>
+                <mat-icon>warning</mat-icon><span>{{localizationService.localize('404_error')}}</span>
             </div>
             <div class="title">
-                <h1>This isn't the page you're looking for...</h1>
+                <h1>{{localizationService.localize('404_title')}}</h1>
             </div>
             <div class="body">
-                <p>The requested URL <strong>{{command}}</strong> was not found on this server.</p>
-                <p>Please check the URL for proper spelling and capitalization.</p>
-                <p>If you're having trouble locating a piece of content, try visiting the home page.</p>
+                <p>{{localizationService.localize('requestedUrl')}} <strong>{{command}}</strong> {{localizationService.localize('notFound')}}</p>
+                <p>{{localizationService.localize('checkURL')}}</p>
+                <p>{{localizationService.localize('visitHomePage')}}</p>
             </div>
-            <a mat-raised-button color="primary" routerLink="">{{localizationService.localize('backToHome')}}</a>
+            <a mat-raised-button class="home-button" routerLink="">{{localizationService.localize('backToHome')}}</a>
         </div>
         <div class="terminal">
             <div class="terminal-header">

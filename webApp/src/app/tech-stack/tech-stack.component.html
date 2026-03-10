@@ -5,10 +5,10 @@
         <span>{{localizationService.localize('technologies')}}</span>
       </div>
       <div class="search">
-        <mat-checkbox class="group-checkbox" [(ngModel)]="groupItems">Group Items</mat-checkbox>
+        <mat-checkbox class="group-checkbox" [(ngModel)]="groupItems">{{localizationService.localize('groupItems')}}</mat-checkbox>
         <mat-form-field class="searchbar" appearance="outline">
-          <mat-label>Search</mat-label>
-          <input matInput placeholder="Search for any keywords" [(ngModel)]="filterText"
+          <mat-label>{{localizationService.localize('search')}}</mat-label>
+          <input matInput placeholder="{{localizationService.localize('searchKeyword')}}" [(ngModel)]="filterText"
             (ngModelChange)="onFilterTextChange()" />
         </mat-form-field>
       </div>

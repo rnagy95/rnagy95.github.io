@@ -5,25 +5,25 @@
 @use './app/about/about.component.theme.scss' as about;
 @use './app/experience/experience.component.theme.scss' as experience;
 @use './app/tech-stack/tech-stack.component.theme.scss' as tech-stack;
+@use './app/page-not-found/page-not-found.component.theme.scss' as page-not-found;
 @use './app/print-contacts/print-contacts.component.theme.scss' as print-contacts;
 
 @include mat.elevation-classes();
 @include mat.app-background();
 
 $dark-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 900);
-$dark-accent: mat.m2-define-palette(mat.$m2-purple-palette);
+$dark-accent: mat.m2-define-palette(mat.$m2-green-palette);
 $dark-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$light-primary: mat.m2-define-palette(mat.$m2-indigo-palette, 700, 500, 900);
-$light-accent: mat.m2-define-palette(mat.$m2-pink-palette, 600, 400, 800);
+$light-primary: mat.m2-define-palette(mat.$m2-cyan-palette, 700, 500, 900);
+$light-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette, 600, 400, 800);
 $light-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 $print-primary: mat.m2-define-palette(mat.$m2-blue-palette, 600, 400, 800);
 $print-accent: mat.m2-define-palette(mat.$m2-light-blue-palette, 'A400', 100, 'A700');
 $print-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$typography: mat.m2-define-typography-config(
-    $font-family: 'Inter, sans-serif',
+$typography: mat.m2-define-typography-config($font-family: 'Inter, sans-serif',
   );
 
 $dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
@@ -43,35 +43,38 @@ $print-theme: mat.m2-define-light-theme((color: (primary: $print-primary,
 
 .dark-theme {
   @include mat.all-component-themes($dark-theme);
-  @include navbar.theme($dark-theme);
-  @include footer.theme($dark-theme);
-  @include about.theme($dark-theme);
+  @include navbar.theme($dark-theme, $isDarkTheme: true);
+  @include footer.theme($dark-theme, $isDarkTheme: true);
+  @include about.theme($dark-theme, $isDarkTheme: true);
   @include print-contacts.theme($dark-theme);
-  @include tech-stack.theme($dark-theme);
+  @include tech-stack.theme($dark-theme, $isDarkTheme: true);
   @include experience.theme($dark-theme, $isDarkTheme: true);
   @include banner.theme($dark-theme, $isDarkTheme: true);
+  @include page-not-found.theme($dark-theme, $isDarkTheme: true);
 }
 
 .light-theme {
   @include mat.all-component-themes($light-theme);
-  @include navbar.theme($light-theme);
-  @include footer.theme($light-theme);
-  @include about.theme($light-theme);
+  @include navbar.theme($light-theme, $isDarkTheme: false);
+  @include footer.theme($light-theme, $isDarkTheme: false);
+  @include about.theme($light-theme, $isDarkTheme: false);
   @include print-contacts.theme($light-theme);
-  @include tech-stack.theme($light-theme);
+  @include tech-stack.theme($light-theme, $isDarkTheme: false);
   @include experience.theme($light-theme, $isDarkTheme: false);
   @include banner.theme($light-theme, $isDarkTheme: false);
+  @include page-not-found.theme($light-theme, $isDarkTheme: false);
 }
 
 .print-theme {
   @include mat.all-component-themes($print-theme);
-  @include navbar.theme($print-theme);
-  @include footer.theme($print-theme);
-  @include about.theme($print-theme);
+  @include navbar.theme($print-theme,  $isDarkTheme: false);
+  @include footer.theme($print-theme, $isDarkTheme: false);
+  @include about.theme($print-theme, $isDarkTheme: false);
   @include print-contacts.theme($print-theme);
-  @include tech-stack.theme($print-theme);
+  @include tech-stack.theme($print-theme, $isDarkTheme: false);
   @include experience.theme($print-theme, $isDarkTheme: false);
   @include banner.theme($print-theme, $isDarkTheme: false);
+  @include page-not-found.theme($light-theme, $isDarkTheme: false);
 }
 
 html {

@@ -2,63 +2,106 @@
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
-@mixin color($color-config) {
+@mixin color($color-config, $isDarkTheme: false) {
   $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
 
-  $outer-background-color: mat.m2-get-color-from-palette($primary-palette, 900);
-  $inner-background-color: mat.m2-get-color-from-palette($primary-palette, 100);
-  $color: color-utils.get-text-color-on-background($inner-background-color);
+  $teminal-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 17%);
+  $terminal-header-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 7%);
+  $terminal-shadow-color: mat.m2-get-color-from-palette($primary-palette, 700);
+  $terminal-border-color: mat.m2-get-color-from-palette($primary-palette, 100);
+  $command-line-color: mat.m2-get-color-from-palette($accent-palette, 400);
+  $text-color: color-utils.get-text-color-on-background($teminal-color);
 
-  .about-outer-container {
-    //background-color: $outer-background-color;
+  @if $isDarkTheme {
+    $teminal-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 26%);
+    $terminal-header-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 20%);
+    $terminal-shadow-color: lighten(mat.m2-get-color-from-palette($accent-palette, 100), 15%);
+    $terminal-border-color: lighten(mat.m2-get-color-from-palette($primary-palette, 100), 30%);
+    $command-line-color: mat.m2-get-color-from-palette($accent-palette, 500);
+    $text-color: color-utils.get-text-color-on-background($teminal-color);
+  }
 
-    .about-inner-container {
-      background-color: $inner-background-color;
+  .about-container {
+    color: $text-color;
 
-      @media print {
-        background-color: #f0f0f0;
-      }
+    .terminal {
+      background: linear-gradient(180deg,
+          rgba(red($teminal-color),
+            green($teminal-color),
+            blue($teminal-color),
+            0.9),
+          rgba(red($teminal-color),
+            green($teminal-color),
+            blue($teminal-color),
+            0.85));
+      border: 1px solid $teminal-color;
+      box-shadow: 0 14px 40px rgba(red($teminal-color),
+          green($teminal-color),
+          blue($teminal-color),
+          0.55),
+        inset 0 0 0 1px rgba(red($terminal-shadow-color),
+          green($terminal-shadow-color),
+          blue($terminal-shadow-color),
+          0.05);
 
-      color: $color;
+      .terminal-header {
+        background: linear-gradient(180deg, rgba(red($terminal-header-color),
+              green($terminal-header-color),
+              blue($terminal-header-color),
+              0.85),
+            rgba(red($terminal-header-color),
+              green($terminal-header-color),
+              blue($terminal-header-color),
+              0.80));
+        border-bottom: .06em solid $teminal-color;
 
-      .left-panel {
-        @media screen and (max-width: 720px) {
-          border-bottom: 3px solid $outer-background-color;
-        }
+        .traffic {
+          .dot {
+            box-shadow: 0 0 .5em rgba(red($teminal-color),
+                green($teminal-color),
+                blue($teminal-color),
+                0.25);
 
-        @media print,
-        (min-width: 720px) {
-          border-right: 3px solid $outer-background-color;
+            &.red {
+              background: #ff5f56;
+            }
 
-          @media print {
-            $color: mat.m2-get-color-from-palette($primary-palette, darker);
-            border-right: 3px solid $color;
-          }
-        }
+            &.yellow {
+              background: #ffbd2e;
+            }
 
-        .bullet-point {
-
-          .bullet-point-icon,
-          .bullet-point-text {
-            color: $outer-background-color;
-
-            @media print {
-              color: mat.m2-get-color-from-palette($primary-palette, darker);
+            &.green {
+              background: #27c93f;
             }
           }
+
+
         }
       }
 
-      .right-panel {
-        .quote-block {
-          .quote {
-            &::before {
-              color: $outer-background-color;
+      .terminal-body {
+        @media only screen {
+          font-family: 'Roboto Mono', monospace;
+        }
 
-              @media print {
-                color: mat.m2-get-color-from-palette($primary-palette, darker);
+        .commander {
+          .panel {
+            border: 0.06em solid $terminal-border-color;
+
+            &.top-left {
+              .quote-block {
+                border-top: solid .06em $terminal-border-color;
+                border-bottom: solid .06em $terminal-border-color;
               }
             }
+          }
+        }
+
+        .command-line {
+          .prompt-end {
+            color: $command-line-color;
           }
         }
       }
@@ -72,11 +115,11 @@
   }
 }
 
-@mixin theme($theme) {
+@mixin theme($theme, $isDarkTheme: false) {
   $color-config: mat.m2-get-color-config($theme);
 
   @if $color-config !=null {
-    @include color($color-config);
+    @include color($color-config, $isDarkTheme);
   }
 
   $typography-config: mat.m2-get-typography-config($theme);

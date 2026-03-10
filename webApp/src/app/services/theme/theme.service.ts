@@ -9,9 +9,9 @@ import { TimeService } from '../time/time.service';
 export class ThemeService {
 
   private _themes: Theme[] = [
-    { id: 0, klass: 'dark-theme', name: 'Dark', type: ThemeType.dark },
+    { id: 0, klass: 'auto', name: 'Auto', type: ThemeType.auto },
     { id: 1, klass: 'light-theme', name: 'Light', type: ThemeType.light },
-    { id: 2, klass: 'placeholder', name: 'Auto', type: ThemeType.auto },
+    { id: 2, klass: 'dark-theme', name: 'Dark', type: ThemeType.dark },
     { id: 3, klass: 'print-theme', name: '.print', type: ThemeType.light }
   ]
 
