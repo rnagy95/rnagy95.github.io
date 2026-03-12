@@ -92,9 +92,11 @@
 
             &.top-right {
               .bullet-point{
-                border: solid 1px #999;
-                background-color: #ddd;
-                print-color-adjust: exact;
+                @media print {
+                  border: solid 1px #999;
+                  background-color: #ddd;
+                  print-color-adjust: exact;
+                }
               }
             }
 
