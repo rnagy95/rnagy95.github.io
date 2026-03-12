@@ -1,10 +1,11 @@
-export enum ThemeType{
+export enum ThemeType {
     light = 1,
     dark = 2,
-    auto = 3
+    auto = 3,
+    system = 4,
 }
 
-export interface Theme{
+export interface Theme {
     id: number,
     klass: string,
     name: string,

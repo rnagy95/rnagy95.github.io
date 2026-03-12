@@ -9,10 +9,11 @@ import { TimeService } from '../time/time.service';
 export class ThemeService {
 
   private _themes: Theme[] = [
-    { id: 0, klass: 'auto', name: 'Auto', type: ThemeType.auto },
-    { id: 1, klass: 'light-theme', name: 'Light', type: ThemeType.light },
-    { id: 2, klass: 'dark-theme', name: 'Dark', type: ThemeType.dark },
-    { id: 3, klass: 'print-theme', name: '.print', type: ThemeType.light }
+    { id: 0, klass: 'system', name: 'System', type: ThemeType.system },
+    { id: 1, klass: 'timeBases', name: 'TimeBased', type: ThemeType.auto },
+    { id: 2, klass: 'light-theme', name: 'Light', type: ThemeType.light },
+    { id: 3, klass: 'dark-theme', name: 'Dark', type: ThemeType.dark },
+    { id: 4, klass: 'print-theme', name: '.print', type: ThemeType.light }
   ]
 
   private timeService: TimeService = new TimeService();
@@ -36,16 +37,28 @@ export class ThemeService {
     this.cookieService.storeValue('preferences.theme', JSON.stringify(value))
 
     if (value.type === ThemeType.auto) {
-      value = this.updateAutoTheme(value);
+      value = this.updateTimeBasedTheme(value);
 
       this.startTimer(() => {
-        const updatedTheme = this.updateAutoTheme(this.selectedTheme);
+        const updatedTheme = this.updateTimeBasedTheme(this.selectedTheme);
         this._selectedTheme = updatedTheme;
         this.applyTheme(updatedTheme)
       }, 60000);
     }
     else {
       this.stopTimer()
+    }
+
+    if (value.type === ThemeType.system){
+      value = this.updateSystemTheme(value);
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('systemThemeChnage', e => {
+        const updatedTheme = this.updateTimeBasedTheme(this.selectedTheme);
+        this._selectedTheme = updatedTheme;
+        this.applyTheme(updatedTheme)
+      });
+    }
+    else{
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('systemThemeChnage', e=>{})
     }
 
     this._selectedTheme = value;
@@ -75,10 +88,20 @@ export class ThemeService {
     }
   }
 
-  private updateAutoTheme(theme: Theme): Theme {
+  private updateTimeBasedTheme(theme: Theme): Theme {
     if (theme.type === ThemeType.auto) {
       const isDay = this.timeService.isDay(new Date());
-      const klass = (this.themes.find(x => x.name === (isDay ? "Light" : "Dark")) || this.themes[0]).klass;
+      const klass = (this.themes.find(x => x.type === (isDay ? ThemeType.light : ThemeType.dark)) || this.themes[0]).klass;
+      theme.klass = klass;
+    }
+    return theme;
+  }
+
+  private updateSystemTheme(theme: Theme): Theme {
+    if (theme.type === ThemeType.system) {
+      const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+      const isDarkTheme = darkModeMql && darkModeMql.matches;
+      const klass = (this.themes.find(x => x.type === (isDarkTheme ? ThemeType.dark : ThemeType.light)) || this.themes[0]).klass;
       theme.klass = klass;
     }
     return theme;
