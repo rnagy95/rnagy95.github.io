@@ -63,14 +63,20 @@
                 -webkit-mask:
                     conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0/calc(100% - var(--s)) calc(100% - var(--s)),
                     linear-gradient(#000 0 0) content-box;
+                print-color-adjust: exact;
             }
         }
     }
 
 
     @media print {
-        .text-container {
-            color: mat.m2-get-color-from-palette($primary-palette, darker);
+        .banner-container {
+            .left-col {
+                .text-container {
+                    color: black;
+                    font-family: 'Roboto Mono', monospace;
+                }
+            }
         }
     }
 }

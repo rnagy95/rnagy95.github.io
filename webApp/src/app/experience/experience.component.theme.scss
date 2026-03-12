@@ -26,15 +26,7 @@
 
     .experience-container {
         @media print {
-            background-color: white;
-            $color: mat.m2-get-color-from-palette($primary-palette, darker);
-            color: $color;
-
-            .section-title {
-                span {
-                    border-bottom: solid 2px $color;
-                }
-            }
+            color: black;
         }
 
         .job-history {
@@ -50,6 +42,11 @@
                             0.85));
                 border: 1px solid $job-card-border-color;
                 color: $job-text-color;
+
+                @media print {
+                    color: black;
+                    border: none;
+                }
 
                 .card-content {
                     .card-content-description {
@@ -81,6 +78,11 @@
                             0.7));
                 border: 1px solid $education-card-border-color;
                 color: $education-text-color;
+
+                @media print {
+                    color: black;
+                    border: none;
+                }
 
                 .card-content {
                     .card-content-description {

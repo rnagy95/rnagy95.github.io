@@ -90,6 +90,14 @@
           .panel {
             border: 0.06em solid $terminal-border-color;
 
+            &.top-right {
+              .bullet-point{
+                border: solid 1px #999;
+                background-color: #ddd;
+                print-color-adjust: exact;
+              }
+            }
+
             &.top-left {
               .quote-block {
                 border-top: solid .06em $terminal-border-color;
@@ -105,6 +113,12 @@
           }
         }
       }
+    }
+  }
+
+  @media print {
+    .about-container {
+      color: black;
     }
   }
 }

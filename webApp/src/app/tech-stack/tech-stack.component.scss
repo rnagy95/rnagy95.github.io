@@ -16,6 +16,10 @@
       display: flex;
       flex-direction: column;
 
+      @media print {
+        width: 95%;
+      }
+
       .title-bar {
         display: flex;
         flex-direction: row;
@@ -30,6 +34,11 @@
           font-size: 4vmin;
           font-weight: bold;
           page-break-after: avoid;
+
+          @media print {
+            font-size: 16px;
+            text-decoration: underline;
+          }
         }
 
         .search {
@@ -58,6 +67,10 @@
         flex-direction: row;
         width: 100%;
         flex-wrap: wrap;
+
+        @media print {
+          display: none;
+        }
 
         .group {
           flex: 1 1 100%;
@@ -115,6 +128,18 @@
                 }
               }
             }
+          }
+        }
+      }
+
+      .print-template {
+        @media screen {
+          display: none;
+        }
+        .print-chip-set {
+          margin-top:12px;
+          .print-chip {
+            font-size: 12px;
           }
         }
       }
