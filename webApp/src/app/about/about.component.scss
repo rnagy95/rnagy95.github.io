@@ -8,6 +8,9 @@
     @media print {
         padding: 0px;
         min-height: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
     }
 
     .terminal {
@@ -60,6 +63,11 @@
             flex-direction: column;
             height: 90%;
 
+            @media print {
+                padding: 0;
+                margin-top: 0px;
+            }
+
             .commander {
                 display: flex;
                 width: 100%;
@@ -75,13 +83,21 @@
                     flex-direction: column;
 
                     @media print {
-                        margin: .5em;
-                        padding:.5em;
+                        margin: 0;
+                        margin-bottom: 16px;
+                        padding: 0;
                         border: none;
                     }
 
                     &.top-right {
                         flex: 1 1 30%;
+
+                        @media print {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                        }
 
                         .bullet-point {
                             margin-top: .95em;
@@ -94,10 +110,16 @@
                             }
 
                             @media print {
-                                margin-top: .6em;
+                                margin-top: 0;
+                                margin-left: 14px;
+                                margin-right: 14px;
+                                justify-content: flex-start;
+                                border-radius: 12px;
+                                padding: 7px 14px;
+
 
                                 &:last-child {
-                                    margin-bottom: .6em;
+                                    margin-bottom: 0;
                                 }
                             }
 
@@ -160,6 +182,10 @@
                             @media print {
                                 margin-top: .6em;
                                 margin-bottom: .6em;
+
+                                @media print {
+                                    display: none;
+                                }
                             }
 
                             .quote {
@@ -212,8 +238,10 @@
                                 }
 
                                 @media print {
+                                    margin-top: 6px;
+                                    margin-bottom: 6px;
                                     font-size: 12px;
-                                    line-height: 1.2;
+                                    line-height: 1.1;
                                 }
                             }
                         }

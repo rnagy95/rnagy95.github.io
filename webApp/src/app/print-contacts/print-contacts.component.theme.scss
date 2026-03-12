@@ -5,10 +5,13 @@
 @mixin color($color-config) {
 
     $primary-palette: map.get($color-config, 'primary');
+    $primary-palette: map.get($color-config, 'accent');
 
     .print-contacts-container {
         @media print {
-            $color: mat.m2-get-color-from-palette($primary-palette, darker);
+            $color: darken(mat.m2-get-color-from-palette($primary-palette, darker), 15%);
+            $background-color: lighten(mat.m2-get-color-from-palette($primary-palette, lighter), 10%);
+            background-color: $background-color;
 
             .contact {
                 color: $color;
