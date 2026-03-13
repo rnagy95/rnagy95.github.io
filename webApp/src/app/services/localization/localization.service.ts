@@ -62,7 +62,8 @@ export class LocalizationService {
     const preferedLanguageString = cookieService.getValue('preferences.language');
     const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;
 
-    const browserLanguage = navigator.language === 'hu' ? 'hu' : 'en'; 
+    let browserLanguage = (navigator.language || navigator.languages[0] || "").split('-')[0]
+    browserLanguage = browserLanguage === "hu" ? "hu" : "en";
 
     this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages.find(x => x.code === browserLanguage) || this.languages[0];
     document.documentElement.setAttribute("lang", this._selectedLanguage.code);
