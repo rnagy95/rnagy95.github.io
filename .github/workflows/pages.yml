@@ -50,26 +50,31 @@ jobs:
       - name: Read bump type
         id: bump_type
         run: echo "type=$(cat .bump-type)" >> $GITHUB_OUTPUT
-        
+
       - name: Bump version
         id: bump
         run: |
           cd webApp
-          export NPM_CONFIG_JSON=false
           new_tag=$(npm version ${{ steps.bump_type.outputs.type }})
           echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
 
       - name: Push commit and tag
-        run: git push --follow-tags
+        run: git push && git push --tags
+        env:
+          GH_TOKEN: ${{ steps.auth.outputs.token }}
 
       - name: Create Pull Request to develop
         run: gh pr create -B master -H develop --title 'Merge master into develop' --body 'Created by Release & Deploy Action'
+        env:
+          GH_TOKEN: ${{ steps.auth.outputs.token }}
 
       - name: Create GitHub Release
         run: |
           gh release create "${{ steps.bump.outputs.new_tag }}" \
           --title "Release ${{ steps.bump.outputs.new_tag }}" \
           --notes "Created by Release & Deploy Action"
+        env:
+          GH_TOKEN: ${{ steps.auth.outputs.token }}
 
   build:
     runs-on: ubuntu-latest
