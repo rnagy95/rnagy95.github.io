@@ -59,7 +59,11 @@ jobs:
           echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
 
       - name: Push commit and tag
-        run: git push && git push --tags
+        run: |
+          git commit -m "Bump version to ${{ steps.bump.outputs.new_tag }}"
+          git tag -a "${{ steps.bump.outputs.new_tag }}" -m "Release ${{ steps.bump.outputs.new_tag }}"
+          git push
+          git push --tags
         env:
           GH_TOKEN: ${{ steps.auth.outputs.token }}
 
