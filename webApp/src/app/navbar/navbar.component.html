@@ -1,10 +1,31 @@
-<nav class="app-navbar">
-    <a mat-button class="home-link" href="#home">{{localizationService.localize('name')}}</a>
-    <a mat-button class="navbar-link hide-on-mobile" *ngFor="let link of links" [href]="link.href">{{localizationService.localize(link.text)}}</a>
+@if (!sidenav){
+  <nav class="app-navbar" #navbar [class.on-top]="onTop">
+    <a mat-button class="home-link show-on-mobile" href="#home">{{localizationService.localize('name')}}</a>
+    <app-language-picker class="hide-on-mobile"></app-language-picker>
+    <app-theme-picker class="hide-on-mobile"></app-theme-picker>
     <div class="flex-spacer"></div>
-    <app-language-picker></app-language-picker>
+    <a mat-button class="home-link hide-on-mobile" href="#home">{{localizationService.localize('name')}}</a>
+    @for (link of links; track link) {
+      <a mat-button class="navbar-link hide-on-mobile" [href]="link.href">{{localizationService.localize(link.text)}}</a>
+    }
+    <button matIconButton (click)="navmenuService.toggle()" class="show-on-mobile">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="end-spacer"></div>
+  </nav>
+}
+@if (sidenav){
+  <nav class="app-sidebar">
+    @for (link of links; track link) {
+      <a mat-button class="navbar-link" 
+        (click)="navmenuService.toggle()"
+        [href]="link.href">
+        {{localizationService.localize(link.text)}}
+      </a>
+    }
+    <div class="flex-spacer"></div>
     <app-theme-picker></app-theme-picker>
-</nav>
-<nav class="app-navbar show-on-mobile">
-    <a mat-button class="navbar-link" *ngFor="let link of links" [href]="link.href">{{localizationService.localize(link.text)}}</a>
-</nav>
+    <app-language-picker></app-language-picker>
+    <div class="bottom-spacer"></div>
+  </nav>
+}

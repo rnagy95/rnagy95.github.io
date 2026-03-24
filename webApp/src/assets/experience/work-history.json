@@ -4,9 +4,17 @@
         "companyLogo": "aegon.png",
         "positions": [
             {
+                "title": "actuarialModelDeveloper",
+                "employmentType": 1,
+                "startDateString":"2025-01-01",
+                "description": "aegon.modelDev.desc"
+            },
+            {
                 "title": "firstLineModelValidator",
                 "employmentType": 1,
-                "startDateString":"2024-08-21"
+                "startDateString":"2024-08-21",
+                "endDateString": "2024-12-31",
+                "description": "aegon.validator.desc"
             }
         ]
     },
@@ -18,14 +26,15 @@
                 "title": "quantitativeModelDeveloper",
                 "employmentType": 1,
                 "startDateString":"2022-06-07",
-                "endDateString": "2024-08-12"
+                "endDateString": "2024-08-12",
+                "description": "ms.quantDev2.desc"
             },
             {
                 "title": "quantitativeModelDeveloper",
                 "employmentType": 3,
                 "startDateString":"2020-06-15",
                 "endDateString": "2022-06-06",
-                "description": "ms.quantDev.desc"
+                "description": "ms.quantDev1.desc"
             }
         ]
     },

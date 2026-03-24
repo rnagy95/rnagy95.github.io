@@ -5,15 +5,19 @@ import { CookiePopupComponent } from '../cookie-popup/cookie-popup.component';
 import { ContactLink } from '../interfaces/ContactLink';
 import { PrintService } from '../services/print/print.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import version from '../../assets/version.json';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss'],
+    standalone: false
 })
 export class FooterComponent implements OnInit {
 
   @Input() contacts: ContactLink[] | undefined;
+
+  public version: string = version.APP_VERSION;
 
   constructor(public localizationService: LocalizationService, public printService: PrintService, private dialog: MatDialog, private domSanitizer: DomSanitizer) { }
 

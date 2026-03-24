@@ -1,29 +1,182 @@
 {
-    "backend":{
-        ".NET / C#": "csharp.svg",
-        "ASP.NET": "aspdotnet.png",
-        "ADO.NET & Entity Framework": "ef.png",
-        "Language-Integrated Query (LINQ)": "linq.png",
-        "Node.js": "nodejs.svg",
-        "Python": "python.svg"
+    "categories": {
+        "backend": {
+            "name": "backend"
+        },
+        "frontend": {
+            "name": "frontend"
+        },
+        "database": {
+            "name": "database"
+        },
+        "source_control": {
+            "name": "sourceControl"
+        },
+        "automation": {
+            "name": "automation"
+        },
+        "ai": {
+            "name": "aiTools"
+        },
+        "other": {
+            "name": "otherTools"
+        }
     },
-    "database":{
-        "Microsoft SQL Server & Transact‑SQL": "ms_sql_server.svg",
-        "MySQL": "mysql.svg",
-        "MongoDB": "mongodb.svg",
-        "q/KDB+": "kdb.svg"
-    },
-    "frontend":{
-        "Angular": "angular.svg",
-        "JavaScript / TypeScript": "javascript.svg",
-        "CSS / Sass": "sass.svg",
-        "HTML": "html.svg"
-    },
-    "misc":{
-        "Microsoft Office": "office.svg",
-        "Microsoft Sharepoint": "sharepoint.svg",
-        "Microsoft Azure DevOps": "azure_devops.svg",
-        "Atlassian Jira": "jira.svg",
-        "Git": "git.svg"
-    }
+    "tools": [
+        {
+            "name": ".NET / C#",
+            "category": "backend",
+            "logo": "csharp.svg"
+        },
+        {
+            "name": "ASP.NET",
+            "category": "backend",
+            "logo": "aspdotnet.png"
+        },
+        {
+            "name": "ADO.NET & Entity Framework",
+            "category": "backend",
+            "logo": "ef.png"
+        },
+        {
+            "name": "Language-Integrated Query (LINQ)",
+            "category": "backend",
+            "logo": "linq.png"
+        },
+        {
+            "name": "Node.js",
+            "category": "backend",
+            "logo": "nodejs.svg"
+        },
+        {
+            "name": "Python",
+            "category": "backend",
+            "logo": "python.svg"
+        },
+        {
+            "name": "Microsoft SQL Server & Transact‑SQL",
+            "category": "database",
+            "logo": "ms_sql_server.svg"
+        },
+        {
+            "name": "MySQL",
+            "category": "database",
+            "logo": "mysql.svg"
+        },
+        {
+            "name": "MongoDB",
+            "category": "database",
+            "logo": "mongodb.svg"
+        },
+        {
+            "name": "q/KDB+",
+            "category": "database",
+            "logo": "kdb.svg"
+        },
+        {
+            "name": "Angular",
+            "category": "frontend",
+            "logo": "angular.svg"
+        },
+        {
+            "name": "React",
+            "category": "frontend",
+            "logo": "react.svg"
+        },
+        {
+            "name": "JavaScript",
+            "category": "frontend",
+            "logo": "javascript.svg"
+        },
+        {
+            "name": "TypeScript",
+            "category": "frontend",
+            "logo": "ts.svg"
+        },
+        {
+            "name": "Sass",
+            "category": "frontend",
+            "logo": "sass.svg"
+        },
+        {
+            "name": "CSS",
+            "category": "frontend",
+            "logo": "css.svg"
+        },
+        {
+            "name": "HTML",
+            "category": "frontend",
+            "logo": "html.svg"
+        },
+        {
+            "name": "Microsoft Office",
+            "category": "other",
+            "logo": "office.svg"
+        },
+        {
+            "name": "Microsoft Sharepoint",
+            "category": "other",
+            "logo": "sharepoint.svg"
+        },
+        {
+            "name": "Microsoft Azure DevOps",
+            "category": "source_control",
+            "logo": "azure_devops.svg"
+        },
+        {
+            "name": "Jira",
+            "category": "other",
+            "logo": "jira.svg"
+        },
+        {
+            "name": "Git",
+            "category": "source_control",
+            "logo": "git.svg"
+        },
+        {
+            "name": "BitBucket",
+            "category": "source_control",
+            "logo": "bitbucket.svg"
+        },
+        {
+            "name": "GitHub",
+            "category": "source_control",
+            "logo": "github.svg"
+        },
+        {
+            "name": "Microsoft Copilot",
+            "category": "ai",
+            "logo": "ms_copilot.svg"
+        },
+        {
+            "name": "GitHub Copilot",
+            "category": "ai",
+            "logo": "gh_copilot.svg"
+        },
+        {
+            "name": "Amazon Q",
+            "category": "ai",
+            "logo": "amazon_q.svg"
+        },
+        {
+            "name": "Stitch",
+            "category": "ai",
+            "logo": "stitch.svg"
+        },
+        {
+            "name": "Jenkins",
+            "category": "automation",
+            "logo": "jenkins.svg"
+        },
+        {
+            "name": "Azure DevOps Pipelines",
+            "category": "automation",
+            "logo": "azure_pipelines.svg"
+        },
+        {
+            "name": "GitHub Actions",
+            "category": "automation",
+            "logo": "gh_actions.svg"
+        }
+    ]
 }

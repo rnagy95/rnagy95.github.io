@@ -1,8 +1,50 @@
+<div class="bg-not-found">
+  <div class="bg-lines-not-found"></div>
+</div>
+
 <section class="page-not-found-container">
-    <h1 class="text">{{localizationService.localize('404')}}</h1>
-    <a mat-raised-button color="primary" routerLink="">{{localizationService.localize('backToHome')}}</a>
     <section class="customization-section">
         <app-language-picker></app-language-picker>
         <app-theme-picker></app-theme-picker>
     </section>
+    <div class="flex-container">
+
+        <div class="notification">
+            <div class="error-badge">
+                <mat-icon>warning</mat-icon><span>{{localizationService.localize('404_error')}}</span>
+            </div>
+            <div class="title">
+                <h1>{{localizationService.localize('404_title')}}</h1>
+            </div>
+            <div class="body">
+                <p>{{localizationService.localize('requestedUrl')}} <strong>{{command}}</strong> {{localizationService.localize('notFound')}}</p>
+                <p>{{localizationService.localize('checkURL')}}</p>
+                <p>{{localizationService.localize('visitHomePage')}}</p>
+            </div>
+            <a mat-raised-button class="home-button" routerLink="">{{localizationService.localize('backToHome')}}</a>
+        </div>
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="traffic">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="title">Terminal: ~</div>
+            </div>
+            <div id="terminal" class="terminal-body">
+                <div class="command-line">
+                    <span class="prompt">rnagy95@github.io:</span>
+                    <span class="prompt-end">$ {{command}}</span>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">bash: {{command}}: command not found...</span>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">rnagy95@github.io:</span>
+                    <span class="prompt-end">$</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
