@@ -51,6 +51,7 @@ jobs:
         id: bump
         run: |
           cd webApp
+          export NPM_CONFIG_JSON=false
           new_tag=$(npm version ${{ steps.bump_type.outputs.type }})
           echo "new_tag=$new_tag" >> $GITHUB_OUTPUT
 
