@@ -60,6 +60,7 @@ jobs:
 
       - name: Push commit and tag
         run: |
+          git add .
           git commit -m "Bump version to ${{ steps.bump.outputs.new_tag }}"
           git tag -a "${{ steps.bump.outputs.new_tag }}" -m "Release ${{ steps.bump.outputs.new_tag }}"
           git push
