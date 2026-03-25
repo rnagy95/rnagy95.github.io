@@ -1,63 +1,44 @@
-<section class="about-container">
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="traffic">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
+<section class="about-outer-container">
+    <div class="about-inner-container">
+        <section class="left-panel">
+            <div class="bullet-point" matTooltip="{{localizationService.localize('address')}}">
+                <mat-icon fontIcon="place" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{localizationService.localize('myAddress')}}</span>
             </div>
-            <div class="title">Terminal: ~ {{localizationService.localize('about')}}</div>
-        </div>
-        <div id="terminal" class="terminal-body">
-            <div class="commander">
-                <div class="panel top-left">
-                    <div class="name">{{localizationService.localize('name')}}</div>
-                    <div class="functions">{{localizationService.localize('functionList')}}</div>
-                    <div class="quote-block">
-                        <div class="quote">
-                            {{localizationService.localize('quote')}}
-                        </div>
-                        <div class="quotee">
-                            - Martin Fowler
-                        </div>
-                    </div>
+            <div class="bullet-point" matTooltip="{{localizationService.localize('DOB')}}">
+                <mat-icon fontIcon="cake" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{localizationService.localize('dateOfBirth')}}</span>
+            </div>
+            <div class="bullet-point" matTooltip="{{localizationService.localize('workExperience')}}">
+                <mat-icon fontIcon="work_history" class="bullet-point-icon"></mat-icon>
+                <span class="bullet-point-text">{{getExperienceInYears()}} {{localizationService.localize('years')}}</span>
+            </div>
+        </section>
+        <section class="right-panel">
+            <div class="name">{{localizationService.localize('name')}}</div>
+            <div class="functions">{{localizationService.localize('functionList')}}</div>
+            <div class="quote-block">
+                <div class="quote">
+                    {{localizationService.localize('quote')}}
                 </div>
-                <div class="panel top-right">
-                    <div class="bullet-point" matTooltip="{{localizationService.localize('address')}}">
-                        <mat-icon fontIcon="place" class="bullet-point-icon"></mat-icon>
-                        <span class="bullet-point-text">{{localizationService.localize('myAddress')}}</span>
-                    </div>
-                    <div class="bullet-point" matTooltip="{{localizationService.localize('DOB')}}">
-                        <mat-icon fontIcon="cake" class="bullet-point-icon"></mat-icon>
-                        <span class="bullet-point-text">{{localizationService.localize('dateOfBirth')}}</span>
-                    </div>
-                    <div class="bullet-point" matTooltip="{{localizationService.localize('workExperience')}}">
-                        <mat-icon fontIcon="work_history" class="bullet-point-icon"></mat-icon>
-                        <span class="bullet-point-text">{{getExperienceInYears()}}
-                            {{localizationService.localize('years')}}</span>
-                    </div>
-                </div>
-                <div class="panel bottom">
-                    <div class="introduction">
-                        <div class="paragraph">
-                            {{localizationService.localize('intro.p1')}}
-                        </div>
-                        <div class="paragraph">
-                            {{localizationService.localize('intro.p2')}}
-                        </div>
-                        <div class="paragraph">
-                            {{localizationService.localize('intro.p3')}}
-                        </div>
-                        <div class="paragraph">
-                            {{localizationService.localize('intro.p4')}}
-                        </div>
-                    </div>
+                <div class="quotee">
+                    - Martin Fowler
                 </div>
             </div>
-            <div class="command-line">
-                <span class="prompt">rnagy95@github.io:</span>
-                <span class="prompt-end">$</span>
+            <div class="introduction">
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p1')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p2')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p3')}}
+                </div>
+                <div class="paragraph">
+                    {{localizationService.localize('intro.p4')}}
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </section>
