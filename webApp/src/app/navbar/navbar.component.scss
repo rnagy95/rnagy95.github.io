@@ -1,5 +1,4 @@
 .app-navbar {
-    display: flex;
     @media print {
         display: none;
     }
@@ -7,6 +6,7 @@
     position: fixed;
     width: 100%;
     top: 0px;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 16px;
