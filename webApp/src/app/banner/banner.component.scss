@@ -1,14 +1,10 @@
 .bg {
-    @media print {
-        display: none
-    }
-
     position: fixed;
     inset: 0;
     z-index: -1;
     overflow: hidden;
 
-    .bg-lines {
+    .bg-lines{
         position: absolute;
         inset: 0;
         animation: scrollGrid 20s linear infinite;
@@ -94,13 +90,12 @@
     }
 
     @media print {
-        height: 18vh;
+        height: 15vh;
 
         .left-col {
-            width:65%;
             .text-container {
                 .name {
-                    font-size: 26px;
+                    font-size: 24px;
                 }
 
                 .title {
@@ -108,7 +103,6 @@
                 }
 
                 .slogen {
-                    margin-top: 14px;
                     font-size: 14px;
 
                     &:after {
@@ -123,7 +117,7 @@
         }
 
         .right-col {
-            width:35%;
+
             align-items: end;
             justify-content: end;
 
