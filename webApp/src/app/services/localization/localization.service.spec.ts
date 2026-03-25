@@ -15,7 +15,7 @@ describe('LocalizationService', () => {
   });
 
   it('should be able to determine date format', () => {
-    expect(service.dateFormat).toBe(navigator.language == "hu" ? "yyyy MMMM d" : "MMM d, yyyy");
+    expect(service.dateFormat).toBe(navigator.language == "hu" ? "YYYY MMMM d" : "MMM d, YYYY");
   });
 
   it('should localize a known phrase', () => {
