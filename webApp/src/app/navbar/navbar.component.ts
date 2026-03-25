@@ -24,6 +24,6 @@ export class NavBarComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   public onScroll(): void { 
-    this.onTop = window.scrollY <= 50;
+    this.onTop = window.scrollY === 0;
   }
 }
