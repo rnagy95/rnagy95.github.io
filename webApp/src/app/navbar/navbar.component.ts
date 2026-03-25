@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
      this.onScroll();
   }
 
-  @HostListener('window:scroll')
+  @HostListener('window:scroll', ['$event'])
   public onScroll(): void { 
     this.onTop = window.scrollY <= 50;
   }
