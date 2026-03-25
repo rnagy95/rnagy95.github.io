@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "sass:color";
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
@@ -10,8 +9,8 @@
 
     .print-contacts-container {
         @media print {
-            $color: color.adjust(mat.m2-get-color-from-palette($primary-palette, darker), $lightness: -15%);
-            $background-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, lighter), $lightness: 10%);
+            $color: darken(mat.m2-get-color-from-palette($primary-palette, darker), 15%);
+            $background-color: lighten(mat.m2-get-color-from-palette($primary-palette, lighter), 10%);
             background-color: $background-color;
 
             .contact {

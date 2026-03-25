@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "sass:color";
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
@@ -8,12 +7,12 @@
     $accent-palette: map.get($color-config, 'accent');
     $warn-palette: map.get($color-config, 'warn');
 
-    $background-color: color.adjust(mat.m2-get-color-from-palette($warn-palette, 100), $lightness: 5%);
+    $background-color: lighten(mat.m2-get-color-from-palette($warn-palette, 100), 5%);
     $background-lines-color: mat.m2-get-color-from-palette($warn-palette, 400);
     $background-aura-color: mat.m2-get-color-from-palette($warn-palette, 100);
     $badge-color: mat.m2-get-color-from-palette($warn-palette, 500);
-    $teminal-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -17%);
-    $terminal-header-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -7%);
+    $teminal-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 17%);
+    $terminal-header-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 7%);
     $terminal-shadow-color: mat.m2-get-color-from-palette($primary-palette, 700);
     $command-line-color: mat.m2-get-color-from-palette($accent-palette, 400);
     $terminal-text-color: color-utils.get-text-color-on-background($teminal-color);
@@ -22,13 +21,13 @@
     $color: color-utils.get-text-color-on-background($background-color);
 
     @if $isDarkTheme {
-        $background-color: color.adjust(mat.m2-get-color-from-palette($warn-palette, 900), $lightness: -70%);
+        $background-color: darken(mat.m2-get-color-from-palette($warn-palette, 900), 70%);
         $background-lines-color: mat.m2-get-color-from-palette($warn-palette, 300);
-        $background-aura-color: color.adjust(mat.m2-get-color-from-palette($warn-palette, 900), $lightness: -30%);
+        $background-aura-color: darken(mat.m2-get-color-from-palette($warn-palette, 900), 30%);
         $badge-color: mat.m2-get-color-from-palette($warn-palette, 700);
         $badge-text-color: color-utils.get-text-color-on-background($badge-color);
-        $terminal-header-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -20%);
-        $terminal-shadow-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 100), $lightness: 15%);
+        $terminal-header-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 20%);
+        $terminal-shadow-color: lighten(mat.m2-get-color-from-palette($accent-palette, 100), 15%);
         $command-line-color: mat.m2-get-color-from-palette($accent-palette, 500);
         $terminal-text-color: color-utils.get-text-color-on-background($teminal-color);
         $button-color: mat.m2-get-color-from-palette($accent-palette, 800);
@@ -41,15 +40,15 @@
 
         .bg-lines-not-found {
             background-image: repeating-linear-gradient(to right,
-                    rgba(color.channel($background-lines-color, "red", $space: rgb),
-                        color.channel($background-lines-color, "green", $space: rgb),
-                        color.channel($background-lines-color, "blue", $space: rgb),
+                    rgba(red($background-lines-color),
+                        green($background-lines-color),
+                        blue($background-lines-color),
                         0.1) 0 0.3vmin,
                     transparent 0.1vmin 4vmin),
                 repeating-linear-gradient(to bottom,
-                    rgba(color.channel($background-lines-color, "red", $space: rgb),
-                        color.channel($background-lines-color, "green", $space: rgb),
-                        color.channel($background-lines-color, "blue", $space: rgb),
+                    rgba(red($background-lines-color),
+                        green($background-lines-color),
+                        blue($background-lines-color),
                         0.1) 0 0.3vmin,
                     transparent 0.1vmin 4vmin);
         }
@@ -70,41 +69,41 @@
 
         .terminal {
             background: linear-gradient(180deg,
-                    rgba(color.channel($teminal-color, "red", $space: rgb),
-                        color.channel($teminal-color, "green", $space: rgb),
-                        color.channel($teminal-color, "blue", $space: rgb),
+                    rgba(red($teminal-color),
+                        green($teminal-color),
+                        blue($teminal-color),
                         0.9),
-                    rgba(color.channel($teminal-color, "red", $space: rgb),
-                        color.channel($teminal-color, "green", $space: rgb),
-                        color.channel($teminal-color, "blue", $space: rgb),
+                    rgba(red($teminal-color),
+                        green($teminal-color),
+                        blue($teminal-color),
                         0.85));
             border: 1px solid $teminal-color;
-            box-shadow: 0 14px 40px rgba(color.channel($teminal-color, "red", $space: rgb),
-                    color.channel($teminal-color, "green", $space: rgb),
-                    color.channel($teminal-color, "blue", $space: rgb),
+            box-shadow: 0 14px 40px rgba(red($teminal-color),
+                    green($teminal-color),
+                    blue($teminal-color),
                     0.55),
-                inset 0 0 0 1px rgba(color.channel($terminal-shadow-color, "red", $space: rgb),
-                    color.channel($terminal-shadow-color, "green", $space: rgb),
-                    color.channel($terminal-shadow-color, "blue", $space: rgb),
+                inset 0 0 0 1px rgba(red($terminal-shadow-color),
+                    green($terminal-shadow-color),
+                    blue($terminal-shadow-color),
                     0.05);
             color: $terminal-text-color;
 
             .terminal-header {
-                background: linear-gradient(180deg, rgba(color.channel($terminal-header-color, "red", $space: rgb),
-                            color.channel($terminal-header-color, "green", $space: rgb),
-                            color.channel($terminal-header-color, "blue", $space: rgb),
+                background: linear-gradient(180deg, rgba(red($terminal-header-color),
+                            green($terminal-header-color),
+                            blue($terminal-header-color),
                             0.85),
-                        rgba(color.channel($terminal-header-color, "red", $space: rgb),
-                            color.channel($terminal-header-color, "green", $space: rgb),
-                            color.channel($terminal-header-color, "blue", $space: rgb),
+                        rgba(red($terminal-header-color),
+                            green($terminal-header-color),
+                            blue($terminal-header-color),
                             0.80));
                 border-bottom: .06em solid $teminal-color;
 
                 .traffic {
                     .dot {
-                        box-shadow: 0 0 .5em rgba(color.channel($teminal-color, "red", $space: rgb),
-                                color.channel($teminal-color, "green", $space: rgb),
-                                color.channel($teminal-color, "blue", $space: rgb),
+                        box-shadow: 0 0 .5em rgba(red($teminal-color),
+                                green($teminal-color),
+                                blue($teminal-color),
                                 0.25);
 
                         &.red {

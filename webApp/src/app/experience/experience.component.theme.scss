@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "sass:color";
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
@@ -8,18 +7,18 @@
     $primary-palette: map.get($color-config, 'primary');
     $accent-palette: map.get($color-config, 'accent');
 
-    $job-card-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -17%);
+    $job-card-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 17%);
     $job-card-border-color: mat.m2-get-color-from-palette($primary-palette, 100);
-    $education-card-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 300), $lightness: 5%);
+    $education-card-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
     $education-card-border-color: mat.m2-get-color-from-palette($accent-palette, 400);
     $job-text-color: color-utils.get-text-color-on-background($job-card-color);
     $education-text-color: color-utils.get-text-color-on-background($education-card-color);
 
     @if $isDarkTheme {
-        $job-card-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -26%);
-        $job-card-border-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 100), $lightness: 5%);
-        $education-card-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 800), $lightness: -7%);
-        $education-card-border-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 300), $lightness: 5%);
+        $job-card-color: darken(mat.m2-get-color-from-palette($primary-palette, 900), 26%);
+        $job-card-border-color: lighten(mat.m2-get-color-from-palette($primary-palette, 100), 5%);
+        $education-card-color: darken(mat.m2-get-color-from-palette($accent-palette, 800), 7%);
+        $education-card-border-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
         $job-text-color: color-utils.get-text-color-on-background($job-card-color);
         $education-text-color: color-utils.get-text-color-on-background($education-card-color);
     }
@@ -33,13 +32,13 @@
         .job-history {
             .card {
                 background: linear-gradient(180deg,
-                        rgba(color.channel($job-card-color, "red", $space: rgb),
-                            color.channel($job-card-color, "green", $space: rgb),
-                            color.channel($job-card-color, "blue", $space: rgb),
+                        rgba(red($job-card-color),
+                            green($job-card-color),
+                            blue($job-card-color),
                             0.9),
-                        rgba(color.channel($job-card-color, "red", $space: rgb),
-                            color.channel($job-card-color, "green", $space: rgb),
-                            color.channel($job-card-color, "blue", $space: rgb),
+                        rgba(red($job-card-color),
+                            green($job-card-color),
+                            blue($job-card-color),
                             0.85));
                 border: 1px solid $job-card-border-color;
                 color: $job-text-color;
@@ -69,13 +68,13 @@
         .education-history {
             .card {
                 background: linear-gradient(180deg,
-                        rgba(color.channel($education-card-color, "red", $space: rgb),
-                            color.channel($education-card-color, "green", $space: rgb),
-                            color.channel($education-card-color, "blue", $space: rgb),
+                        rgba(red($education-card-color),
+                            green($education-card-color),
+                            blue($education-card-color),
                             0.85),
-                        rgba(color.channel($education-card-color, "red", $space: rgb),
-                            color.channel($education-card-color, "green", $space: rgb),
-                            color.channel($education-card-color, "blue", $space: rgb),
+                        rgba(red($education-card-color),
+                            green($education-card-color),
+                            blue($education-card-color),
                             0.7));
                 border: 1px solid $education-card-border-color;
                 color: $education-text-color;
