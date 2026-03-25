@@ -3,7 +3,18 @@ import techStack from '../../assets/tech-stack/tech-stack.json';
 import { LocalizationService } from '../services/localization/localization.service';
 import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { Category, Tool } from '../interfaces/Tool';
+
+interface Category {
+  name: string;
+  icon: string;
+}
+
+interface Tool {
+  name: string;
+  category: string;
+  logo: string;
+}
+
 
 @Component({
   selector: 'app-tech-stack',
@@ -16,8 +27,7 @@ export class TechStackComponent implements OnInit {
   private techStack = techStack;
   private tools: Tool[] = this.techStack.tools;
   private searchSubject: Subject<string> = new Subject<string>();
-  private groupingState: boolean | null = null;
-
+  
   public categories: Record<string, Category> = techStack.categories
   public groupItems: boolean = false;
   public filterText: string = '';
@@ -37,11 +47,12 @@ export class TechStackComponent implements OnInit {
   };
 
   public groupTools(filteredTools: Tool[]): Record<string, Tool[]> {
-    return filteredTools.reduce<Record<string, Tool[]>>((acc, item) => {
-      (acc[item.category] ??= []).push(item);
-      return acc;
-    }, {});
+      return filteredTools.reduce<Record<string, Tool[]>>((acc, item) => {
+        (acc[item.category] ??= []).push(item);
+        return acc;
+      }, {});
   }
+
 
   constructor(public localizationService: LocalizationService) {
     this.searchSubject.pipe(debounceTime(this.debounceTime)).subscribe((filterText) => {

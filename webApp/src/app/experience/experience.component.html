@@ -1,6 +1,7 @@
 <section class="experience-container">
   <section class="job-history">
     <div class="section-title">
+      <mat-icon fontIcon="work_history" class="icon"></mat-icon>
       <span>{{localizationService.localize('experience')}}</span>
     </div>
     @for (company of workHistory; track company) {
@@ -129,6 +130,7 @@
 
   <section class="education-history">
     <div class="section-title">
+      <mat-icon fontIcon="school" class="icon"></mat-icon>
       <span>{{localizationService.localize('education')}}</span>
     </div>
     @for (edu of educationHistory; track edu) {

@@ -14,13 +14,13 @@
     .experience-container {
         @if $isDarkTheme {
             $background-color: mat.m2-get-color-from-palette($primary-palette, 200);
-            //background-color: $background-color;
-            color: $light-background
+            background-color: $background-color;
+            color: $dark-background
         }
 
         @else {
             $background-color: mat.m2-get-color-from-palette($primary-palette, 400);
-            //background-color: $background-color;
+            background-color: $background-color;
             color: $light-background;
         }
 

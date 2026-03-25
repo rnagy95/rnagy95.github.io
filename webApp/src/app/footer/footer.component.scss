@@ -52,22 +52,11 @@
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            
-            .copyright-notice {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 0.5em;
-                align-items: center;
-                justify-content: center;
-
-            }
     
             li {
                 margin: 0.125rem 0.625rem;
                 white-space: nowrap;
-                line-height: 2em;
-
+                line-height: 36px;
     
                 &:nth-last-child(2) {
                     flex: 1;
@@ -84,7 +73,7 @@
             ul.ft-legal-list {
                 flex-direction: column;
                 align-items: center;
-                gap: 2em
+                gap: 2vh
             }
         }
     }
