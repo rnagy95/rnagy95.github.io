@@ -1,46 +1,8 @@
 <section class="page-not-found-container">
+    <h1 class="text">{{localizationService.localize('404')}}</h1>
+    <a mat-raised-button color="primary" routerLink="">{{localizationService.localize('backToHome')}}</a>
     <section class="customization-section">
         <app-language-picker></app-language-picker>
         <app-theme-picker></app-theme-picker>
     </section>
-    <div class="flex-container">
-
-        <div class="notification">
-            <div class="error-badge">
-                <mat-icon>warning</mat-icon><span>ERROR: 404</span>
-            </div>
-            <div class="title">
-                <h1>This isn't the page you're looking for...</h1>
-            </div>
-            <div class="body">
-                <p>The requested URL <strong>{{command}}</strong> was not found on this server.</p>
-                <p>Please check the URL for proper spelling and capitalization.</p>
-                <p>If you're having trouble locating a piece of content, try visiting the home page.</p>
-            </div>
-            <a mat-raised-button color="primary" routerLink="">{{localizationService.localize('backToHome')}}</a>
-        </div>
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="traffic">
-                    <div class="dot red"></div>
-                    <div class="dot yellow"></div>
-                    <div class="dot green"></div>
-                </div>
-                <div class="title">Terminal: ~</div>
-            </div>
-            <div id="terminal" class="terminal-body">
-                <div class="command-line">
-                    <span class="prompt">rnagy95@github.io:</span>
-                    <span class="prompt-end">$ {{command}}</span>
-                </div>
-                <div class="command-line">
-                    <span class="prompt">bash: {{command}}: command not found...</span>
-                </div>
-                <div class="command-line">
-                    <span class="prompt">rnagy95@github.io:</span>
-                    <span class="prompt-end">$</span>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
