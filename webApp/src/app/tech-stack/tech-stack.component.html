@@ -1,120 +1,25 @@
-<section class="tech-stack-container">
-  <div class="card-container">
-    <div class="title-bar">
-      <div class="title">
-        <mat-icon fontIcon="handyman" class="icon"></mat-icon>
-        <span>{{localizationService.localize('technologies')}}</span>
-      </div>
-      <div class="search">
-        <mat-checkbox class="group-checkbox" [(ngModel)]="groupItems">Group Items</mat-checkbox>
-        <mat-form-field class="searchbar" appearance="outline">
-          <mat-label>Search</mat-label>
-          <input matInput placeholder="Search for any keywords" [(ngModel)]="filterText"
-            (ngModelChange)="onFilterTextChange()" />
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="group-container">
-      @if (!groupItems){
-      <div class="group">
-        @for (tool of filteredTools; track tool.name) {
-        <mat-card class="card">
-          <mat-card-content>
-            <div class="card-logo">
-              @if (tool.logo) {
-              <img src="../../assets/tech-stack/logos/{{tool.logo}}" />
-              }
-              @else {
-              <mat-icon fontIcon="code" class="icon"></mat-icon>
-              }
-            </div>
-          </mat-card-content>
-          <mat-card-header>
-            <mat-card-title class="card-title">{{localizationService.localize(tool.name)}}</mat-card-title>
-          </mat-card-header>
-        </mat-card>
-        }
-      </div>
-      }
-      @else{
-      @for (group of groupedTools | keyvalue; track group.key) {
-        <div class="group">
-          <div class="group-title">
-            <mat-icon fontIcon="{{categories[group.key].icon}}" class="icon"></mat-icon>
-            <span>{{localizationService.localize(categories[group.key].name)}}</span>
-          </div>
-          @for (tool of group.value; track tool.name) {
-          <mat-card class="card">
-            <mat-card-content>
-              <div class="card-logo">
-                @if (tool.logo) {
-                <img src="../../assets/tech-stack/logos/{{tool.logo}}" />
-                }
-                @else {
-                <mat-icon fontIcon="code" class="icon"></mat-icon>
-                }
-              </div>
-            </mat-card-content>
-            <mat-card-header>
-              <mat-card-title class="card-title">{{localizationService.localize(tool.name)}}</mat-card-title>
-            </mat-card-header>
-          </mat-card>
-          }
-        </div>
-      }
-      }
-    </div>
-    <!-- @for (group of filteredTools | keyvalue; track group) {
-    <div class="group-container">
-      <div class="group">
-        <div class="group-title">{{localizationService.localize(group.key)}}</div>
-        @for (card of group.value | keyvalue; track card) {
-        <mat-card class="card">
-          <mat-card-content>
-            <div class="card-logo">
-              @if (card.value) {
-              <img src="../../assets/tech-stack/logos/{{card.value}}" />
-              }
-              @if (!card.value) {
-              <mat-icon fontIcon="code" class="icon"></mat-icon>
-              }
-            </div>
-          </mat-card-content>
-          <mat-card-header>
-            <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
-          </mat-card-header>
-        </mat-card>
-        }
-      </div>
-
-    </div>
-    } -->
-  </div>
-</section>
-
-<!-- <section #parallaxContainer class="tech-stack-parallax-container">
+<section #parallaxContainer class="tech-stack-parallax-container">
   <div class="section-title">
     <mat-icon fontIcon="handyman" class="icon"></mat-icon>
     <span>{{localizationService.localize('technologies')}}</span>
   </div>
   <div class="flex-container">
     @for (card of techStack | keyvalue; track card) {
-    <mat-card class="card" [class.show]="areCardsVisible">
-      <mat-card-header>
-        <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        @for (item of card.value | keyvalue; track item) {
-        <div class="stack-item">
-          <div class="stack-item-logo">@if (item.value) {
-            <img src="../../assets/tech-stack/logos/{{item.value}}" />
-            }
-          </div>
-          <div class="stack-item-title">{{item.key}}</div>
-        </div>
-        }
-      </mat-card-content>
-    </mat-card>
+      <mat-card class="card" [class.show]="areCardsVisible">
+        <mat-card-header>
+          <mat-card-title class="card-title">{{localizationService.localize(card.key)}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          @for (item of card.value | keyvalue; track item) {
+            <div class="stack-item">
+              <div class="stack-item-logo">@if (item.value) {
+                <img src="../../assets/tech-stack/logos/{{item.value}}" />
+              }</div>
+              <div class="stack-item-title">{{item.key}}</div>
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
     }
   </div>
-</section> -->
+</section>

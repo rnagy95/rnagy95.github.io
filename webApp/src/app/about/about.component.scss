@@ -2,7 +2,7 @@
     display: grid;
     place-items: center;
     min-height: 100vh;
-    padding: 24px 0;
+    padding: 24px;
     page-break-inside: avoid;
     @media print{
         padding: 0px;
