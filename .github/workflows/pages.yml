@@ -60,8 +60,6 @@ jobs:
 
       - name: Push commit and tag
         run: |
-          git config --global credential.helper store
-          echo "https://x-access-token:${{ steps.auth.outputs.token }}@github.com" > ~/.git-credentials
           git add .
           git commit -m "Bump version to ${{ steps.bump.outputs.new_tag }}"
           git tag -a "${{ steps.bump.outputs.new_tag }}" -m "Release ${{ steps.bump.outputs.new_tag }}"
