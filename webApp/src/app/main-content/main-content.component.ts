@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Link } from '../interfaces/Link';
 import { ContactLink } from '../interfaces/ContactLink';
 import { PrintContact } from '../interfaces/PrintContact';
-import { NavmenuService } from '../services/navmenu/navmenu.service';
 
 @Component({
     selector: 'app-main-content',
@@ -16,7 +15,7 @@ export class MainContentComponent implements OnInit {
   contacts: ContactLink[] = [{altText: 'E-Mail', logo:'../../assets/email.png', url: "mailto:95.richard.nagy@gmail.com"}, {altText: 'GitHub', logo:'../../assets/GitHub-Mark-Light-64px.png', url: "https://github.com/rnagy95"}, {altText: 'LinkedIn', logo:'../../assets/LI-In-Bug.png', url: "https://www.linkedin.com/in/rnagy95/"}]
   printContacts: PrintContact[] = [{contactType: "E-Mail", iconFont:'mail', contact: "95.richard.nagy@gmail.com"}, {contactType: "Web", iconFont:'public', contact: "rnagy95.github.io"}, {contactType: "Phone", iconFont:'call', contact: "+36 (20) 987 - 6661"}]
 
-  constructor(public navmenuService: NavmenuService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
