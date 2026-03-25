@@ -1,12 +1,8 @@
 {
-  "name": "rnagy95.github.io",
-  "version": "v1.0.0",
+  "name": "web-app",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "prebuild": "node generate-version-file.js",
-    "prestart": "node generate-version-file.js",
-    "prewatch": "node generate-version-file.js",
-    "pretest": "node generate-version-file.js",
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
