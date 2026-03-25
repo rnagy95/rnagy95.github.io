@@ -2,6 +2,7 @@
 
 # Compiled output
 _site/
+/assests/version.json
 
 # Node
 /node_modules
