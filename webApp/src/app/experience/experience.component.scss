@@ -48,6 +48,10 @@
             border-radius: .6em;
             page-break-inside: avoid;
 
+            @media only screen {
+                border: solid .06em #A3A3A3;
+            }
+
             @media print {
                 padding: 5px;
                 margin: 2px 10px;

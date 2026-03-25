@@ -1,122 +1,130 @@
-  .tech-stack-container {
-    width: 100%;
-    min-height: 75vh;
+.tech-stack-container {
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  page-break-inside: avoid;
+  padding: 1.5em 0;
+
+  @media print {
+    min-height: 0;
+  }
+
+  .card-container {
+    width: 80%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    page-break-inside: avoid;
-    padding: 1.5em 0;
+    flex-direction: column;
 
-    @media print {
-      min-height: 0;
-    }
-
-    .card-container {
-      width: 80%;
+    .title-bar {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4vmin;
 
-      .title-bar {
+      .title {
         display: flex;
-        flex-direction: row;
         align-items: baseline;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 4vmin;
-
-        .title {
-          display: flex;
-          align-items: baseline;
-          font-size: 4vmin;
-          font-weight: bold;
-          page-break-after: avoid;
-        }
-
-        .search {
-          display: flex;
-          gap: 2vmin;
-          align-items: baseline;
-          flex-wrap: nowrap;
-
-          @media print {
-            display: none;
-          }
-
-          .group-checkbox {
-            flex: 0 0 auto;
-          }
-
-          .searchbar {
-            flex: 0 0 auto;
-            width: 36vmin;
-          }
-        }
+        font-size: 4vmin;
+        font-weight: bold;
+        page-break-after: avoid;
       }
 
-      .group-container {
+      .search {
         display: flex;
-        flex-direction: row;
+        gap: 2vmin;
+        align-items: baseline;
+        flex-wrap: nowrap;
+
+        @media print {
+          display: none;
+        }
+
+        .group-checkbox {
+          flex: 0 0 auto;
+        }
+
+        .searchbar {
+          flex: 0 0 auto;
+          width: 36vmin;
+        }
+      }
+    }
+
+    .group-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: hidden;
+      flex-wrap: wrap;
+
+      .group {
+        flex: 1 1 100%;
         width: 100%;
+        display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2vmin;
+        margin: 2vmin 0;
 
-        .group {
-          flex: 1 1 100%;
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          flex-direction: row;
-          justify-content: center;
-          gap: 2vmin;
-          margin: 2vmin 0;
+        &:not(:only-of-type){
+          border: solid 1px #A3A3A3;
+          border-radius: 1em;
           padding: 1em;
+        }
 
 
-          .group-title {
-            flex: 0 0 100%;
-            font-size: 3vmin;
-            font-weight: bold;
-            text-align: center;
+        .group-title {
+          flex: 0 0 100%;
+          font-size: 3vmin;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        .card {
+          flex: 0 0 18%;
+          min-width: 30vmin;
+          max-height: 30vmin;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: stretch;
+          gap: 1vmin;
+          border-radius: 10px;
+          border: solid 1px #A3A3A3;
+
+          @media print {
+            min-width: 50px;
+            gap: 0.1vmin;
           }
 
-          .card {
-            flex: 0 0 18%;
-            min-width: 30vmin;
-            max-height: 30vmin;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: stretch;
-            gap: 1vmin;
-            border-radius: 10px;
+          .card-title {
+            flex: 0 0 30%;
+            font-size: 2vmin;
+            line-height: 1.2em;
+            padding: 0.5em;
+          }
 
+          .card-logo {
+            flex: 0 0 70%;
 
-            @media print {
-              min-width: 50px;
-              gap: 0.1vmin;
-            }
+            img {
+              width: 8vmin;
+              aspect-ratio: 1 / 1;
+              object-fit: contain;
 
-            .card-title {
-              flex: 0 0 30%;
-              font-size: 2vmin;
-              line-height: 1.2em;
-              padding: 0.5em;
-            }
-
-            .card-logo {
-              flex: 0 0 70%;
-
-              img {
-                width: 8vmin;
-                aspect-ratio: 1 / 1;
-                object-fit: contain;
-
-                @media print {
-                  width: 4vmin;
-                }
+              @media print {
+                width: 4vmin;
               }
             }
           }
         }
+
       }
+
     }
   }
+}

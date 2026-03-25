@@ -99,14 +99,6 @@
     "abesse.fullStack.desc": "I worked on the development and operation of custom enterprise software for clients across several industries. The delivery approach varied by project — from traditional waterfall to agile — giving me broad exposure to different methodologies. Early on, I contributed to an internal process-management tool for a domestic pharmaceutical company, and later focused on optimizing and extending the project-management system of an international energy provider. Throughout this period, I was part of a DevOps team, which allowed me to gain hands-on experience not only in development but also in operational and support responsibilities.",
     "ht.fullStack.desc": "I contributed to the development of a customer relationship management (CRM) platform, working in a Scrum/Agile environment and taking part in several greenfield projects. My work spanned multiple industries and included building project- and time-management tools for a U.S. public utilities company, as well as developing a digital reporting solution for the OBDK to support mandatory monthly and annual data submissions from healthcare institutions. I also created a mobile application for the HyperTeam CRM ecosystem, which gave me hands-on experience with the Xamarin platform.",
     "printCV": "Print Resume",
-    "backToHome": "Back to the HOME page",
-    "groupItems": "Group Items",
-    "search": "Search",
-    "searchKeyword": "Search for any keyword...",
-    "404_title":"This isn't the page you're looking for...",
-    "requestedUrl":"The requested URL",
-    "notFound":"was not found on this seerver",
-    "checkURL":"Please check the URL for proper spelling and capitalization.",
-    "visitHomePage":"If you're having trouble locating a piece of content, try visiting the home page.",
-    "404_error": "ERROR: 404"
+    "404": "404 - The page cannot be found!",
+    "backToHome": "Back to the HOME page"
 }

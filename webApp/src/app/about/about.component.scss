@@ -12,7 +12,11 @@
 
     .terminal {
         width: 80vw;
+        background: linear-gradient(180deg, rgba(17, 24, 33, 0.95), rgba(12, 17, 23, 0.98));
         border-radius: 10px;
+        border: 1px solid #1e2a36;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55),
+            inset 0 0 0 1px rgba(200, 255, 220, 0.05);
         overflow: hidden;
 
         @media print {
@@ -28,6 +32,8 @@
             align-items: center;
             gap: 1vimn;
             padding: .6em .8em;
+            background: linear-gradient(180deg, rgba(24, 32, 43, 0.9), rgba(18, 26, 36, 0.9));
+            border-bottom: .06em solid #1a2633;
             color: var(--muted);
             font-size: 2vmin;
 
@@ -44,7 +50,22 @@
                     width: .75em;
                     height: .75em;
                     border-radius: 50%;
+                    box-shadow: 0 0 .5em rgba(0, 0, 0, 0.25);
+
+                    &.red {
+                        background: #ff5f56;
+                    }
+
+                    &.yellow {
+                        background: #ffbd2e;
+                    }
+
+                    &.green {
+                        background: #27c93f;
+                    }
                 }
+
+
             }
 
             .title {
@@ -54,6 +75,10 @@
 
         .terminal-body {
             padding: .6em;
+
+            @media only screen {
+                font-family: 'Roboto Mono', monospace;
+            }
 
             font-size: 2vmin;
             display: flex;
@@ -69,6 +94,7 @@
 
                 .panel {
                     margin: 0.5vmin;
+                    border: 0.06em solid #C3C3C3;
                     border-radius: .4em;
                     padding: .8em;
                     display: flex;
@@ -88,6 +114,7 @@
                             margin-left: .95em;
                             display: flex;
                             align-items: center;
+                            font-family: monospace;
 
                             &:last-child {
                                 margin-bottom: .95em;
@@ -154,6 +181,8 @@
                             margin-bottom: 1.5em;
                             padding: .4em;
                             width: fit-content;
+                            border-top: solid .06em #959595;
+                            border-bottom: solid .06em #959595;
                             position: relative;
                             font-size: 2vmin;
 
@@ -226,6 +255,7 @@
                 pointer-events: none;
 
                 .prompt-end {
+                    color: #00ffa3;
                     margin-left: .4em;
                 }
 

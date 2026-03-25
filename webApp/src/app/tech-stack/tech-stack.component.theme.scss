@@ -2,36 +2,18 @@
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
-@mixin color($color-config, $isDarkTheme: false) {
+@mixin color($color-config) {
 
-    $accent-palette: map.get($color-config, 'accent');
+    $primary-palette: map.get($color-config, 'primary');
 
-    $card-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
-    $border-color: mat.m2-get-color-from-palette($accent-palette, 400);
-    $text-color: color-utils.get-text-color-on-background($card-color);
+    .tech-stack-parallax-container {
+        @media print {
+            $color: mat.m2-get-color-from-palette($primary-palette, darker);
 
-    @if $isDarkTheme {
-        $card-color: darken(mat.m2-get-color-from-palette($accent-palette, 800), 5%);
-        $border-color: lighten(mat.m2-get-color-from-palette($accent-palette, 300), 5%);
-        $text-color: color-utils.get-text-color-on-background($card-color);
-    }
-
-    .tech-stack-container {
-        .card-container {
-            .group-container {
-                .group {
-                    .card {
-                        background: linear-gradient(180deg,
-                                rgba(red($card-color),
-                                    green($card-color),
-                                    blue($card-color),
-                                    0.9),
-                                rgba(red($card-color),
-                                    green($card-color),
-                                    blue($card-color),
-                                    0.75));
-                        border: 1px solid $border-color;
-                    }
+            .section-title {
+                color: $color;
+                span {
+                    border-bottom: solid 2px $color;
                 }
             }
         }
@@ -44,11 +26,11 @@
     }
 }
 
-@mixin theme($theme, $isDarkTheme: false) {
+@mixin theme($theme) {
     $color-config: mat.m2-get-color-config($theme);
 
     @if $color-config !=null {
-        @include color($color-config, $isDarkTheme);
+        @include color($color-config);
     }
 
     $typography-config: mat.m2-get-typography-config($theme);
