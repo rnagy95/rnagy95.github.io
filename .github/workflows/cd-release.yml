@@ -50,7 +50,7 @@ jobs:
           git add .
           git commit -m "Bump version to ${{ steps.bump.outputs.new_tag }}"
           git tag -a "${{ steps.bump.outputs.new_tag }}" -m "Release ${{ steps.bump.outputs.new_tag }}"
-          git push
+          git push --set-upstream origin release/${{ steps.bump.outputs.new_tag }}
           git push --tags
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
