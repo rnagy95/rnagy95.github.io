@@ -3,10 +3,9 @@ import techStack from '../../assets/tech-stack/tech-stack.json';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
-    selector: 'app-tech-stack',
-    templateUrl: './tech-stack.component.html',
-    styleUrls: ['./tech-stack.component.scss'],
-    standalone: false
+  selector: 'app-tech-stack',
+  templateUrl: './tech-stack.component.html',
+  styleUrls: ['./tech-stack.component.scss']
 })
 export class TechStackComponent implements OnInit {
 

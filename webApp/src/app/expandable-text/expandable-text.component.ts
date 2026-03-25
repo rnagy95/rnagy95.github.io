@@ -2,10 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
-    selector: 'app-expandable-text',
-    templateUrl: './expandable-text.component.html',
-    styleUrls: ['./expandable-text.component.scss'],
-    standalone: false
+  selector: 'app-expandable-text',
+  templateUrl: './expandable-text.component.html',
+  styleUrls: ['./expandable-text.component.scss']
 })
 export class ExpandableTextComponent implements OnInit {
 

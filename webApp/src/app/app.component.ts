@@ -4,10 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { CookieService } from './services/cookie/cookie.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: false
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'webApp';

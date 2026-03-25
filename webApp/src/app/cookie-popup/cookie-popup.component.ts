@@ -5,10 +5,9 @@ import { CookieService } from '../services/cookie/cookie.service';
 import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
-    selector: 'app-cookie-popup',
-    templateUrl: './cookie-popup.component.html',
-    styleUrls: ['./cookie-popup.component.scss'],
-    standalone: false
+  selector: 'app-cookie-popup',
+  templateUrl: './cookie-popup.component.html',
+  styleUrls: ['./cookie-popup.component.scss'],
 })
 export class CookiePopupComponent implements OnInit {
 
