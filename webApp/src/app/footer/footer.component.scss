@@ -2,24 +2,25 @@
     @media print {
         display: none;
     }
-    padding-top: 5vh;
+
     line-height: 1.5;
-    
+
     a {
         text-decoration: none;
         cursor: pointer;
-        
+        color: #eee;
+
         &:hover {
             text-decoration: underline;
         }
     }
-    
+
     .ft-main {
         padding: 0.75rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+    
         .ft-main-item {
             min-width: 5rem;
             text-align: center;
@@ -40,6 +41,8 @@
     
     .ft-legal {
         padding: 0.9375rem 1.875rem;
+        background-color: #333;
+        color: #fff;
     
         ul.ft-legal-list {
             list-style: none;
@@ -47,40 +50,17 @@
             width: 100%;
             display: flex;
             flex-wrap: wrap;
-            
-            .copyright-notice {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 0.5em;
-                align-items: center;
-                justify-content: center;
-
-            }
     
             li {
                 margin: 0.125rem 0.625rem;
                 white-space: nowrap;
-                line-height: 2em;
-
+                line-height: 36px;
     
                 &:nth-last-child(2) {
                     flex: 1;
                 }
             }
     
-        }
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .app-footer {
-        .ft-legal {
-            ul.ft-legal-list {
-                flex-direction: column;
-                align-items: center;
-                gap: 2em
-            }
         }
     }
 }

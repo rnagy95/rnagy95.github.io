@@ -5,76 +5,92 @@
 @use './app/about/about.component.theme.scss' as about;
 @use './app/experience/experience.component.theme.scss' as experience;
 @use './app/tech-stack/tech-stack.component.theme.scss' as tech-stack;
-@use './app/page-not-found/page-not-found.component.theme.scss' as page-not-found;
 @use './app/print-contacts/print-contacts.component.theme.scss' as print-contacts;
 
-@include mat.elevation-classes();
-@include mat.app-background();
+@include mat.core();
 
-$dark-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 500, 900);
-$dark-accent: mat.m2-define-palette(mat.$m2-green-palette);
-$dark-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$dark-ide-primary: mat.define-palette(mat.$blue-palette, 700, 500, 900);
+$dark-ide-accent: mat.define-palette(mat.$purple-palette);
+$dark-ide-warn: mat.define-palette(mat.$red-palette);
 
-$light-primary: mat.m2-define-palette(mat.$m2-cyan-palette, 700, 500, 900);
-$light-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette, 600, 400, 800);
-$light-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$light-ide-primary: mat.define-palette(mat.$indigo-palette, 700, 500, 900);
+$light-ide-accent: mat.define-palette(mat.$pink-palette, 600, 400, 800);
+$light-ide-warn: mat.define-palette(mat.$red-palette);
 
-$print-primary: mat.m2-define-palette(mat.$m2-blue-palette, 700, 400, 900);
-$print-accent: mat.m2-define-palette(mat.$m2-light-blue-palette, 'A400', 100, 'A700');
-$print-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$terminal-primary: mat.define-palette(mat.$green-palette, 800, 600, 900);
+$terminal-accent: mat.define-palette(mat.$teal-palette, 'A400', 'A200', 'A700');
+$terminal-warn: mat.define-palette(mat.$red-palette);
 
-$typography: mat.m2-define-typography-config($font-family: 'Inter, sans-serif',
+$print-primary: mat.define-palette(mat.$blue-palette, 600, 400, 800);
+$print-accent: mat.define-palette(mat.$light-blue-palette, 'A400', 100, 'A700');
+$print-warn: mat.define-palette(mat.$red-palette);
+
+$typography: mat.define-typography-config(
+    $font-family: 'Roboto',
   );
 
-$dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
-        accent: $dark-accent,
-        warn: $dark-warn),
+$dark-ide-theme: mat.define-dark-theme((color: (primary: $dark-ide-primary,
+        accent: $dark-ide-accent,
+        warn: $dark-ide-warn),
       typography: $typography));
 
-$light-theme: mat.m2-define-light-theme((color: (primary: $light-primary,
-        accent: $light-accent,
-        warn: $light-warn),
+$light-ide-theme: mat.define-light-theme((color: (primary: $light-ide-primary,
+        accent: $light-ide-accent,
+        warn: $light-ide-warn),
       typography: $typography));
 
-$print-theme: mat.m2-define-light-theme((color: (primary: $print-primary,
+$terminal-theme: mat.define-dark-theme((color: (primary: $terminal-primary,
+        accent: $terminal-accent,
+        warn: $terminal-warn),
+      typography: $typography));
+
+$print-theme: mat.define-light-theme((color: (primary: $print-primary,
         accent: $print-accent,
         warn: $print-warn),
       typography: $typography));
 
-.dark-theme {
-  @include mat.all-component-themes($dark-theme);
-  @include navbar.theme($dark-theme, $isDarkTheme: true);
-  @include footer.theme($dark-theme, $isDarkTheme: true);
-  @include about.theme($dark-theme, $isDarkTheme: true);
-  @include print-contacts.theme($dark-theme);
-  @include tech-stack.theme($dark-theme, $isDarkTheme: true);
-  @include experience.theme($dark-theme, $isDarkTheme: true);
-  @include banner.theme($dark-theme, $isDarkTheme: true);
-  @include page-not-found.theme($dark-theme, $isDarkTheme: true);
+.dark-ide-theme {
+  @include mat.all-component-themes($dark-ide-theme);
+  @include navbar.theme($dark-ide-theme);
+  @include footer.theme($dark-ide-theme);
+  @include about.theme($dark-ide-theme);
+  @include print-contacts.theme($dark-ide-theme);
+  @include tech-stack.theme($dark-ide-theme);
+  @include experience.theme($dark-ide-theme, $isDarkTheme: true);
+  @include banner.theme($dark-ide-theme, $isDarkTheme: true);
 }
 
-.light-theme {
-  @include mat.all-component-themes($light-theme);
-  @include navbar.theme($light-theme, $isDarkTheme: false);
-  @include footer.theme($light-theme, $isDarkTheme: false);
-  @include about.theme($light-theme, $isDarkTheme: false);
-  @include print-contacts.theme($light-theme);
-  @include tech-stack.theme($light-theme, $isDarkTheme: false);
-  @include experience.theme($light-theme, $isDarkTheme: false);
-  @include banner.theme($light-theme, $isDarkTheme: false);
-  @include page-not-found.theme($light-theme, $isDarkTheme: false);
+.light-ide-theme {
+  @include mat.all-component-themes($light-ide-theme);
+  @include navbar.theme($light-ide-theme);
+  @include footer.theme($light-ide-theme);
+  @include about.theme($light-ide-theme);
+  @include print-contacts.theme($light-ide-theme);
+  @include tech-stack.theme($light-ide-theme);
+  @include experience.theme($light-ide-theme, $isDarkTheme: false);
+  @include banner.theme($light-ide-theme, $isDarkTheme: false);
+}
+
+.terminal-theme {
+  @include mat.all-component-themes($terminal-theme);
+  @include navbar.theme($terminal-theme);
+  @include footer.theme($terminal-theme);
+  @include about.theme($terminal-theme);
+  @include print-contacts.theme($terminal-theme);
+  @include tech-stack.theme($terminal-theme);
+  @include experience.theme($terminal-theme, $isDarkTheme: true);
+  @include banner.theme($terminal-theme, $isDarkTheme: true);
 }
 
 .print-theme {
   @include mat.all-component-themes($print-theme);
-  @include navbar.theme($print-theme,  $isDarkTheme: false);
-  @include footer.theme($print-theme, $isDarkTheme: false);
-  @include about.theme($print-theme, $isDarkTheme: false);
+  @include navbar.theme($print-theme);
+  @include footer.theme($print-theme);
+  @include about.theme($print-theme);
   @include print-contacts.theme($print-theme);
-  @include tech-stack.theme($print-theme, $isDarkTheme: false);
+  @include tech-stack.theme($print-theme);
   @include experience.theme($print-theme, $isDarkTheme: false);
   @include banner.theme($print-theme, $isDarkTheme: false);
-  @include page-not-found.theme($light-theme, $isDarkTheme: false);
 }
 
 html {
@@ -93,4 +109,180 @@ body {
 @page {
   size: A4;
   margin: .5cm;
+}
+
+@keyframes glitch-main {
+  17% {
+      --scale: .87;
+  }
+
+  31% {
+      --scale: 1.1;
+  }
+
+  37% {
+      --scale: 1.3;
+  }
+
+  47% {
+      --scale: .91;
+  }
+
+  87% {
+      --scale: 1;
+  }
+}
+
+@keyframes glitch-after {
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+      --top: 0;
+      --left: 0;
+      opacity: 0;
+  }
+
+  0% {
+      opacity: 0;
+  }
+
+  1% {
+      --v-height: 15%;
+      opacity: 1;
+  }
+
+  20% {
+      --left: .005;
+      opacity: 1;
+  }
+
+  40% {
+      --left: .01;
+      --v-height: 20%;
+      --top: 3;
+      opacity: 1;
+  }
+
+  60% {
+      --left: .03;
+      --v-height: 25%;
+      --top: 6;
+      opacity: 1;
+  }
+
+  80% {
+      --left: .07;
+      --v-height: 5%;
+      --top: 8;
+      opacity: 1;
+  }
+
+  99% {
+      --left: .083;
+      --v-height: 30%;
+      --top: 1;
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes glitch-before {
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+      --top: 0;
+      --left: 0;
+      opacity: 0;
+  }
+
+  0% {
+      opacity: 0;
+  }
+
+  1% {
+      --v-height: 15%;
+      --top: 10;
+      opacity: 1;
+  }
+
+  20% {
+      --left: -.005;
+      opacity: 1;
+  }
+
+  40% {
+      --left: -.01;
+      --v-height: 17%;
+      --top: 3;
+      opacity: 1;
+  }
+
+  60% {
+      --left: -.03;
+      --v-height: 35%;
+      --top: 6;
+      opacity: 1;
+  }
+
+  80% {
+      --left: -.07;
+      --v-height: 5%;
+      --top: 8;
+      opacity: 1;
+  }
+
+  99% {
+      --left: -.083;
+      --v-height: 30%;
+      --top: 1;
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+      transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  50% {
+      transform: translate(-50%, -50%) rotate(-180deg);
+  }
+
+  75% {
+      transform: translate(-50%, -50%) rotate(-270deg);
+  }
+
+  100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes float-in {
+  from {
+    transform: translate(0, 25vh);
+    opacity: 0%;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+
 }

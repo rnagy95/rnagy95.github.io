@@ -1,56 +1,38 @@
 @use "sass:map";
-@use "sass:color";
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
-@mixin color($color-config, $isDarkTheme: false) {
-  $primary-palette: map.get($color-config, 'primary');
+@mixin color($color-config) {
   $accent-palette: map.get($color-config, 'accent');
 
-  $background-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -10%);
-  $text-color: color-utils.get-text-color-on-background($background-color);
-
-  @if $isDarkTheme {
-    $background-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 700), $lightness: -10%);
-    $text-color: color-utils.get-text-color-on-background($background-color);
-  }
+  $background-color: mat.get-color-from-palette($accent-palette, darker);
+  $color: color-utils.get-text-color-on-background($background-color);
 
   .app-footer {
-    background-color: $background-color;
-
-    a {
-      color: $text-color;
-    }
-
-    .ft-main {
       background-color: $background-color;
-    }
+      color: $color;
 
-    .ft-legal {
-      background-color: $background-color;
-      color: $text-color;
-
-    }
+      a{
+        color: $color;
+      }
   }
-}
 
+}
 
 @mixin typography($typography-config) {
   .app-footer {
-    font-family: mat.m2-font-family($typography-config);
+    font-family: mat.font-family($typography-config);
   }
 }
 
-@mixin theme($theme, $isDarkTheme: false) {
-  $color-config: mat.m2-get-color-config($theme);
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  @if $color-config != null {
+    @include color($color-config);
+  }
 
-    @if $color-config !=null {
-        @include color($color-config, $isDarkTheme);
-    }
-
-    $typography-config: mat.m2-get-typography-config($theme);
-
-    @if $typography-config !=null {
-        @include typography($typography-config);
-    }
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config != null {
+    @include typography($typography-config);
+  }
 }

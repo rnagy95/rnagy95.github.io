@@ -1,19 +1,13 @@
 .print-contacts-container {
-    display: flex;
     @media screen {
         display: none;
     }
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 16px;
-    margin-bottom: 16px;
+
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    border-radius: 16px;
-    print-color-adjust: exact;
 
 
     .contact {

@@ -2,8 +2,7 @@
 
 # Compiled output
 _site/
-src/assets/version.json
-
+/assests/version.json
 
 # Node
 /node_modules

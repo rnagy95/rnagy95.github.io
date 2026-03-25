@@ -50,15 +50,15 @@ jobs:
           git add .
           git commit -m "Bump version to ${{ steps.bump.outputs.new_tag }}"
           git tag -a "${{ steps.bump.outputs.new_tag }}" -m "Release ${{ steps.bump.outputs.new_tag }}"
-          git push
+          git push --set-upstream origin release/${{ steps.bump.outputs.new_tag }}
           git push --tags
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Pull Requests
         run: |
-          PR_master=$(gh pr create -B release/${{ steps.bump.outputs.new_tag }} -H develop --title 'Merge release/${{ steps.bump.outputs.new_tag }} into develop' --body 'Created by GitHub Actions' --json number --jq '.[0].number')
-          PR_develop=$(gh pr create -B release/${{ steps.bump.outputs.new_tag }} -H master --title 'Merge release/${{ steps.bump.outputs.new_tag }} into master' --body 'Created by GitHub Actions' --json number --jq '.[0].number')
+          PR_master=$(gh pr create -B release/${{ steps.bump.outputs.new_tag }} -H develop --title 'Merge release/${{ steps.bump.outputs.new_tag }} into develop' --body 'Created by GitHub Actions')
+          PR_develop=$(gh pr create -B release/${{ steps.bump.outputs.new_tag }} -H master --title 'Merge release/${{ steps.bump.outputs.new_tag }} into master' --body 'Created by GitHub Actions')
           gh pr merge $PR_master --auto
           gh pr merge $PR_develop --auto
         env:

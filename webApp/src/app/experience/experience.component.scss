@@ -6,33 +6,43 @@
     justify-content: center;
 
     .section-title {
-        padding-left: 1em;
+        padding-left: 15px;
         display: flex;
         align-items: center;
         page-break-after: avoid;
 
+        .icon {
+            font-size: 36px;
+            width: 36px;
+            height: 36px;
+
+            @media print {
+                font-size: 22px;
+                width: 22px;
+                height: 22px;
+            }
+        }
+
         span {
-            font-size: 4vmin;
+            font-size: 24px;
             font-weight: bold;
-            margin-left: .4em;
+            margin-left: 5px;
 
             @media print {
                 font-size: 16px;
-                text-decoration: underline;
-                margin-bottom: 16px;
             }
         }
     }
 
     .job-history,
     .education-history {
-        min-width: 30vmin;
-        max-width: 90vmin;
+        min-width: 360px;
+        max-width: 750px;
         flex-basis: auto;
         flex-grow: 1;
-        padding: 2em 1em;
+        padding: 40px 15px;
         page-break-inside: avoid;
-
+        
 
         @media print {
             width: 100% !important;
@@ -45,9 +55,9 @@
         }
 
         .card {
-            padding: .6em 1.9em;
-            margin: .6em .4em;
-            border-radius: .6em;
+            padding: 10px 30px;
+            margin: 10px 5px;
+            border-radius: 7px;
             page-break-inside: avoid;
 
             @media print {
@@ -60,19 +70,18 @@
                 .card-content-logo {
                     display: inline-block;
                     vertical-align: top;
-                    width: 10vmin;
+                    width: 75px;
 
                     @media print {
                         width: 48px;
                     }
 
                     img {
-                        width: 8vmin;
-                        pointer-events: none;
-
+                        width: 64px;
                         @media print {
                             width: 42px;
                         }
+                        pointer-events: none;
                     }
                 }
 
@@ -83,7 +92,7 @@
                     width: auto;
 
                     .card-content-position {
-                        font-size: 2.5vmin;
+                        font-size: 20px;
                         font-weight: bold;
 
                         @media print {
@@ -93,8 +102,7 @@
                     }
 
                     .card-content-company {
-                        font-size: 2vmin;
-
+                        font-size: 16px;
                         @media print {
                             font-size: 12px;
                             line-height: 1.1;
@@ -102,10 +110,7 @@
                     }
 
                     .card-content-period {
-                        font-size: 2vmin;
-
                         font-style: italic;
-
                         @media print {
                             font-size: 10px;
                             line-height: 1.1;
@@ -115,13 +120,11 @@
 
                 .card-content-description {
                     text-align: justify;
-                    font-size: 2vmin;
 
                     @media print {
                         font-size: 12px;
                         line-height: 1.1;
                     }
-
                     .position-card {
                         padding: 5px 20px;
                         margin: 5px 10px;
@@ -130,8 +133,8 @@
                         &::before {
                             content: ' ';
                             position: absolute;
-                            width: .6em;
-                            height: .6em;
+                            width: 10px;
+                            height: 10px;
                             border-radius: 50%;
                             left: 0px;
                             top: 10px;
@@ -140,21 +143,20 @@
                         &::after {
                             content: ' ';
                             position: absolute;
-                            width: 0.12em;
+                            width: 2px;
                             height: calc(100% - 14px);
-                            left: .24em;
+                            left: 4px;
                             top: 24px;
                             border-radius: 25%;
                         }
 
-                        .position-card-content-description {
+                        .position-card-content-description{
                             padding: 5px 0px;
                             text-align: justify;
-                            margin-top: 1em;
                         }
 
-                        &:last-of-type {
-                            &::after {
+                        &:last-of-type{
+                            &::after{
                                 display: none;
                             }
                         }

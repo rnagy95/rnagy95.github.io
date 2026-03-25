@@ -1,145 +1,85 @@
 @use "sass:map";
-@use "sass:color";
 @use "@angular/material" as mat;
 @use "../../utils/styles/color-utils.scss" as color-utils;
 
-@mixin color($color-config, $isDarkTheme: false) {
+@mixin color($color-config) {
   $primary-palette: map.get($color-config, 'primary');
-  $accent-palette: map.get($color-config, 'accent');
-  $warn-palette: map.get($color-config, 'warn');
 
-  $teminal-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -17%);
-  $terminal-header-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -7%);
-  $terminal-shadow-color: mat.m2-get-color-from-palette($primary-palette, 700);
-  $terminal-border-color: mat.m2-get-color-from-palette($primary-palette, 100);
-  $command-line-color: mat.m2-get-color-from-palette($accent-palette, 400);
-  $text-color: color-utils.get-text-color-on-background($teminal-color);
+  $outer-background-color: mat.get-color-from-palette($primary-palette, 900);
+  $inner-background-color: mat.get-color-from-palette($primary-palette, 100);
+  $color: color-utils.get-text-color-on-background($inner-background-color);
 
-  @if $isDarkTheme {
-    $teminal-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -26%);
-    $terminal-header-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 900), $lightness: -20%);
-    $terminal-shadow-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 100), $lightness: 15%);
-    $terminal-border-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 100), $lightness: 30%);
-    $command-line-color: mat.m2-get-color-from-palette($accent-palette, 500);
-    $text-color: color-utils.get-text-color-on-background($teminal-color);
-  }
+  .about-outer-container {
+    background-color: $outer-background-color;
 
-  .about-container {
-    color: $text-color;
+    .about-inner-container {
+      background-color: $inner-background-color;
 
-    .terminal {
-      background: linear-gradient(180deg,
-          rgba(color.channel($teminal-color, "red", $space: rgb),
-            color.channel($teminal-color, "green", $space: rgb),
-            color.channel($teminal-color, "blue", $space: rgb),
-            0.9),
-          rgba(color.channel($teminal-color, "red", $space: rgb),
-            color.channel($teminal-color, "green", $space: rgb),
-            color.channel($teminal-color, "blue", $space: rgb),
-            0.85));
-      border: 1px solid $teminal-color;
-      box-shadow: 0 14px 40px rgba(color.channel($teminal-color, "red", $space: rgb),
-          color.channel($teminal-color, "green", $space: rgb),
-          color.channel($teminal-color, "blue", $space: rgb),
-          0.55),
-        inset 0 0 0 1px rgba(color.channel($terminal-shadow-color, "red", $space: rgb),
-          color.channel($terminal-shadow-color, "green", $space: rgb),
-          color.channel($terminal-shadow-color, "blue", $space: rgb),
-          0.05);
+      @media print {
+        background-color: #f0f0f0;
+      }
 
-      .terminal-header {
-        background: linear-gradient(180deg, rgba(color.channel($terminal-header-color, "red", $space: rgb),
-              color.channel($terminal-header-color, "green", $space: rgb),
-              color.channel($terminal-header-color, "blue", $space: rgb),
-              0.85),
-            rgba(color.channel($terminal-header-color, "red", $space: rgb),
-              color.channel($terminal-header-color, "green", $space: rgb),
-              color.channel($terminal-header-color, "blue", $space: rgb),
-              0.80));
-        border-bottom: .06em solid $teminal-color;
+      color: $color;
 
-        .traffic {
-          .dot {
-            box-shadow: 0 0 .5em rgba(color.channel($teminal-color, "red", $space: rgb),
-                color.channel($teminal-color, "green", $space: rgb),
-                color.channel($teminal-color, "blue", $space: rgb),
-                0.25);
+      .left-panel {
+        @media screen and (max-width: 720px) {
+          border-bottom: 3px solid $outer-background-color;
+        }
 
-            &.red {
-              background: #ff5f56;
-            }
+        @media print,
+        (min-width: 720px) {
+          border-right: 3px solid $outer-background-color;
 
-            &.yellow {
-              background: #ffbd2e;
-            }
+          @media print {
+            $color: mat.get-color-from-palette($primary-palette, darker);
+            border-right: 3px solid $color;
+          }
+        }
 
-            &.green {
-              background: #27c93f;
+        .bullet-point {
+
+          .bullet-point-icon,
+          .bullet-point-text {
+            color: $outer-background-color;
+
+            @media print {
+              color: mat.get-color-from-palette($primary-palette, darker);
             }
           }
-
-
         }
       }
 
-      .terminal-body {
-        @media only screen {
-          font-family: 'Roboto Mono', monospace;
-        }
+      .right-panel {
+        .quote-block {
+          .quote {
+            &::before {
+              color: $outer-background-color;
 
-        .commander {
-          .panel {
-            border: 0.06em solid $terminal-border-color;
-
-            &.top-right {
-              .bullet-point{
-                @media print {
-                  border: solid 1px #999;
-                  background-color: #ddd;
-                  print-color-adjust: exact;
-                }
-              }
-            }
-
-            &.top-left {
-              .quote-block {
-                border-top: solid .06em $terminal-border-color;
-                border-bottom: solid .06em $terminal-border-color;
+              @media print {
+                color: mat.get-color-from-palette($primary-palette, darker);
               }
             }
           }
         }
-
-        .command-line {
-          .prompt-end {
-            color: $command-line-color;
-          }
-        }
       }
-    }
-  }
-
-  @media print {
-    .about-container {
-      color: black;
     }
   }
 }
 
 @mixin typography($typography-config) {
   .about-outer-container {
-    font-family: mat.m2-font-family($typography-config);
+    font-family: mat.font-family($typography-config);
   }
 }
 
-@mixin theme($theme, $isDarkTheme: false) {
-  $color-config: mat.m2-get-color-config($theme);
+@mixin theme($theme) {
+  $color-config: mat.get-color-config($theme);
 
   @if $color-config !=null {
-    @include color($color-config, $isDarkTheme);
+    @include color($color-config);
   }
 
-  $typography-config: mat.m2-get-typography-config($theme);
+  $typography-config: mat.get-typography-config($theme);
 
   @if $typography-config !=null {
     @include typography($typography-config);

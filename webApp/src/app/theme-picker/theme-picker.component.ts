@@ -4,10 +4,9 @@ import { LocalizationService } from '../services/localization/localization.servi
 import { ThemeService } from '../services/theme/theme.service';
 
 @Component({
-    selector: 'app-theme-picker',
-    templateUrl: './theme-picker.component.html',
-    styleUrls: ['./theme-picker.component.scss'],
-    standalone: false
+  selector: 'app-theme-picker',
+  templateUrl: './theme-picker.component.html',
+  styleUrls: ['./theme-picker.component.scss']
 })
 export class ThemePickerComponent implements OnInit {
 
@@ -23,8 +22,7 @@ export class ThemePickerComponent implements OnInit {
 }
 
 @Pipe({
-    name: 'filterPrivateThemes',
-    standalone: false
+  name: 'filterPrivateThemes'
 })
 export class FilterPrivateThemesPipe implements PipeTransform{
   public transform(values:any[], ...args: unknown[]): any[]{
