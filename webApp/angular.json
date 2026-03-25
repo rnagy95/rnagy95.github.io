@@ -33,7 +33,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/scripts/particles/particles.min.js"
+            ],
             "browser": "src/main.ts"
           },
           "configurations": {
@@ -101,7 +103,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts/particles/particles.min.js"
+            ]
           }
         }
       }
