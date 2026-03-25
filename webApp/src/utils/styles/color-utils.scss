@@ -1,10 +1,9 @@
 @use "sass:math";
-@use "sass:color";
 
 @function calculate-luminance($color){
-    $vR: math.div(color.channel($color, "red", $space: rgb), 255);
-    $vG: math.div(color.channel($color, "green", $space: rgb), 255);
-    $vB: math.div(color.channel($color, "blue", $space: rgb), 255);
+    $vR: math.div(red($color), 255);
+    $vG: math.div(green($color), 255);
+    $vB: math.div(blue($color), 255);
 
     @if $vR <= 0.04045 {
         $vR: math.div($vR, 12.92);

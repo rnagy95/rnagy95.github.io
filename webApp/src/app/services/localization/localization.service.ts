@@ -49,10 +49,10 @@ export class LocalizationService {
     let dateFormat: string;
     
     if (this.selectedLanguage.code === "hu"){
-      dateFormat = "yyyy MMMM d";
+      dateFormat = "YYYY MMMM d";
     }
     else{
-      dateFormat = "MMM d, yyyy"
+      dateFormat = "MMM d, YYYY"
     }
 
     return dateFormat
@@ -62,8 +62,7 @@ export class LocalizationService {
     const preferedLanguageString = cookieService.getValue('preferences.language');
     const preferedLanguage = !!preferedLanguageString ? JSON.parse(preferedLanguageString) : null;
 
-    let browserLanguage = (navigator.language || navigator.languages[0] || "").split('-')[0]
-    browserLanguage = browserLanguage === "hu" ? "hu" : "en";
+    const browserLanguage = navigator.language === 'hu' ? 'hu' : 'en'; 
 
     this._selectedLanguage = this.languages.find(x => x.code === preferedLanguage?.code) || this.languages.find(x => x.code === browserLanguage) || this.languages[0];
     document.documentElement.setAttribute("lang", this._selectedLanguage.code);

@@ -1,105 +1,47 @@
-@use "sass:math";
-@use "sass:color";
-@use "sass:list";
 @use "sass:map";
 @use "@angular/material" as mat;
-@use "../../utils/styles/color-utils.scss" as color-utils;
 
 @mixin color($color-config, $isDarkTheme: false) {
-
+   
     $primary-palette: map.get($color-config, 'primary');
-    $accent-palette: map.get($color-config, 'accent');
-    $warn-palette: map.get($color-config, 'warn');
-
-    $heading-color: color.adjust(mat.m2-get-color-from-palette($primary-palette, 700), $lightness: -5%);
-    $background-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 100), $lightness: 12%);
-    $background-lines-color: mat.m2-get-color-from-palette($primary-palette, 600);
-    $background-aura-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 100), $lightness: 7%);
-    $text-color: color-utils.get-text-color-on-background($background-color);
-    $button-color: mat.m2-get-color-from-palette($accent-palette, 300);
-
     @if $isDarkTheme {
-        $heading-color: mat.m2-get-color-from-palette($primary-palette, 100);
-        $background-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 900), $lightness: -25%);
-        $background-lines-color: mat.m2-get-color-from-palette($primary-palette, 200);
-        $background-aura-color: color.adjust(mat.m2-get-color-from-palette($accent-palette, 900), $lightness: -20%);
-        $text-color: color-utils.get-text-color-on-background($background-color);
-        $button-color: mat.m2-get-color-from-palette($accent-palette, 800);
-    }
-
-    .bg {
-        background: radial-gradient(circle at center, $background-aura-color 0%, $background-color 100%);
-
-        .bg-lines {
-            background-image: repeating-linear-gradient(to right,
-                    rgba(color.channel($background-lines-color, "red", $space: rgb),
-                        color.channel($background-lines-color, "green", $space: rgb),
-                        color.channel($background-lines-color, "blue", $space: rgb),
-                        0.1) 0 0.3vmin,
-                    transparent 0.1vmin 4vmin),
-                repeating-linear-gradient(to bottom,
-                    rgba(color.channel($background-lines-color, "red", $space: rgb),
-                        color.channel($background-lines-color, "green", $space: rgb),
-                        color.channel($background-lines-color, "blue", $space: rgb),
-                        0.1) 0 0.3vmin,
-                    transparent 0.1vmin 4vmin);
+        $color: mat.get-color-from-palette($primary-palette, 100); 
+        
+        .text-container {
+            color: $color;
         }
     }
+    @else {
+        $color: mat.get-color-from-palette($primary-palette, 900);
 
-    .banner-container {
-        .left-col {
-            .text-container {
-                color: $heading-color;
-                font-family: 'Roboto Mono', monospace;
-            }
-
-            .learn-more-button {
-                background-color: $button-color;
-            }
-        }
-
-        .right-col {
-            .profile-picture {
-                border: 0.4vw solid $heading-color;
-                /* the thickness and color */
-                --s: 5vw;
-                -webkit-mask:
-                    conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 list.slash(0, calc(100% - var(--s))) calc(100% - var(--s)),
-                    linear-gradient(#000 0 0) content-box;
-                print-color-adjust: exact;
-            }
+        .text-container {
+            color: $color;
         }
     }
-
 
     @media print {
-        .banner-container {
-            .left-col {
-                .text-container {
-                    color: black;
-                    font-family: 'Roboto Mono', monospace;
-                }
-            }
+        .text-container {
+            color: mat.get-color-from-palette($primary-palette, darker);
         }
     }
 }
 
 @mixin typography($typography-config) {
     .banner-container {
-        font-family: mat.m2-font-family($typography-config);
+        font-family: mat.font-family($typography-config);
     }
 }
 
 @mixin theme($theme, $isDarkTheme: false) {
-    $color-config: mat.m2-get-color-config($theme);
+    $color-config: mat.get-color-config($theme);
 
-    @if $color-config !=null {
+    @if $color-config  !=null {
         @include color($color-config, $isDarkTheme);
     }
 
-    $typography-config: mat.m2-get-typography-config($theme);
+    $typography-config: mat.get-typography-config($theme);
 
-    @if $typography-config !=null {
+    @if $typography-config  !=null {
         @include typography($typography-config);
     }
 }
