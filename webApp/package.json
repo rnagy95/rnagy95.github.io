@@ -10,8 +10,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
-    "generate-licenses": "npx license-checker --customPath ../thhird-party-license-format.json --out ../docs/THIRD_PARTY_LICENSES.md --markdown"
+    "test": "ng test --no-watch --code-coverage --browsers ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -42,7 +41,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "license-checker": "^25.0.1",
     "sass": "^1.98.0",
     "typescript": "~5.9.3"
   }
