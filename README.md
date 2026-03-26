@@ -1,5 +1,5 @@
 # Personal Webpage of Richard Nagy (rnagy95)
-[![Build and Deploy](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/cd-deploy.yml/badge.svg?branch=master)](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/cd-deploy.yml) [![CI Pipepline](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/ci.yml)
+[![Build and Deploy](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/cd-deploy.yml/badge.svg)](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/cd-deploy.yml) [![CI Pipepline](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/rnagy95/rnagy95.github.io/actions/workflows/ci.yml)
 
 This project has a dual purpose:
 - Personal website / online CV
