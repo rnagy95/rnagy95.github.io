@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
 
   @Input() contacts: ContactLink[] | undefined;
 
-  public version: string = version.APP_VERSION;
+  public version: string = `v${version.APP_VERSION}`;
 
   constructor(public localizationService: LocalizationService, public printService: PrintService, private dialog: MatDialog, private domSanitizer: DomSanitizer) { }
 
