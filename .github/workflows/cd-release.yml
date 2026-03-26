@@ -57,10 +57,10 @@ jobs:
 
       - name: Create Pull Requests
         run: |
-          PR_master=$(gh pr create -H release/${{ steps.bump.outputs.new_tag }} -B develop --title 'Merge release/${{ steps.bump.outputs.new_tag }} into develop' --body 'Created by GitHub Actions' --merge)
-          PR_develop=$(gh pr create -H release/${{ steps.bump.outputs.new_tag }} -B master --title 'Merge release/${{ steps.bump.outputs.new_tag }} into master' --body 'Created by GitHub Actions' --merge)
-          gh pr merge $PR_master --auto
-          gh pr merge $PR_develop --auto
+          PR_master=$(gh pr create -H release/${{ steps.bump.outputs.new_tag }} -B develop --title 'Merge release/${{ steps.bump.outputs.new_tag }} into develop' --body 'Created by GitHub Actions')
+          PR_develop=$(gh pr create -H release/${{ steps.bump.outputs.new_tag }} -B master --title 'Merge release/${{ steps.bump.outputs.new_tag }} into master' --body 'Created by GitHub Actions')
+          gh pr merge $PR_master --auto --merge
+          gh pr merge $PR_develop --auto --merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
