@@ -1,10 +1,12 @@
 <button class="menu-button" mat-button [matMenuTriggerFor]="languagePicker" aria-label="Select language" [matTooltip]="localizationService.localize('selectLanguage')">
-        <img class="menu-button-flag" src="../../assets/{{localizationService.selectedLanguage.code}}.svg" width="30" height="30" />
-        <span class="menu-button-text">{{localizationService.selectedLanguage.name}}<mat-icon class="menu-button-text-arrow">arrow_drop_down</mat-icon></span>
+  <img class="menu-button-flag" src="../../assets/{{localizationService.selectedLanguage.code}}.svg" width="30" height="30" />
+  <span class="menu-button-text">{{localizationService.selectedLanguage.name}}<mat-icon class="menu-button-text-arrow">arrow_drop_down</mat-icon></span>
 </button>
 <mat-menu #languagePicker="matMenu" xPosition="before">
-  <button mat-menu-item *ngFor="let language of localizationService.languages" (click)="onLanguageChanged(language)">
-    <img class="menu-item-flag" src="../../assets/{{language.code}}.svg" width="30" height="30" />
-    {{language.name}}
-  </button>
+  @for (language of localizationService.languages; track language) {
+    <button mat-menu-item (click)="onLanguageChanged(language)">
+      <img class="menu-item-flag" src="../../assets/{{language.code}}.svg" width="30" height="30" />
+      {{language.name}}
+    </button>
+  }
 </mat-menu>

@@ -1,6 +1,8 @@
 <section class="print-contacts-container">
-    <div class="contact" *ngFor="let contact of contacts">
-        <mat-icon>{{contact.iconFont}}</mat-icon>
-        <span class="value">{{contact.contact}}</span>
+  @for (contact of contacts; track contact) {
+    <div class="contact">
+      <mat-icon>{{contact.iconFont}}</mat-icon>
+      <span class="value">{{contact.contact}}</span>
     </div>
+  }
 </section>

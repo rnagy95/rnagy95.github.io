@@ -1,6 +1,14 @@
-<div *ngIf="!!text">
+@if (!!text) {
+  <div>
     <span class="in-print">{{text}}</span>
-    <span class="on-screen" *ngIf="!expanded && text.length <= 123">{{text}}</span>
-    <span class="on-screen" *ngIf="!expanded && text.length > 123">{{text | slice:0:120}}... <a (click)="toggleExpandedState()">[{{localizationService.localize('seeMore')}}]</a></span>
-    <span class="on-screen" *ngIf="expanded && text.length > 123">{{text}} <a (click)="toggleExpandedState()">[{{localizationService.localize('seeLess')}}]</a></span>
-</div>
+    @if (!expanded && text.length <= 123) {
+      <span class="on-screen">{{text}}</span>
+    }
+    @if (!expanded && text.length > 123) {
+      <span class="on-screen">{{text | slice:0:120}}... <a (click)="toggleExpandedState()">[{{localizationService.localize('seeMore')}}]</a></span>
+    }
+    @if (expanded && text.length > 123) {
+      <span class="on-screen">{{text}} <a (click)="toggleExpandedState()">[{{localizationService.localize('seeLess')}}]</a></span>
+    }
+  </div>
+}

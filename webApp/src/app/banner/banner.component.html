@@ -1,15 +1,33 @@
-<div id="particles-js"></div>
+<div class="bg">
+  <div class="bg-lines"></div>
+</div>
 
 <section class="banner-container">
     <section class="left-col">
-        <div class="image-container">
-            <img class="profile-picture" src="../../assets/profile_pic.jpg" />
+        <div class="text-container">
+            <div class="name">
+                {{localizationService.localize('name')}}
+            </div>
+            <div class="title">
+                {{localizationService.localize('profession')}}
+            </div>
+            <div class="slogen">
+                {{localizationService.localize('slogen')}}
+            </div>
+            <button matButton="filled" class="learn-more-button" (click)="scrollDown()">
+                {{localizationService.localize('learnMore')}}
+            </button>
         </div>
     </section>
     <section class="right-col">
-        <div class="text-container">
-            <p class="name"  [attr.glitch-text]="localizationService.localize('name')">{{localizationService.localize('name')}}</p>
-            <p class="title" [attr.glitch-text]="localizationService.localize('profession')">{{localizationService.localize('profession')}}</p>
-        </div>
+        <img class="profile-picture" src="../../assets/profile_pic.jpg" />
     </section>
+    <div class="scroll-icon-container" (click)="scrollDown()">
+        <div class="scroll-text">
+            {{localizationService.localize('scrollDown')}}
+        </div>
+        <div class="scroll-icon">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </div>
+    </div>
 </section>
