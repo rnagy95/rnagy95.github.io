@@ -1,5 +1,5 @@
 {
-    "name": "Richard Nagy",
+    "name": "Richárd Nagy-Móczik",
     "profession": "Software Engineer / MBA",
     "slogen": "Building clarity at the intersection of tech and business.",
     "learnMore": "Learn More",
@@ -48,7 +48,7 @@
     "intro.p1": "I'm a software engineer and economist with a multidisciplinary mindset and more than a decade of experience across engineering, finance and risk analytics. My background spans computer science, quantitative development, and financial modeling, supported by a BSc in Computer Science Engineering and an MBA with a focus on finance.",
     "intro.p2": "Over the years, I've worked in full-stack development, quantitative roles, and actuarial modeling, gaining hands-on exposure to enterprise software solutions in various fields. I've spent the majority of my career in multinational, English-speaking environments, where I've become known for being adaptable, curious, and quick to learn. I enjoy working in agile teams, value clean engineering practices like TDD, and naturally gravitate toward roles that sit at the intersection of technology and business.",
     "intro.p3": "I see myself as a generalist who learns fast, connects dots across domains, and understands customer needs just as well as the technical challenges behind them.",
-    "intro.p4": "Outside of work, I'm usually exploring something new - especially astronomy, space research, photography. I also like to watch Formula 1 together with my fiancée and our cat.",
+    "intro.p4": "Outside of work, I'm usually exploring something new - especially astronomy, space research, photography. I also like to watch Formula 1 together with my wife and our cat.",
     "backend": "Backend",
     "frontend": "Frontend",
     "database": "Database",

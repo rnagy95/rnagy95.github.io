@@ -59,13 +59,13 @@ describe('LocalizationService', () => {
   it('should localize to hu a known phrase', () => {
     mockNavigatorLanguage('hu', ['hu', 'en-US'])
     service = TestBed.inject(LocalizationService);
-    expect(service.localize('name')).toBe("Nagy Richárd");
+    expect(service.localize('name')).toBe("Nagy-Móczik Richárd");
   });
 
   it('should localize to en a known phrase', () => {
     mockNavigatorLanguage('en-US', ['en-US', 'en-GB'])
     service = TestBed.inject(LocalizationService);
-    expect(service.localize('name')).toBe("Richard Nagy");
+    expect(service.localize('name')).toBe("Richárd Nagy-Móczik");
   });
 
   it('should return the input for any unknown phrase', () => {
