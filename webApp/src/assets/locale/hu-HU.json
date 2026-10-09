@@ -1,5 +1,5 @@
 {
-    "name": "Nagy Richárd",
+    "name": "Nagy-Móczik Richárd",
     "profession": "Mérnök Informatikus / MBA",
     "slogen": "Átláthatóságot teremtek ott, ahol a technológia és az üzlet találkozik.",
     "learnMore": "Tudj meg többet rólam",
@@ -48,7 +48,7 @@
     "intro.p1": "Mérnök informatikus és közgazdász vagyok, multidiszciplináris szemlélettel és több mint egy évtizednyi tapasztalattal mérnöki, pénzügyi és kockázatelemzési területen. Hátteremet a számítástechnika, a kvantitatív fejlesztés és a pénzügyi modellezés határozza meg, amelyet egy mérnökinformatikus BSc-diploma és egy pénzügyi fókuszú MBA egészít ki.",
     "intro.p2": "Pályám során dolgoztam full-stack fejlesztőként, kvantitatív szerepkörökben és aktuáriusi modellezési területen is, így több iparág vállalati szoftvermegoldásaiban szereztem gyakorlatot. Karrierem jelentős részét multinacionális, angol nyelvű környezetben töltöttem, ahol kíváncsiságommal, alkalmazkodóképességemmel és gyors tanulási képességemmel tűntem ki. Szeretek agilis csapatban dolgozni, fontosnak tartom a letisztult mérnöki gyakorlatokat - például a TDD-t -, és remekül teljesítek azokban a szerepekben, ahol a technológia és az üzlet találkozik.",
     "intro.p3": "Generalistának tartom magam. Gyorsan tanulok, könnyen átlátom a különböző területek közti összefüggéseket, és a technikai kihívások mellett a felhasználói igényeket is jól értem.",
-    "intro.p4": "Szabadidőmben általában valami új dologba ásom bele magam - különösen érdekel az űrkutatás, a csillagászat és a fotózás. Emellett rendszeresen nézek Forma-1-et a menyasszonyommal és a macskánkkal.",
+    "intro.p4": "Szabadidőmben általában valami új dologba ásom bele magam - különösen érdekel az űrkutatás, a csillagászat és a fotózás. Emellett rendszeresen nézek Forma-1-et a feleségemmel és a macskánkkal.",
     "backend": "Backend",
     "frontend": "Frontend",
     "database": "Adatbázis",

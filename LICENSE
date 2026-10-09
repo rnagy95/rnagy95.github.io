@@ -2,7 +2,7 @@
 
 ### Terminology
 * ***Software***: The source code, binaries and associated documentation of THIS software porject.
-* ***Author, I, My, Me***: Richard Nagy (95.richard.nagy@gmail.com)
+* ***Author, I, My, Me***: Richárd Nagy-Móczik (95.richard.nagy@gmail.com)
 * ***Program Code***: All the source code, configuration and descriptor files that are necessary to build, deploy and run the *Software*, or are responsible for the behavior, layout and style of the *Software*, excluding any textual, graphic and audio information that is presented by the *Software*. *Program Code* is located mostly but not exclusively at */webApp/src/app/*.
 * ***Content***: All textual, graphic and audio information that is presented by the *Software*. *Content* is located mostly but not exclusively at */webApp/src/assets*.
 
@@ -13,7 +13,7 @@ The *Program Code* is provided under the *MIT License*:
 
 > MIT License
 > 
-> Copyright (c) 2023 Richard Nagy (95.richard.nagy@gmail.com)
+> Copyright (c) 2023 Richárd Nagy-Móczik (95.richard.nagy@gmail.com)
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
